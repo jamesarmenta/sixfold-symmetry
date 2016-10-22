@@ -1,0 +1,115 @@
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+//VARIABLES
+$item-size: 15vw;
+
+:root { --item-transform: scale(1); }
+
+body{
+  background-color: #1f1f1f;
+  font-family: 'Brown-Bold', sans-serif;
+  color: white;
+  font-weight: lighter;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+//mixin sorta
+.center{
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  margin: auto;
+}
+
+.item{
+  max-width: $item-size;
+  position: absolute;
+
+  .item-name{
+    font-size: 1.25em;
+    margin: .25em 0 .25em 0;
+  }
+  .item-artist{
+    font-size: 1em;
+    font-style: italic;
+  }
+}
+
+.item-colors{
+  width: $item-size; height: $item-size;
+  position: relative;
+  div{@extend .center;}
+}
+
+//id contains position & colors
+#one{
+  left: 10vw; top: 10vw;
+  .primary{
+    width: 100%; height: 100%;
+    background-color: olive;
+  }
+  .secondary{
+    width: 60%; height: 60%;
+    background-color: beige;
+  }
+  .tertiary{
+    width: 20%; height: 20%;
+    background-color: teal;
+  }
+}
+
+#two{
+  left: 50vw; top: 20vw;
+  .primary{
+    //first color is set to 100%
+    width: 100%; height: 100%;
+    background-color: #BA8B62;
+  }
+  .secondary{
+    //proportionate to 
+    //(100/primary%) * .66 * secondary %
+    width: 49%; height: 49%;
+    background-color: #A75A3C;
+  }
+  .tertiary{
+    //proportionate to 
+    //(100/primary%) * .33 * tertiary %
+    width: 28%; height: 28%;
+    background-color: #614439;
+  }
+}
+
+#three{
+  left: 50vw; top: 20vw;
+  .primary{
+    //first color is set to 100%
+    width: 100%; height: 100%;
+    background-color: #B979B7;
+  }
+  .secondary{
+    //proportionate to 
+    //(100/primary%) * .66 * secondary %
+    width: 62.2%; height: 62.2%;
+    background-color: #B99DBF;
+  }
+  .tertiary{
+    //proportionate to 
+    //(100/primary%) * .33 * tertiary %
+    width: 29.08%; height: 29.08%;
+    background-color: #A964A5;
+  }
+}
+
+.full{
+  width: 100vw; height: 100vw;
+}

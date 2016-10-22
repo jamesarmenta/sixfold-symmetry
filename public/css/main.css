@@ -1,0 +1,87 @@
+:root {
+  --item-transform: scale(1); }
+
+body {
+  background-color: #1f1f1f;
+  font-family: 'Brown-Bold', sans-serif;
+  color: white;
+  font-weight: lighter; }
+
+a, a:visited {
+  color: white;
+  text-decoration: none; }
+
+.center, .item-colors div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.item {
+  max-width: 15vw;
+  position: absolute; }
+  .item .item-name {
+    font-size: 1.25em;
+    margin: .25em 0 .25em 0; }
+  .item .item-artist {
+    font-size: 1em;
+    font-style: italic; }
+
+.item-colors {
+  width: 15vw;
+  height: 15vw;
+  position: relative; }
+
+#one {
+  left: 10vw;
+  top: 10vw; }
+  #one .primary {
+    width: 100%;
+    height: 100%;
+    background-color: olive; }
+  #one .secondary {
+    width: 60%;
+    height: 60%;
+    background-color: beige; }
+  #one .tertiary {
+    width: 20%;
+    height: 20%;
+    background-color: teal; }
+
+#two {
+  left: 50vw;
+  top: 20vw; }
+  #two .primary {
+    width: 100%;
+    height: 100%;
+    background-color: #BA8B62; }
+  #two .secondary {
+    width: 49%;
+    height: 49%;
+    background-color: #A75A3C; }
+  #two .tertiary {
+    width: 28%;
+    height: 28%;
+    background-color: #614439; }
+
+#three {
+  left: 50vw;
+  top: 20vw; }
+  #three .primary {
+    width: 100%;
+    height: 100%;
+    background-color: #B979B7; }
+  #three .secondary {
+    width: 62.2%;
+    height: 62.2%;
+    background-color: #B99DBF; }
+  #three .tertiary {
+    width: 29.08%;
+    height: 29.08%;
+    background-color: #A964A5; }
+
+.full {
+  width: 100vw;
+  height: 100vw; }
