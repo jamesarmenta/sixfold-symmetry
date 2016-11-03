@@ -1,15 +1,23 @@
-:root {
-  --item-transform: scale(1); }
 
 body {
-  background-color: #1f1f1f;
-  font-family: 'Brown-Bold', sans-serif;
-  color: white;
-  font-weight: lighter; }
+  background-color: #262626;
+  font-family: "Brown-Light", "Century Gothic", Helvetica, sans-serif;
+  color: #fff;
+  padding: 8px; }
 
 a, a:visited {
-  color: white;
+  color: #fff;
   text-decoration: none; }
+
+.sixfold-title {
+  position: fixed;
+  margin: 8px;
+  left: 0; }
+  .sixfold-title h1 {
+    font-size: 4em; }
+
+:root {
+  --item-transform: scale(1); }
 
 .center, .item-colors div {
   position: absolute;
@@ -24,10 +32,12 @@ a, a:visited {
   position: absolute; }
   .item .item-name {
     font-size: 1.25em;
+    font-style: bold-italic;
     margin: .25em 0 .25em 0; }
   .item .item-artist {
     font-size: 1em;
-    font-style: italic; }
+    font-weight: 100;
+    font-style: light; }
 
 .item-colors {
   width: 15vw;
@@ -36,7 +46,7 @@ a, a:visited {
 
 #one {
   left: 10vw;
-  top: 10vw; }
+  top: 20vw; }
   #one .primary {
     width: 100%;
     height: 100%;
@@ -85,3 +95,21 @@ a, a:visited {
 .full {
   width: 100vw;
   height: 100vw; }
+
+
+body {
+  background-color: #262626;
+  font-family: "Brown-Light", "Century Gothic", Helvetica, sans-serif;
+  color: #fff;
+  padding: 8px; }
+
+a, a:visited {
+  color: #fff;
+  text-decoration: none; }
+
+.sixfold-title {
+  position: fixed;
+  margin: 8px;
+  left: 0; }
+  .sixfold-title h1 {
+    font-size: 4em; }

@@ -66,7 +66,7 @@ gulp.task('assets', function() {
 
 //JAVSCRIPT
 gulp.task('js', function () {
-	return gulp.src('./js/**/*.js')
-	// .pipe(strip())
+	return gulp.src(['./js/**/*.js','!node_modules/**/*.js'])
+	.pipe(strip())
 	.pipe(gulp.dest('./public/js/'));
 });

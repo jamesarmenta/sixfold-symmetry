@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
-var io = require('socket.io')(http);
+// var io = require('socket.io')(http);
 http.listen(3000);
 
 app.set('view engine', 'ejs');
@@ -12,7 +12,7 @@ var globals = {test: test, second: second}
 
 // ROUTING
 app.get('/', function (req, res) {
-	res.render('pages/dog',globals);
+	res.render('pages/index',globals);
 });
 
 app.get('/:id', function (req, res) {
@@ -20,17 +20,10 @@ app.get('/:id', function (req, res) {
 	//will alter their global value
 	//adding objects, like global.foo, is just fine
 	let mylocal = Object.assign({}, globals);
-	let id = req.params.id;
+	mylocal.id = req.params.id;
 
-	res.render('pages/dog',mylocal);
+	res.render('pages/index',mylocal);
 });
 
-// io.on('connection', function (socket) {
-// 	setInterval(function(){
-// 		if(Math.random()>Math.random()){
-// 			socket.emit('news',Math.random());
-// 		}
-// 	}, 5000);
-// });
-
-//http://coenraets.org/blog/2012/10/real-time-web-analytics-with-node-js-and-socket-io/
+// NOTE: Use WCAG color procedure to test contrast of background-color and text
+// http://coenraets.org/blog/2012/10/real-time-web-analytics-with-node-js-and-socket-io/

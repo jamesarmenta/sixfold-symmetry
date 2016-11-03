@@ -4,7 +4,7 @@
   "description": "Exhibition site for the Tang Museum's Sixfold Symmetry",
   "main": "index.js",
   "scripts": {
-    "test": "node test/fixme.js"
+    "test": "nodemon tests/fixme.js"
   },
   "author": "James Armenta",
   "license": "MIT",

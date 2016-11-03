@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+<body>
+	Welcome!
+	<%if (locals.id) { %>
+		<p>ID is <%= id %>
+	<% } %>
+
+	<% include ../partials/footer %>
+	<% include ../js/scripts %>
+
+	</body>
+	</html>

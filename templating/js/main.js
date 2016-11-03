@@ -1,4 +1,4 @@
-$('.item').draggable();
+// $('.item').draggable();
 
 const items = Array.from(document.querySelectorAll('.item'));
 
@@ -38,8 +38,8 @@ function expandSelectedItem(item) {
     //append clone to body
     document.body.appendChild(clone);
     //scale using window height or width?
-    var scaleWidth = (window.innerWidth/width.replace('px',''))*2;
-    var scaleHeight = (window.innerHeight/height.replace('px',''))*2;
+    var scaleWidth = document.documentElement.clientWidth/width.replace('px','')*3;
+    var scaleHeight = document.documentElement.clientHeight/height.replace('px','')*3;
     var finalScale = (scaleHeight > scaleWidth) ? scaleHeight : scaleWidth;
     //how much should animation delay? 
     var delay = i/6;
@@ -50,6 +50,7 @@ function expandSelectedItem(item) {
 
 // FIXME: Fix so that transform is cross-browser (moz, etc.)
 // FIXME: Update using CSS variables like --item-scale
+// FIXME: Animation jumps on iPhone
 function scaleItem(item,finalScale,delay){
   //OPENING ANIMATION
   window.setTimeout(function(){
@@ -71,8 +72,7 @@ function scaleItem(item,finalScale,delay){
     window.setTimeout(function(){
       item.remove();
       document.body.style.overflow = 'visible';
-      items[0].style.border = '1px solid red';
-    },1000);
+    },5000);
 
   },3500);
 
