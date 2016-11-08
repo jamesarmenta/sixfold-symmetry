@@ -7,6 +7,10 @@
     "test": "node tests/fixme.js"
   },
   "author": "James Armenta",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/jamesarmenta/sixfold-symmetry"
+  },
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.17.3",
