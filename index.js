@@ -1,29 +1,42 @@
-var express = require('express');
-var app = express();
-var http = require('http').createServer(app);
-// var io = require('socket.io')(http);
-http.listen(3000);
+var helpers = require('./helpers.js');
+// var server = require('./server.js');
 
-app.set('view engine', 'ejs');
-
-var test = ['thing one','thing two','thing three','thing four'];
-var second = ['s1','s2','s3','s4'];
-var globals = {test: test, second: second}
-
-// ROUTING
-app.get('/', function (req, res) {
-	res.render('pages/index',globals);
+var items = {};
+helpers.getItemsAsync('assets/items/','.md').then((data)=>{
+  items = data;
+  startServer();
 });
 
-app.get('/:id', function (req, res) {
-	//this is a SHALLOW copy, meaning that editing any children of global
-	//will alter their global value
-	//adding objects, like global.foo, is just fine
-	let mylocal = Object.assign({}, globals);
-	mylocal.id = req.params.id;
+function startServer(){
+  var express = require('express');
+  var app = express();
+  var http = require('http').createServer(app);
+  // var io = require('socket.io')(http);
+  http.listen(3000);
 
-	res.render('pages/index',mylocal);
-});
+  app.set('view engine', 'ejs');
+
+  // ROUTING
+  app.get('/partials/:name', function (req, res) {
+
+    var local = items[req.params.name];
+    
+    res.render('partials/item',local);
+  });
+
+  app.get('/:name', function (req, res) {
+
+    var local = items[req.params.name];
+    
+    res.render('pages/item',local);
+  });
+
+  app.get('/', function (req, res) {
+
+    res.render('pages/index');
+  });
+}
+
 
 // NOTE: Use WCAG color procedure to test contrast of background-color and text
 // http://coenraets.org/blog/2012/10/real-time-web-analytics-with-node-js-and-socket-io/

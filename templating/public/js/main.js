@@ -1,3 +1,4 @@
+$('.item').draggable();
 
 const items = Array.from(document.querySelectorAll('.item'));
 

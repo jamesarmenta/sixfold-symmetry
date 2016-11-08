@@ -1,0 +1,22 @@
+<html>
+<head>
+    <style>
+      .destination{
+        width: 500px;
+        height: 500px;
+        background-color: pink;
+        overflow-y: scroll;
+      }
+    </style>
+</head>
+<body>
+  Welcome!
+  <div class="destination">
+    <h1><%= title %></h1>
+    <h2><%= artist %></h2>
+    <p><%= body %></p>
+  </div>
+  <% include ../partials/footer %>
+  <% include ../js/scripts %>
+</body>
+</html>

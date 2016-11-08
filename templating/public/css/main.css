@@ -1,20 +1,78 @@
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 body {
   background-color: #262626;
-  font-family: "Brown-Light", "Century Gothic", Helvetica, sans-serif;
+  font-family: "Brown", "Century Gothic", Helvetica, sans-serif;
   color: #fff;
-  padding: 8px; }
+  padding: 18px; }
 
 a, a:visited {
   color: #fff;
   text-decoration: none; }
 
-.sixfold-title {
+nav div, nav ul, nav li {
+  z-index: 999; }
+
+.site-title {
+  position: fixed; }
+  .site-title h1 {
+    font-size: 3.5em; }
+  .site-title h1:nth-of-type(1) {
+    position: fixed;
+    moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -moz-transform: rotate(-90deg) translateX(-111%);
+    -o-transform: rotate(-90deg) translateX(-111%);
+    -ms-transform: rotate(-90deg) translateX(-111%);
+    -webkit-transform: rotate(-90deg) translateX(-111%);
+    transform: rotate(-90deg) translateX(-111%); }
+  @media screen and (max-width: 1000px) {
+    .site-title h1 {
+      font-size: 3em; } }
+
+.menu {
   position: fixed;
-  margin: 8px;
-  left: 0; }
-  .sixfold-title h1 {
-    font-size: 4em; }
+  right: 0;
+  top: 1.75em;
+  padding: 9px 18px; }
+  .menu li {
+    display: inline-block;
+    margin: 0 9px 0 9px; }
 
 :root {
   --item-transform: scale(1); }
@@ -27,38 +85,39 @@ a, a:visited {
   right: 0;
   margin: auto; }
 
+.all-items {
+  position: relative;
+  margin: 3.5em 0 0 3.5em;
+  height: 2000px; }
+
 .item {
   max-width: 15vw;
-  position: absolute; }
+  position: absolute;
+  margin: 18px; }
   .item .item-name {
     font-size: 1.25em;
-    font-style: bold-italic;
+    font-style: italic;
     margin: .25em 0 .25em 0; }
-  .item .item-artist {
-    font-size: 1em;
-    font-weight: 100;
-    font-style: light; }
 
 .item-colors {
   width: 15vw;
   height: 15vw;
   position: relative; }
 
-#one {
-  left: 10vw;
-  top: 20vw; }
-  #one .primary {
-    width: 100%;
-    height: 100%;
-    background-color: olive; }
-  #one .secondary {
-    width: 60%;
-    height: 60%;
-    background-color: beige; }
-  #one .tertiary {
-    width: 20%;
-    height: 20%;
-    background-color: teal; }
+#one .primary {
+  width: 100%;
+  height: 100%;
+  background-color: olive; }
+
+#one .secondary {
+  width: 60%;
+  height: 60%;
+  background-color: beige; }
+
+#one .tertiary {
+  width: 20%;
+  height: 20%;
+  background-color: teal; }
 
 #two {
   left: 50vw;
@@ -97,19 +156,110 @@ a, a:visited {
   height: 100vw; }
 
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 body {
   background-color: #262626;
-  font-family: "Brown-Light", "Century Gothic", Helvetica, sans-serif;
+  font-family: "Brown", "Century Gothic", Helvetica, sans-serif;
   color: #fff;
-  padding: 8px; }
+  padding: 18px; }
 
 a, a:visited {
   color: #fff;
   text-decoration: none; }
 
-.sixfold-title {
+nav div, nav ul, nav li {
+  z-index: 999; }
+
+.site-title {
+  position: fixed; }
+  .site-title h1 {
+    font-size: 3.5em; }
+  .site-title h1:nth-of-type(1) {
+    position: fixed;
+    moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -moz-transform: rotate(-90deg) translateX(-111%);
+    -o-transform: rotate(-90deg) translateX(-111%);
+    -ms-transform: rotate(-90deg) translateX(-111%);
+    -webkit-transform: rotate(-90deg) translateX(-111%);
+    transform: rotate(-90deg) translateX(-111%); }
+  @media screen and (max-width: 1000px) {
+    .site-title h1 {
+      font-size: 3em; } }
+
+.menu {
   position: fixed;
-  margin: 8px;
-  left: 0; }
-  .sixfold-title h1 {
-    font-size: 4em; }
+  right: 0;
+  top: 1.75em;
+  padding: 9px 18px; }
+  .menu li {
+    display: inline-block;
+    margin: 0 9px 0 9px; }

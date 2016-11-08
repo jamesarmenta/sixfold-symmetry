@@ -1,3 +1,4 @@
+//TRANSITION
 @mixin transition($args...) {
 	-webkit-transition: $args;
 	-moz-transition: $args;
@@ -6,6 +7,14 @@
 	transition: $args;
 }
 
+//CALC
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+//TRANSFORM
 @mixin transform($transforms...) {
 	-moz-transform: $transforms;
 	-o-transform: $transforms;
@@ -21,12 +30,15 @@
 @mixin scale($scale) {
 	@include transform(scale($scale));
 } 
+
 @mixin translate ($x, $y) {
 	@include transform(translate($x, $y));
 }
+
 @mixin skew ($x, $y) {
 	@include transform(skew(#{$x}deg, #{$y}deg));
 }
+
 @mixin transform-origin ($origin) {
 	moz-transform-origin: $origin;
 	-o-transform-origin: $origin;
