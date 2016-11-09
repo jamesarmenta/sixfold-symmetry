@@ -14,10 +14,14 @@ $item-size: 15vw;
   margin: auto;
 }
 
-.all-items{
+.content-area{
   position: relative;
   margin: $site-title-size 0 0 $site-title-size;
-  height: 2000px; //TODO: Determine correct height based on ... ?
+  height: 500px; //TODO: Determine correct height based on ... ?
+
+  @media #{$screen-break2}{
+    margin: $site-title-size 0 0 0;
+  }
 }
 
 .item{
@@ -40,6 +44,16 @@ $item-size: 15vw;
   div{@extend .center;}
 }
 
+.selected-item{
+  width: 100%; height: auto;
+  z-index: 998;
+  padding: $spacing-unit;
+  @include border-box();
+}
+
+
+//SPECIFIC ITEMS
+//FIXME: Color CSS should be dynamically created with node
 //id contains position & colors
 #one{
   .primary{
@@ -96,8 +110,4 @@ $item-size: 15vw;
     width: 29.08%; height: 29.08%;
     background-color: #A964A5;
   }
-}
-
-.full{
-  width: 100vw; height: 100vw;
 }

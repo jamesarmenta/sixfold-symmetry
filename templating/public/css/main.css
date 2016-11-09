@@ -61,9 +61,25 @@ nav div, nav ul, nav li {
     -ms-transform: rotate(-90deg) translateX(-111%);
     -webkit-transform: rotate(-90deg) translateX(-111%);
     transform: rotate(-90deg) translateX(-111%); }
-  @media screen and (max-width: 1000px) {
+    .site-title h1:nth-of-type(1):after {
+      content: ':'; }
+  @media screen and (max-width: 1200px) {
     .site-title h1 {
       font-size: 3em; } }
+  @media screen and (max-width: 1100px) {
+    .site-title h1 {
+      font-size: 2.5em;
+      position: relative; }
+    .site-title h1:nth-of-type(1) {
+      -moz-transform: rotate(0deg) translateX(0%);
+      -o-transform: rotate(0deg) translateX(0%);
+      -ms-transform: rotate(0deg) translateX(0%);
+      -webkit-transform: rotate(0deg) translateX(0%);
+      transform: rotate(0deg) translateX(0%); }
+      .site-title h1:nth-of-type(1):after {
+        content: ''; }
+    .site-title h1:nth-of-type(2) {
+      display: none; } }
 
 .menu {
   position: fixed;
@@ -85,10 +101,13 @@ nav div, nav ul, nav li {
   right: 0;
   margin: auto; }
 
-.all-items {
+.content-area {
   position: relative;
   margin: 3.5em 0 0 3.5em;
-  height: 2000px; }
+  height: 500px; }
+  @media screen and (max-width: 1100px) {
+    .content-area {
+      margin: 3.5em 0 0 0; } }
 
 .item {
   max-width: 15vw;
@@ -103,6 +122,16 @@ nav div, nav ul, nav li {
   width: 15vw;
   height: 15vw;
   position: relative; }
+
+.selected-item {
+  width: 100%;
+  height: auto;
+  z-index: 998;
+  padding: 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
 
 #one .primary {
   width: 100%;
@@ -150,10 +179,6 @@ nav div, nav ul, nav li {
     width: 29.08%;
     height: 29.08%;
     background-color: #A964A5; }
-
-.full {
-  width: 100vw;
-  height: 100vw; }
 
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -251,9 +276,25 @@ nav div, nav ul, nav li {
     -ms-transform: rotate(-90deg) translateX(-111%);
     -webkit-transform: rotate(-90deg) translateX(-111%);
     transform: rotate(-90deg) translateX(-111%); }
-  @media screen and (max-width: 1000px) {
+    .site-title h1:nth-of-type(1):after {
+      content: ':'; }
+  @media screen and (max-width: 1200px) {
     .site-title h1 {
       font-size: 3em; } }
+  @media screen and (max-width: 1100px) {
+    .site-title h1 {
+      font-size: 2.5em;
+      position: relative; }
+    .site-title h1:nth-of-type(1) {
+      -moz-transform: rotate(0deg) translateX(0%);
+      -o-transform: rotate(0deg) translateX(0%);
+      -ms-transform: rotate(0deg) translateX(0%);
+      -webkit-transform: rotate(0deg) translateX(0%);
+      transform: rotate(0deg) translateX(0%); }
+      .site-title h1:nth-of-type(1):after {
+        content: ''; }
+    .site-title h1:nth-of-type(2) {
+      display: none; } }
 
 .menu {
   position: fixed;

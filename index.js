@@ -1,5 +1,4 @@
 var helpers = require('./helpers.js');
-// var server = require('./server.js');
 
 var items = {};
 helpers.getItemsAsync('assets/items/','.md').then((data)=>{
