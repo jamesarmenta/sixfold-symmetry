@@ -3,14 +3,16 @@
 @import 'mixins.scss';
 
 $screen-break1: 'screen and (max-width: 1200px)';
-$screen-break2: 'screen and (max-width: 1100px)';
-
+$screen-break2: 'screen and (max-width: 1000px)';
 
 body{
 	background-color: $color-dark;
 	font-family: $font-primary;
 	color: $color-light;
-	padding: $spacing-unit;
+
+		@media #{$screen-break2}{
+			font-size: 1.4em;
+		}
 }
 
 a, a:visited {
@@ -20,14 +22,29 @@ a, a:visited {
 
 nav
 {
-	div, ul, li{
-		z-index: 999;
+	position: fixed;
+	width: 100%;
+	@include border-box();
+	top: 0; 
+	left: 0;
+	padding: $spacing-unit;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	flex-basis: 100;
+
+	z-index: 999;
+
+	@media #{$screen-break2}{
+		flex-direction: column;
+		flex-wrap: wrap;
+		flex-basis: 100;
+		text-align: center;
 	}
-	
 }
 
 .site-title{
-	position: fixed;
 	h1{
 		font-size: $site-title-size;
 	}
@@ -41,14 +58,14 @@ nav
 	}
 
 	@media #{$screen-break1}{
-		h1{font-size:3em;}
+		h1{font-size:$site-title-size-break1;}
 	}
 	@media #{$screen-break2}{
 		h1{
-			font-size:2.5em;
 			position: relative;
 		}
 		h1:nth-of-type(1){
+			position: relative;
 			@include transform(rotate(0deg) translateX(0%));
 			&:after{
 				content: '';
@@ -61,12 +78,16 @@ nav
 }
 
 .menu{
-	position: fixed;
-	right: 0;
 	top: $site-title-size/2;
 	padding: $spacing-unit/2 $spacing-unit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	li{
 		display: inline-block;
 		margin: 0 $spacing-unit/2 0 $spacing-unit/2;
+	}
+	@media #{$screen-break1}{
+		top: $site-title-size-break1/2;
 	}
 }

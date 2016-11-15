@@ -2,5 +2,7 @@ $color-dark: #262626;
 $color-light: #fff;
 $font-primary: 'Brown', 'Century Gothic', Helvetica, sans-serif;
 $site-title-size: 3.5em;
+$site-title-size-break1: $site-title-size*.8;
+$site-title-size-break2: $site-title-size*.6;
 
-$spacing-unit: 18px;
+$spacing-unit: 1em;
