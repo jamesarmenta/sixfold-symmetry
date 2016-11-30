@@ -1,4 +1,11 @@
-$('.item').draggable();
+
+var slider = document.getElementById('slider');
+window.mySwipe = Swipe(slider, {
+  continuous: true,
+  //super fast, no sliding
+  speed: 1,
+});
+
 
 const items = Array.from(document.querySelectorAll('.item'));
 

@@ -1,118 +1,109 @@
-@import 'universal.scss';
-
+@import 'universal';
 //VARIABLES
 $item-size: 15vw;
-
 //NOTE: Use CSS variables only for DOM elements that need to edited with JS
-:root { --item-transform: scale(1); }
+:root {
+  --item-transform: scale(1);
+}
 
 //mixin sorta
-.center{
+.center {
   position: absolute;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 
-.content-area{
-  position: relative;
-  margin: $site-title-size+$spacing-unit*2 0 0 $site-title-size+$spacing-unit*2;
-  padding: $spacing-unit;
-  height: 1500px; //TODO: Determine correct height based on ... ?
-  background-color: pink;
-
-@media #{$screen-break1}{
-    margin: $site-title-size-break1+$spacing-unit*2 0 0 $site-title-size-break1+$spacing-unit*2;
-  }
-  @media #{$screen-break2}{
-    margin: $site-title-size*2 0 0 0;
-  }
-}
-
-.item{
+.item {
   max-width: $item-size;
   position: absolute;
   margin: $spacing-unit;
-
-  .item-name{
+  .item-name {
     font-size: 1.25em;
     font-style: italic;
     margin: .25em 0 .25em 0;
   }
-  .item-artist{
+  .item-artist {}
+}
+
+.item-colors {
+  width: $item-size;
+  height: $item-size;
+  position: relative;
+  div {
+    @extend .center;
   }
 }
-
-.item-colors{
-  width: $item-size; height: $item-size;
-  position: relative;
-  div{@extend .center;}
-}
-
-.selected-item{
-  width: 100%; height: auto;
-  z-index: 998;
-  padding: $spacing-unit;
-  @include border-box();
-}
-
 
 //SPECIFIC ITEMS
 //FIXME: Color CSS should be dynamically created with node
 //id contains position & colors
-#one{
-  .primary{
-    width: 100%; height: 100%;
+#one {
+  .primary {
+    width: 100%;
+    height: 100%;
     background-color: olive;
   }
-  .secondary{
-    width: 60%; height: 60%;
+  .secondary {
+    width: 60%;
+    height: 60%;
     background-color: beige;
   }
-  .tertiary{
-    width: 20%; height: 20%;
+  .tertiary {
+    width: 20%;
+    height: 20%;
     background-color: teal;
   }
 }
 
-#two{
-  left: 50vw; top: 20vw;
-  .primary{
+#two {
+  left: 50vw;
+  top: 20vw;
+  .primary {
     //first color is set to 100%
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     background-color: #BA8B62;
   }
-  .secondary{
+  .secondary {
     //proportionate to 
     //(100/primary%) * .66 * secondary %
-    width: 49%; height: 49%;
+    width: 49%;
+    height: 49%;
     background-color: #A75A3C;
   }
-  .tertiary{
+  .tertiary {
     //proportionate to 
     //(100/primary%) * .33 * tertiary %
-    width: 28%; height: 28%;
+    width: 28%;
+    height: 28%;
     background-color: #614439;
   }
 }
 
-#three{
-  left: 50vw; top: 20vw;
-  .primary{
+#three {
+  left: 50vw;
+  top: 20vw;
+  .primary {
     //first color is set to 100%
-    width: 100%; height: 100%;
-    background-color: #B979B7;
+    width: 100%;
+    height: 100%;
+    background-color: #b979b7;
   }
-  .secondary{
+  .secondary {
     //proportionate to 
     //(100/primary%) * .66 * secondary %
-    width: 62.2%; height: 62.2%;
-    background-color: #B99DBF;
+    width: 62.2%;
+    height: 62.2%;
+    background-color: #b99dbf;
   }
-  .tertiary{
+  .tertiary {
     //proportionate to 
     //(100/primary%) * .33 * tertiary %
-    width: 29.08%; height: 29.08%;
-    background-color: #A964A5;
+    width: 29.08%;
+    height: 29.08%;
+    background-color: #a964a5;
   }
 }

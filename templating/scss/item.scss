@@ -1,0 +1,139 @@
+@import 'universal';
+//
+
+.expanded-item-wrapper {
+  width: 100%;
+  height: auto;
+  z-index: 998;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include border-box();
+  // background-color: grey;
+  //direct children only
+  > div {
+    flex: 50%;
+    padding: $spacing-unit;
+    @include border-box();
+    margin: 0;
+  }
+}
+
+.expanded-item--label {
+  flex-basis: 100%;
+  width: 100%;
+  display: flex;
+  font-size: 1.2em;
+  font-family: $font-secondary;
+  margin-bottom: $spacing-unit / 2;
+  color: grey;
+
+  &::after {
+    content: '';
+    flex-grow: 1;
+    //FIXME: Make this a CSS variable or something of the sort
+    background: grey;
+    height: 2px;
+    margin-top: 4px;
+    align-self: center;
+    margin-left: $spacing-unit / 2;
+  }
+}
+
+.expanded-item-images {
+  padding-top: 0 !important;
+  max-height: 600px;
+  overflow: hidden;
+  // background-color: red;
+  //FIXME: no direct children img in slider div
+  img {
+
+    width: auto;
+    height: 100%;
+    //XXX: Remove or revise max-height 
+    max-height: 300px;
+  }
+  @media #{$screen-break2}{
+    flex: 100% !important; 
+  }
+}
+
+#slider{
+ flex: 0 0 100%; 
+}
+
+// required for Swipe
+.swipe {
+  flex: 0 0 100%; 
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-wrap > div {
+  flex: 0 0 100%; 
+  float: left;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+// end required
+
+.expanded-item-info {
+  padding-top: 0 !important;
+  // background-color: green;
+  h1 {
+    font-size: $font-size * 3;
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: $font-size * 2;
+  }
+}
+
+.expanded-item-about {
+  flex: 100% !important;
+  // background-color: pink;
+  p {
+    @include column(2, auto, $spacing-unit)
+  }
+  @media #{$screen-break2}{
+    p{
+      @include column(1, auto, $spacing-unit)
+    }
+  }
+}
+
+.expanded-item-artist {
+  @media #{$screen-break2}{
+    flex: 100% !important; 
+  }
+}
+
+.expanded-item-stats {
+  // background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  // align-content: space-between;
+
+  @media #{$screen-break2}{
+    flex: 100% !important; 
+  }
+}
+
+.expanded-item-stat {
+  padding: 0 $spacing-unit $spacing-unit 0;
+  
+  h1 {
+    font-size: $font-size * 2;
+  }
+  // background-color: orange;
+}
