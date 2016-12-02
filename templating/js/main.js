@@ -26,14 +26,23 @@ function slickInit(){
 
 /*----------  HOME ITEMS  ----------*/
 
+
 function updateItems(){
+  $('.content-area > .item').each(function(){
+    var range = 100;
+    var minimumDistance = 20;
+    var value = Math.floor(Math.random() * range)+minimumDistance;
+    $(this).attr('data-parallax','{"y" : '+value+'}');
+  });
+
   const items = Array.from(document.querySelectorAll('.item'));
 
   //for each item
   items.forEach(function(item) {
+
     //click event handler 
     item.addEventListener('click', function(event) {
-      event.preventDefault();
+      preventDefault(event);
       var item = event.target;
 
       //if it's not an item, then its a child

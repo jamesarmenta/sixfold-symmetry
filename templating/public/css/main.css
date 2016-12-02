@@ -55,6 +55,7 @@ a, a:visited {
 nav {
   position: fixed;
   width: 100%;
+  max-width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -128,6 +129,7 @@ nav {
 .content-area {
   position: relative;
   margin: 5.5em 0 0 5.5em;
+  max-width: 100%;
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transition: opacity 500ms ease-in-out;
@@ -147,7 +149,6 @@ nav {
 .all-items {
   background-color: grey;
   width: 100%;
-  height: 400px;
   display: flex;
   flex-wrap: wrap;
   padding: 0 !important; }
@@ -304,6 +305,7 @@ a, a:visited {
 nav {
   position: fixed;
   width: 100%;
+  max-width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -377,6 +379,7 @@ nav {
 .content-area {
   position: relative;
   margin: 5.5em 0 0 5.5em;
+  max-width: 100%;
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transition: opacity 500ms ease-in-out;
@@ -396,7 +399,6 @@ nav {
 .all-items {
   background-color: grey;
   width: 100%;
-  height: 400px;
   display: flex;
   flex-wrap: wrap;
   padding: 0 !important; }
@@ -473,14 +475,13 @@ nav {
   width: 100%;
   display: flex; }
 
-.slick-slide img {
-  width: 100%;
-  max-height: 100%;
-  object-fit: contain; }
-
 .slick-slide {
   display: flex !important;
   align-items: center; }
+  .slick-slide img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain; }
 
 .expanded-item-info {
   padding-top: 0 !important; }
@@ -633,6 +634,7 @@ a, a:visited {
 nav {
   position: fixed;
   width: 100%;
+  max-width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -706,6 +708,7 @@ nav {
 .content-area {
   position: relative;
   margin: 5.5em 0 0 5.5em;
+  max-width: 100%;
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transition: opacity 500ms ease-in-out;
@@ -725,7 +728,6 @@ nav {
 .all-items {
   background-color: grey;
   width: 100%;
-  height: 400px;
   display: flex;
   flex-wrap: wrap;
   padding: 0 !important; }
