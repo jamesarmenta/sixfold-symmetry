@@ -7,6 +7,7 @@ body{
 	font-family: $font-primary;
 	color: $color-light;
 	font-size: $font-size;
+	overflow-x: hidden;
 
 	//font smoothing
 	-webkit-font-smoothing: antialiased;
@@ -102,18 +103,19 @@ nav
 }
 
 .content-area{
-  position: relative;
-  margin: $site-title-size+$spacing-unit*2 0 0 $site-title-size+$spacing-unit*2;
-  // height: 1500px; //TODO: Determine correct height based on ... ?
+	position: relative;
+	margin: $site-title-size+$spacing-unit*2 0 0 $site-title-size+$spacing-unit*2;
+	@include opacity(1);
+	@include transition(opacity 500ms ease-in-out);
 
-  @media #{$screen-break1}{
-    margin: $site-title-size-break1+$spacing-unit*2 0 0 $site-title-size-break1+$spacing-unit*2;
-  }
-  @media #{$screen-break2}{
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
+	@media #{$screen-break1}{
+		margin: $site-title-size-break1+$spacing-unit*2 0 0 $site-title-size-break1+$spacing-unit*2;
+	}
+	@media #{$screen-break2}{
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .all-items{
@@ -133,4 +135,9 @@ nav
 		padding: 0;
 		margin: 0;
 	}
+}
+
+.fadeOut{
+	@include opacity(0);
+	@include transition(opacity 500ms ease-in-out);
 }

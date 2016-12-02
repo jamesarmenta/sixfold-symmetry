@@ -37,6 +37,7 @@ body {
   font-family: "Brown", Helvetica, sans-serif;
   color: #fff;
   font-size: 18px;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
@@ -126,7 +127,14 @@ nav {
 
 .content-area {
   position: relative;
-  margin: 5.5em 0 0 5.5em; }
+  margin: 5.5em 0 0 5.5em;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out; }
   @media screen and (max-width: 1400px) {
     .content-area {
       margin: 4.45em 0 0 4.45em; } }
@@ -150,6 +158,15 @@ nav {
     flex-basis: 12.5%;
     padding: 0;
     margin: 0; }
+
+.fadeOut {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out; }
 
 .center, .item-colors div {
   position: absolute;
@@ -269,6 +286,7 @@ body {
   font-family: "Brown", Helvetica, sans-serif;
   color: #fff;
   font-size: 18px;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
@@ -358,7 +376,14 @@ nav {
 
 .content-area {
   position: relative;
-  margin: 5.5em 0 0 5.5em; }
+  margin: 5.5em 0 0 5.5em;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out; }
   @media screen and (max-width: 1400px) {
     .content-area {
       margin: 4.45em 0 0 4.45em; } }
@@ -382,6 +407,15 @@ nav {
     flex-basis: 12.5%;
     padding: 0;
     margin: 0; }
+
+.fadeOut {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out; }
 
 .expanded-item-wrapper {
   width: 100%;
@@ -507,7 +541,7 @@ nav {
 .expanded-item-stat {
   padding: 0 1em 1em 0; }
   .expanded-item-stat h1 {
-    font-size: 36px; }
+    font-size: 2em; }
 
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -581,6 +615,7 @@ body {
   font-family: "Brown", Helvetica, sans-serif;
   color: #fff;
   font-size: 18px;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
@@ -670,7 +705,14 @@ nav {
 
 .content-area {
   position: relative;
-  margin: 5.5em 0 0 5.5em; }
+  margin: 5.5em 0 0 5.5em;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out; }
   @media screen and (max-width: 1400px) {
     .content-area {
       margin: 4.45em 0 0 4.45em; } }
@@ -694,3 +736,12 @@ nav {
     flex-basis: 12.5%;
     padding: 0;
     margin: 0; }
+
+.fadeOut {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out; }
