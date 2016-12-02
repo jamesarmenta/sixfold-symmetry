@@ -1,10 +1,12 @@
-
-var slider = document.getElementById('slider');
-window.mySwipe = Swipe(slider, {
-  continuous: true,
-  speed: 1,
+$('.expanded-item-gallery').slick({
+  dots: true,
+  infinite: true,
+  speed: 250,
+  fade: true,
+  cssEase: 'linear',
+  centerMode: true,
+  arrows: false,
 });
-
 
 const items = Array.from(document.querySelectorAll('.item'));
 
@@ -21,6 +23,7 @@ items.forEach(function(item) {
     return false;
   });
 });
+
 
 function expandSelectedItem(item) {
   var itemColors = item.querySelector('.item-colors').children;

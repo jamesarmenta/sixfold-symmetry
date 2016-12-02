@@ -1,10 +1,6 @@
 @import 'universal';
 //VARIABLES
 $item-size: 15vw;
-//NOTE: Use CSS variables only for DOM elements that need to edited with JS
-:root {
-  --item-transform: scale(1);
-}
 
 //mixin sorta
 .center {
@@ -17,7 +13,7 @@ $item-size: 15vw;
 }
 
 .item {
-  max-width: $item-size;
+  width: $item-size;
   position: absolute;
   margin: $spacing-unit;
   .item-name {
@@ -26,11 +22,20 @@ $item-size: 15vw;
     margin: .25em 0 .25em 0;
   }
   .item-artist {}
+
+  @media #{$screen-break2}{
+    position: static;
+    flex: 50%;
+    max-width: 50%;
+    padding: $spacing-unit;
+    margin: 0;
+    @include border-box();
+  }
 }
 
 .item-colors {
-  width: $item-size;
-  height: $item-size;
+  width: 100%;
+  padding-bottom: 100%;
   position: relative;
   div {
     @extend .center;
@@ -84,8 +89,8 @@ $item-size: 15vw;
 }
 
 #three {
-  left: 50vw;
-  top: 20vw;
+  left: 20vw;
+  top: 200vw;
   .primary {
     //first color is set to 100%
     width: 100%;

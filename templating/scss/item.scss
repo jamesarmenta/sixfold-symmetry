@@ -43,47 +43,36 @@
 
 .expanded-item-images {
   padding-top: 0 !important;
-  max-height: 600px;
   overflow: hidden;
-  // background-color: red;
-  //FIXME: no direct children img in slider div
-  img {
-
-    width: auto;
-    height: 100%;
-    //XXX: Remove or revise max-height 
-    max-height: 300px;
-  }
   @media #{$screen-break2}{
     flex: 100% !important; 
   }
 }
 
-#slider{
- flex: 0 0 100%; 
-}
-
-// required for Swipe
-.swipe {
-  flex: 0 0 100%; 
-  overflow: hidden;
-  visibility: hidden;
-  position: relative;
-}
-
-.swipe-wrap {
-  overflow: hidden;
-  position: relative;
-}
-
-.swipe-wrap > div {
-  flex: 0 0 100%; 
-  float: left;
+.expanded-item-gallery {
+  flex: 100% !important;
+  height: 40vw;
   width: 100%;
-  position: relative;
-  text-align: center;
+  max-height: 40vh;
+  min-height: 400px;
 }
-// end required
+
+.expanded-item-slide {
+  width: 100%;
+  display: flex;
+}
+
+.slick-slide img {
+  width: 100%;
+  max-height: 100%;
+  //XXX: Find IE fallback for use in JS
+  object-fit: contain;
+}
+
+.slick-slide {
+  display: flex !important;
+  align-items: center;
+}
 
 .expanded-item-info {
   padding-top: 0 !important;
@@ -104,8 +93,9 @@
   p {
     @include column(2, auto, $spacing-unit)
   }
+
   @media #{$screen-break2}{
-    p{
+    p {
       @include column(1, auto, $spacing-unit)
     }
   }
