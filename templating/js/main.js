@@ -3,6 +3,8 @@
 slickInit();
 updateItems();
 
+// $('.item').draggable();
+
 /*----------  ON DOCUMENT UPDATE  ----------*/
 
 function documentUpdate(){
@@ -16,22 +18,22 @@ function slickInit(){
   $('.expanded-item-gallery').slick({
     dots: true,
     infinite: true,
-    speed: 250,
-    fade: true,
-    cssEase: 'linear',
-    centerMode: true,
-    arrows: false,
+    swipeToSlide: true,
+    arrows: true,
+    // nextArrow: '<a class="image-next" href="javascript=void(0)"></a>',
+    // prevArrow: '<a class="image-prev" href="javascript=void(0)"></a>',
   });
 }
+
+//TODO: Add arrows for next/prev
 
 /*----------  HOME ITEMS  ----------*/
 
 
 function updateItems(){
   $('.content-area > .item').each(function(){
-    var range = 100;
-    var minimumDistance = 20;
-    var value = Math.floor(Math.random() * range)+minimumDistance;
+    var range = -80;
+    var value = Math.floor(Math.random() * range);
     $(this).attr('data-parallax','{"y" : '+value+'}');
   });
 

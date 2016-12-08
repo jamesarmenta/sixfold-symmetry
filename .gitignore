@@ -1,6 +1,10 @@
 #Folders
 node_modules/
 
+# Images *
+###################
+*.jpg
+
 # Compiled source #
 ###################
 *.com

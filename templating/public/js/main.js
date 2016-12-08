@@ -3,6 +3,7 @@ slickInit();
 updateItems();
 
 
+
 function documentUpdate(){
   slickInit();
   updateItems();
@@ -13,21 +14,18 @@ function slickInit(){
   $('.expanded-item-gallery').slick({
     dots: true,
     infinite: true,
-    speed: 250,
-    fade: true,
-    cssEase: 'linear',
-    centerMode: true,
-    arrows: false,
+    swipeToSlide: true,
+    arrows: true,
   });
 }
 
 
 
+
 function updateItems(){
   $('.content-area > .item').each(function(){
-    var range = 100;
-    var minimumDistance = 20;
-    var value = Math.floor(Math.random() * range)+minimumDistance;
+    var range = -80;
+    var value = Math.floor(Math.random() * range);
     $(this).attr('data-parallax','{"y" : '+value+'}');
   });
 

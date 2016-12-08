@@ -7,9 +7,9 @@
     "test": "node tests/fixme.js"
   },
   "author": "James Armenta",
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/jamesarmenta/sixfold-symmetry"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesarmenta/sixfold-symmetry"
   },
   "license": "MIT",
   "devDependencies": {
@@ -24,5 +24,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-strip-comments": "^2.4.3",
     "socket.io": "^1.5.0"
+  },
+  "dependencies": {
+    "imgur": "^0.2.0"
   }
 }

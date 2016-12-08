@@ -121,13 +121,13 @@ nav
 }
 
 .all-items{
-	background-color: grey;
+	// background-color: grey;
 	width: 100%;
 
 	display: flex;
 	flex-wrap: wrap;
 	
-	padding: 0 !important;
+	padding: $spacing-unit !important;
 
 	> div {
 		position: static;

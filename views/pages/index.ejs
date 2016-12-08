@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-.destination{
-	width: 500px;
-	height: 500px;
-	background-color: pink;
-	overflow-y: scroll;
-}
-</style>
+		<% include ../partials/allitemcolors %>
 </head>
 
 <body>
-	<button>CLICK TO LOAD</button>
-	<div class="destination"></div>
-	<% include ../partials/footer %>
-	<% include ../js/scripts %>
-	<script type="text/javascript">
-	$('button').click(function(e){
-		$('.destination').load('./partials/tester');
-	});
-	</script>
+	<div id="one">
+		<div class="primary">
+		one
+		</div>
+		<div class="secondary">
+		two
+		</div>
+		<div class="tertiary">
+		three
+		</div>
+	</div>
+
 </body>
 </html>

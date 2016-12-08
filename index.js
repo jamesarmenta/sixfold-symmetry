@@ -1,10 +1,12 @@
-var helpers = require('./helpers.js');
+// var helpers = require('./helpers.js');
 
 var items = {};
-helpers.getItemsAsync('assets/items/','.md').then((data)=>{
-  items = data;
-  startServer();
-});
+// helpers.getItemsAsync('assets/items/','.md').then((data)=>{
+//   items = data;
+//   startServer();
+// });
+
+startServer();
 
 function startServer(){
   var express = require('express');
@@ -16,19 +18,19 @@ function startServer(){
   app.set('view engine', 'ejs');
 
   // ROUTING
-  app.get('/partials/:name', function (req, res) {
+  // app.get('/partials/:name', function (req, res) {
 
-    var local = items[req.params.name];
+  //   var local = items[req.params.name];
     
-    res.render('partials/item',local);
-  });
+  //   res.render('partials/item',local);
+  // });
 
-  app.get('/:name', function (req, res) {
+  // app.get('/:name', function (req, res) {
 
-    var local = items[req.params.name];
+  //   var local = items[req.params.name];
     
-    res.render('pages/item',local);
-  });
+  //   res.render('pages/item',local);
+  // });
 
   app.get('/', function (req, res) {
 

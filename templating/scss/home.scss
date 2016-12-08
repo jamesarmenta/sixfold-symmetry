@@ -90,7 +90,7 @@ $item-size: 15vw;
 
 #three {
   left: 20vw;
-  top: 200vw;
+  top: 50vw;
   .primary {
     //first color is set to 100%
     width: 100%;
@@ -110,5 +110,55 @@ $item-size: 15vw;
     width: 29.08%;
     height: 29.08%;
     background-color: #a964a5;
+  }
+}
+
+  #four {
+  left: 0vw;
+  top: 40vw;
+  .primary {
+    //first color is set to 100%
+    width: 100%;
+    height: 100%;
+    background-color: #c1b199;
+  }
+  .secondary {
+    //proportionate to 
+    //(100/primary%) * .66 * secondary %
+    width: 62.2%;
+    height: 62.2%;
+    background-color: #94856e;
+  }
+  .tertiary {
+    //proportionate to 
+    //(100/primary%) * .33 * tertiary %
+    width: 29.08%;
+    height: 29.08%;
+    background-color: #eeeeee;
+  }
+}
+
+  #five {
+  left: 70vw;
+  top: 60vw;
+  .primary {
+    //first color is set to 100%
+    width: 100%;
+    height: 100%;
+    background-color: #ccccd0;
+  }
+  .secondary {
+    //proportionate to 
+    //(100/primary%) * .66 * secondary %
+    width: 43%;
+    height: 43%;
+    background-color: #d9d9dd;
+  }
+  .tertiary {
+    //proportionate to 
+    //(100/primary%) * .33 * tertiary %
+    width: 20.08%;
+    height: 20.08%;
+    background-color: #bdbdc2;
   }
 }
