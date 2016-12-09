@@ -20,7 +20,6 @@ function flickInit(){
   $('.expanded-item-gallery').flickity({
     freeScroll: true,
     freeScrollFriction: 0.1,
-    cellAlign: 'left',
     setGallerySize: false
   });
 }

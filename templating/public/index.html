@@ -1,9 +1,8 @@
 
 <html>
   <head>
+    <link href="https://unpkg.com/flickity@2/dist/flickity.min.css" rel="stylesheet"/>
     <link href="./css/main.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet"/>
   </head>
   <body>
     <nav>
@@ -15,7 +14,7 @@
         <li> <a href="/">INDEX</a></li>
         <li> <a href="#">FACULTY</a></li>
         <li> <a href="#">ABOUT</a></li>
-        <li> <a href="#">EXTRA</a></li>
+        <li> <a href="#" onclick="flickResize()">EXTRA</a></li>
       </ul>
     </nav>
     <div class="content-area">
@@ -60,10 +59,11 @@
           <div class="item-name">Sample Item Title</div>
           <div class="item-artist">Artist Name</div></a></div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="http://cdn.rawgit.com/alumbo/jquery.parallax-scroll/master/js/jquery.parallax-scroll.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

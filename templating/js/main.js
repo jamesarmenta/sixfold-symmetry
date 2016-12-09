@@ -1,27 +1,32 @@
 /*----------  ON DOCUMENT LOAD  ----------*/
-
-slickInit();
-updateItems();
+$( document ).ready(function() {
+  flickInit();
+  updateItems();
+});
 
 // $('.item').draggable();
 
 /*----------  ON DOCUMENT UPDATE  ----------*/
 
 function documentUpdate(){
-  slickInit();
+  flickInit();
   updateItems();
+  flickResize();
 }
 
 /*----------  GALLERY SLIDES  ----------*/
 
-function slickInit(){
-  $('.expanded-item-gallery').slick({
-    dots: true,
-    infinite: true,
-    swipeToSlide: true,
-    arrows: true,
-    // nextArrow: '<a class="image-next" href="javascript=void(0)"></a>',
-    // prevArrow: '<a class="image-prev" href="javascript=void(0)"></a>',
+function flickResize(){
+  $('.expanded-item-gallery').flickity('resize');
+}
+
+function flickInit(){
+  $('.expanded-item-gallery').flickity({
+    freeScroll: true,
+    freeScrollFriction: 0.1,
+    // wrapAround: true,
+    cellAlign: 'left',
+    setGallerySize: false
   });
 }
 
@@ -103,12 +108,17 @@ function loadContentArea (href,delay){
   $('.content-area').addClass('fadeOut');
   //TODO: Scroll to top
   setTimeout(function() {
-    //TODO: fade out then in content area
     $('.content-area').load(href, function(){
-      window.scrollTo(0,0);
-      enableScroll();
-      documentUpdate();
-      $('.content-area').removeClass('fadeOut');
+      $(this).imagesLoaded().done( function( instance ) {
+        window.scrollTo(0,0);
+        enableScroll();
+        documentUpdate();
+        $('.content-area').removeClass('fadeOut');
+      })
+      .fail( function() {
+        console.log('IMAGES FAILED TO LOAD');
+      });
+
     });
   }, delay);
 }

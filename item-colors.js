@@ -9,6 +9,8 @@ var http = require('http');
 //   'http://imgur.com/DICQ7qZ', 'http://imgur.com/HTW5umo', 'http://imgur.com/NzNOfei', 
 //   'http://imgur.com/5k1wMe1'];
 
+var imageUrlBase = 'http://res.cloudinary.com/hkhfknnmy/image/upload/v1481247488/assets/color_images/';
+
 var images = ['imgur.com/hVrxiOx.jpg'];
 
 images.forEach( function(element, index) {

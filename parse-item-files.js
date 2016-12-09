@@ -1,56 +1,35 @@
-var fs = require('fs');
+var getFiles = require('./get-files');
 
 function getItemsAsync(path,extension){
-
   return new Promise(
     (resolve,reject)=>{
-      getFilesByTypeAsync(path,extension).then((data)=>{
+      var items = {};
 
-        var items = {};
-        var fileTextPromises = data.map(readFileAsync);
-        var fileText = Promise.all(fileTextPromises);
+      getFiles.getFilesByTypeAsync(path,extension).then((filePaths)=>{
+        //filePaths is list of files
+        //get text from files
+        var fileTextPromises = filePaths.map(getFiles.readFileAsync);
+        //resolve promises
+        var fileTexts = Promise.all(fileTextPromises);
 
-        fileText.then((data)=>{
-          data.forEach( function(element, index) {
+        var fileNames = filePaths.map((filePath)=>{
+          return filePath.replace(path,'').replace(extension,'').replace(/[\W]/g,'-').toLowerCase();
+        });
+
+        fileTexts.then((fileText)=>{
+          //for each file, parse custom
+          fileText.forEach( function(element, index) {
             let temp = customParser(element);
-            items[temp.slug] = temp;
+            items[fileNames[index]] = temp;
           });
+
+          //finally, resolve
           resolve(items);
         });
+
       });
+
     });
-}
-
-function getFilesByTypeAsync(path,extension){
-  return new Promise(
-    (resolve,reject)=>{
-      var validFiles = [];
-
-      fs.readdir(path, (err, files) => {
-        if(err) reject(err);
-
-        files.forEach(file => {
-          if(file.indexOf(extension)>0){
-            validFiles.push(path+file);
-          }
-        });
-
-        resolve(validFiles);
-
-      });
-    });
-}
-
-function readFileAsync(input) {
-  return new Promise(
-    (resolve,reject)=>{
-      fs.readFile(input, 'utf8', function (err,data) {
-        if(err){
-          reject(err);
-        }
-        resolve(data);
-      });
-    } );
 }
 
 function customParser(text){
@@ -84,7 +63,6 @@ function customParser(text){
       obj[key] = value;
     }
   });
-  obj['slug'] = obj.title.replace(/[\W]/g,'').toLowerCase();
   return obj;
 }
 

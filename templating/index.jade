@@ -1,8 +1,7 @@
 html
 	head
+		link(href='https://unpkg.com/flickity@2/dist/flickity.min.css', rel='stylesheet')
 		link(href='./css/main.css', rel='stylesheet')
-		link(href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.css', rel='stylesheet')
-		link(href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css', rel='stylesheet')
 	body
 		nav
 			.site-title
@@ -16,7 +15,7 @@ html
 				li 
 					a(href="#") ABOUT
 				li 
-					a(href="#") EXTRA
+					a(href="#" onclick="flickResize()") EXTRA
 		.content-area
 			#one.item
 				a(href="http://google.com")
@@ -58,8 +57,9 @@ html
 						.tertiary
 					.item-name Sample Item Title
 					.item-artist Artist Name
-		script(src='https://code.jquery.com/jquery-3.1.1.min.js')
-		script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js')
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js')
+		script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
 		script(src='http://cdn.rawgit.com/alumbo/jquery.parallax-scroll/master/js/jquery.parallax-scroll.js')
+		script(src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js")
 		script(src='./js/main.js')

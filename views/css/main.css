@@ -67,8 +67,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  flex-basis: 100;
-  z-index: 999; }
+  flex-basis: 100; }
   @media screen and (max-width: 1000px) {
     nav {
       position: relative;
@@ -351,8 +350,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  flex-basis: 100;
-  z-index: 999; }
+  flex-basis: 100; }
   @media screen and (max-width: 1000px) {
     nav {
       position: relative;
@@ -671,8 +669,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  flex-basis: 100;
-  z-index: 999; }
+  flex-basis: 100; }
   @media screen and (max-width: 1000px) {
     nav {
       position: relative;

@@ -1,9 +1,12 @@
-// var helpers = require('./helpers.js');
+var parser = require('./parse-item-files');
 
 var items = {};
-// helpers.getItemsAsync('assets/items/','.md').then((data)=>{
+// parser.getItemsAsync('assets/items/','.md').then((data)=>{
 //   items = data;
-//   startServer();
+//   // var bingus = 'viktorekpuk_drawingmemory';
+//   // if(bingus in items){
+//   //   console.log('yes');
+//   // }
 // });
 
 startServer();
@@ -17,27 +20,7 @@ function startServer(){
 
   app.set('view engine', 'ejs');
 
-  // ROUTING
-  // app.get('/partials/:name', function (req, res) {
-
-  //   var local = items[req.params.name];
-    
-  //   res.render('partials/item',local);
-  // });
-
-  // app.get('/:name', function (req, res) {
-
-  //   var local = items[req.params.name];
-    
-  //   res.render('pages/item',local);
-  // });
-
   app.get('/', function (req, res) {
-
-    res.render('pages/index');
+    res.render('pages/index', {foo: 'so true'});
   });
 }
-
-
-// NOTE: Use WCAG color procedure to test contrast of background-color and text
-// http://coenraets.org/blog/2012/10/real-time-web-analytics-with-node-js-and-socket-io/

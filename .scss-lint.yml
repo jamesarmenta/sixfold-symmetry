@@ -8,5 +8,8 @@ linters:
     min_properties: 2
     separate_groups: false
 
+  DeclarationOrder:
+    enabled: false
+
   TrailingWhitespace:
     enabled: false
