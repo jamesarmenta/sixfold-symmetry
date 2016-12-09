@@ -11,7 +11,7 @@ Courtesy of the artist and Nicelle Beauchene Gallery
 ## artist
 Dean Snyder
 
-## pictures
+## images
 #* louisedespont_energyscaffolds0
 
 ## body

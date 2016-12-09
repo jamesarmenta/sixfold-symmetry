@@ -12,7 +12,7 @@ Gift of the artist, 2008.9
 ## artist
 Dean Snyder
 
-## pictures
+## images
 #* deansnyder_arachnasarcade0
 
 ## body

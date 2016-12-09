@@ -10,7 +10,7 @@ Digital video file
 ## artist
 Rebecca Johnson
 
-## pictures
+## images
 #* idk
 
 ## body

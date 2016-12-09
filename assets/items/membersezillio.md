@@ -8,7 +8,7 @@ Collection of Toby and Barry Hecht
 ## artist
 Members of the Ezillio Community
 
-## pictures
+## images
 #* membersezillio_ukaracloth0
 
 ## body

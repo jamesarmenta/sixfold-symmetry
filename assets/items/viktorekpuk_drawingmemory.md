@@ -11,7 +11,7 @@ Courtesy of the artist
 ## artist
 Victor Ekpuk
 
-## pictures
+## images
 #* victorekpuk_drawingmemory0
 #* victorekpuk_drawingmemory1
 

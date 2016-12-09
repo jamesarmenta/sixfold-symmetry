@@ -5,17 +5,17 @@
 </head>
 
 <body>
-	<div id="one">
-		<div class="primary">
-		one
-		</div>
-		<div class="secondary">
-		two
-		</div>
-		<div class="tertiary">
-		three
-		</div>
-	</div>
+	<p>Title: <%= title %>
+	<p>Year: <%= year %>
+	<p>Artist: <%= artist %>
+	<p>Description: <%= description %>
+	<p>Body: <%= body %>
+	<% for(var i=0; i<images.length; i++) { %>
+	<li>
+	    <%= images[i] %>
+	</li>
+	<% } %>
+
 	<% include ../partials/universal-scripts.ejs %>
 </body>
 </html>

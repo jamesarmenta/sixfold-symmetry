@@ -12,7 +12,7 @@ Gift in Memory of Susan Sollins, 2016.12.3
 ## artist
 Dean Snyder
 
-## pictures
+## images
 #* joelfisher_tree0
 
 ## body
