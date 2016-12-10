@@ -8,6 +8,8 @@ parser.getItemsAsync('assets/items/','.md').then((data)=>{
 
 startServer();
 
+/*----------  FUNCTIONS  ----------*/
+
 function startServer(){
   var express = require('express');
   var app = express();

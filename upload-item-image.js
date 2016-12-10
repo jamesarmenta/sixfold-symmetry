@@ -21,6 +21,7 @@ getFilesByTypeAsync('assets/featured_images/','.jpg')
   // console.log(data);
 });
 
+/*----------  FUNCTIONS  ----------*/
 
 function imgurUploadAsync(path) {
   return new Promise(

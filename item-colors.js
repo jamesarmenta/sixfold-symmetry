@@ -1,52 +1,102 @@
 var http = require('http');
+var getFiles = require('./get-files.js');
+var setFiles = require('./set-files.js');
 
-//current album: http://imgur.com/a/QKbkf
-//hard code is bad
-// var images = ['http://imgur.com/hVrxiOx', 'http://imgur.com/ClTr3Ee', 'http://imgur.com/xhKDwjb', 
-//   'http://imgur.com/GHd9ixi', 'http://imgur.com/vPsb4fW', 'http://imgur.com/Cb0vdrT', 
-//   'http://imgur.com/icyFSbw', 'http://imgur.com/H4LDKCg', 'http://imgur.com/XdS8sLW', 
-//   'http://imgur.com/peb83qw', 'http://imgur.com/ic3WF82', 'http://imgur.com/ASRfEy3', 
-//   'http://imgur.com/DICQ7qZ', 'http://imgur.com/HTW5umo', 'http://imgur.com/NzNOfei', 
-//   'http://imgur.com/5k1wMe1'];
+var imageUrlBase = 'res.cloudinary.com/hkhfknnmy/image/upload/v1481323015/assets/color_images/';
+var colorImagesPath = 'assets/color-images/';
+var imageType = '.jpg';
 
-var imageUrlBase = 'http://res.cloudinary.com/hkhfknnmy/image/upload/v1481247488/assets/color_images/';
+var colorClusters = [];
 
-var images = ['imgur.com/hVrxiOx.jpg'];
+getFiles.getFilesByTypeAsync(colorImagesPath,imageType).then((filePaths)=>{
+  var fileNames = filePaths.map((element)=>{
+    return element.replace(colorImagesPath,'').replace(imageType,'');
+  });
 
-images.forEach( function(element, index) {
-  getColorClustersAsync(element);
+  fileNames.forEach( function(fileName, index) {
+    colorClusters[index] = getColorClustersAsync(imageUrlBase+fileName+imageType);
+  });
+
+  Promise.all(colorClusters).then((clusters)=>{
+    console.log('All Complete.');
+    clusters.forEach( function(cluster, index) {
+      cluster.name = fileNames[index];
+    });
+    writeClustersCssAsync(clusters);
+  });
+
 });
 
+/*----------  FUNCTIONS  ----------*/
 
 function getColorClustersAsync(imageUrl){
-
-  console.log('Processing: ' + imageUrl);
-  
   var colorClusters = {};
 
   var apiBaseUrl = 'http://mkweb.bcgsc.ca/color-summarizer/?url=';
   //TODO: CHANGE TO HIGH PRECISION
-  var apiOptions = '&precision=vlow&num_clusters=5&json=1';
+  var apiOptions = '&precision=medium&num_clusters=5&json=1';
 
   return new Promise(
     (resolve,reject)=>{
+      console.log('Processing: '+apiBaseUrl+imageUrl+apiOptions);
       http.get(apiBaseUrl+imageUrl+apiOptions, function(res) {
 
         var body = '';
-
         res.on('data',(data)=>{
           body += data;
+          //let us know still receiving data
+          if(Math.random()>.5) process.stdout.write('.');
         });
+        res.on('error',(error)=>{
+          console.log(error);
+        });
+        console.log('statusCode: ', res.statusCode);
 
         res.on('end',()=>{
+          console.log();
           var colorSummary = JSON.parse(body);
-          colorClusters['primary'] = {'rgb':colorSummary.clusters[0].rgb, 'frequency':colorSummary.clusters[0].f};
-          colorClusters['secondary'] = {'rgb':colorSummary.clusters[1].rgb, 'frequency':colorSummary.clusters[1].f};
-          colorClusters['tertiary'] = {'rgb':colorSummary.clusters[2].rgb, 'frequency':colorSummary.clusters[2].f};
-          console.log(colorClusters);
+          colorClusters['primary'] = {'hex':colorSummary.clusters[0].hex[0], 'frequency':colorSummary.clusters[0].f};
+          colorClusters['secondary'] = {'hex':colorSummary.clusters[1].hex[0], 'frequency':colorSummary.clusters[1].f};
+          colorClusters['tertiary'] = {'hex':colorSummary.clusters[2].hex[0], 'frequency':colorSummary.clusters[2].f};
           resolve(colorClusters);
         });
 
       });
     });
+}
+
+function writeClustersCssAsync(clusters){
+  console.log('Writing css...');
+  var cssContent = '';
+  clusters.forEach( function(element, index) {
+    console.log(element);
+    var primary = {};
+    var secondary = {};
+    var tertiary = {};
+
+    primary.hex = element.primary.hex;
+
+    secondary.hex = element.secondary.hex;
+    secondary.size = ((1/element.primary.frequency)*66*element.secondary.frequency).toFixed(1);
+
+    tertiary.hex = element.tertiary.hex;
+    tertiary.size = ((1/element.primary.frequency)*33*element.tertiary.frequency).toFixed(1);
+
+    cssContent += 
+    '#'+element.name+' .primary {'+
+    'background-color:'+primary.hex+'; '+
+    'width: 100%; height: 100%;}\n'+
+
+    '#'+element.name+' .secondary {'+
+    'background-color:'+secondary.hex+'; '+
+    'width: '+secondary.size+'%; '+
+    'height: '+secondary.size+'%;}\n'+
+
+    '#'+element.name+' .tertiary {'+
+    'background-color:'+tertiary.hex+'; '+
+    'width: '+tertiary.size+'%; '+
+    'height: '+tertiary.size+'%;}\n';
+  });
+  console.log('CSS: '+cssContent);
+  setFiles.writeFileAsync(Date.now()+'.css',cssContent);
 }
