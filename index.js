@@ -1,7 +1,7 @@
 var parser = require('./parse-item-files');
 var express = require('express');
 var app = express();
-// var http = require('http').createServer(app);
+var http = require('http').createServer(app);
 var port = process.env.PORT || 8080;
 
 var items = {};
@@ -15,7 +15,9 @@ startServer();
 /*----------  FUNCTIONS  ----------*/
 
 function startServer(){
-
+  app.listen(port, function() {
+    console.log('Our app is running on ' + port);
+  });
   app.set('view engine', 'ejs');
 
   app.get('/', function (req, res) {
