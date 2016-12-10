@@ -1,4 +1,8 @@
 var parser = require('./parse-item-files');
+var express = require('express');
+var app = express();
+// var http = require('http').createServer(app);
+var port = process.env.PORT || 8080;
 
 var items = {};
 parser.getItemsAsync('assets/items/','.md').then((data)=>{
@@ -11,11 +15,6 @@ startServer();
 /*----------  FUNCTIONS  ----------*/
 
 function startServer(){
-  var express = require('express');
-  var app = express();
-  var http = require('http').createServer(app);
-  // var io = require('socket.io')(http);
-  http.listen(3000);
 
   app.set('view engine', 'ejs');
 
