@@ -10,7 +10,7 @@ Collection of the Tang Teaching Museum,
 Gift in Memory of Susan Sollins, 2016.12.3
 
 ## artist
-Dean Snyder
+Joel Fisher
 
 ## images
 #* joelfisher_tree0

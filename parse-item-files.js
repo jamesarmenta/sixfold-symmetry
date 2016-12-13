@@ -3,7 +3,7 @@ var getFiles = require('./get-files');
 function getItemsAsync(path,extension){
   return new Promise(
     (resolve,reject)=>{
-      var items = {};
+      var items = [];
 
       getFiles.getFilesByTypeAsync(path,extension).then((filePaths)=>{
         //filePaths is list of files
@@ -20,7 +20,8 @@ function getItemsAsync(path,extension){
           //for each file, parse custom
           fileText.forEach( function(element, index) {
             let temp = customParser(element);
-            items[fileNames[index]] = temp;
+            temp.slug=fileNames[index];
+            items[index] = temp;
           });
 
           //finally, resolve

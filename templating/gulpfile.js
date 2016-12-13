@@ -11,6 +11,14 @@ reload = browserSync.reload;
 gulp.task('default', ['scss','js','jade','sync'], function(){
 });
 
+gulp.task('deploy', ['scss','js'], function(){
+	gulp.src('./js/*.js')
+    .pipe(gulp.dest('../views/js/'));
+
+    gulp.src('./public/css/*.css')
+    .pipe(gulp.dest('../views/css/'));
+});
+
 //WATCH
 gulp.task('watch', function() {
 	livereload();

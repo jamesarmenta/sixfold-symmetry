@@ -1,14 +1,19 @@
+var BREAKPOINT2 = 1000;
+
+var scrollX;
+var scrollY;
+
 $( document ).ready(function() {
   flickInit();
   updateItems();
 });
 
 
-
 function documentUpdate(){
   flickInit();
   updateItems();
   flickResize();
+  updateItems();
 }
 
 
@@ -27,7 +32,6 @@ function flickInit(){
 
 
 
-
 function updateItems(){
   $('.content-area > .item').each(function(){
     var range = -80;
@@ -35,7 +39,7 @@ function updateItems(){
     $(this).attr('data-parallax','{"y" : '+value+'}');
   });
 
-  const items = Array.from(document.querySelectorAll('.item'));
+  var items = Array.from(document.querySelectorAll('.item'));
 
   items.forEach(function(item) {
 
@@ -51,28 +55,45 @@ function updateItems(){
       expandSelectedItem(item);
     });
   });
+
+  for(var i = 1; i < items.length; i++){
+    var item = items[i];
+    if(isOverlapping(items[i],items[i-1])&&window.innerWidth>BREAKPOINT2){
+      var coord = getCoordinates(item);
+      var width = getSize(item).width;
+      var right = coord.right;
+
+      if((right+width>window.innerWidth)){
+        item.classList += ' overlapping-left';
+      }else{
+        item.classList += ' overlapping-right';
+      }
+    }else{
+      item.classList.remove('overlapping-right');
+      item.classList.remove('overlapping-left');
+    }
+  }
 }
 
 function expandSelectedItem(item) {
   var itemColors = item.querySelector('.item-colors').children;
 
-    for (var i = 0; i < itemColors.length; i++) {
+  for (var i = 0; i < itemColors.length; i++) {
     var clone = itemColors[i].cloneNode(true);
     var existing = window.getComputedStyle(itemColors[i], null);
     var width = clone.style.width = existing.getPropertyValue('width');
     var height = clone.style.height = existing.getPropertyValue('height');
     clone.style.backgroundColor = existing.getPropertyValue('background-color');
 
-    var posTop = itemColors[i].getBoundingClientRect().top+window.scrollY;
-    var posLeft =itemColors[i].getBoundingClientRect().left+window.scrollX;
+    var coords = getCoordinates(itemColors[i]);
 
-    clone.style.top = posTop+'px';
-    clone.style.left = posLeft+'px';
+    clone.style.top = (coords.top+$(window).scrollTop())+'px';
+    clone.style.left = (coords.left+$(window).scrollLeft())+'px';
     clone.style.position = 'absolute';
     clone.style.transform = 'scale(1)';
     document.body.appendChild(clone);
-    var scaleWidth = (window.innerWidth+posLeft)/width.replace('px','')*2;
-    var scaleHeight = (window.innerHeight+posTop)/height.replace('px','')*2;
+    var scaleWidth = (window.innerWidth+coords.left)/width.replace('px','')*2;
+    var scaleHeight = (window.innerHeight+coords.top)/height.replace('px','')*2;
     var finalScale = (scaleHeight > scaleWidth) ? scaleHeight : scaleWidth;
     var delay = i/6;
     scaleItem(clone,finalScale,delay);
@@ -88,14 +109,14 @@ function expandSelectedItem(item) {
 }
 
 function loadContentArea (href,delay){
-  $('.content-area').addClass('fadeOut');
+  $('#content-area').addClass('fadeOut');
   setTimeout(function() {
-    $('.content-area').load(href, function(){
+    $('#content-area').load(href, function(){
       $(this).imagesLoaded().done( function( instance ) {
         window.scrollTo(0,0);
         enableScroll();
         documentUpdate();
-        $('.content-area').removeClass('fadeOut');
+        $('#content-area').removeClass('fadeOut');
       })
       .fail( function() {
         console.log('IMAGES FAILED TO LOAD');
@@ -114,9 +135,62 @@ function scaleItem(item,finalScale,delay){
   window.setTimeout(function(){
     item.remove();
   },delay+1000);
-
 }
 
+
+
+function getCoordinates(element) {
+  var coords = element.getBoundingClientRect();
+
+  return coords;
+}
+
+function getSize(element) {
+  var size = {};
+  size.width = parseInt(window.getComputedStyle(element, null).getPropertyValue('width').replace('px',''));
+  size.height = parseInt(window.getComputedStyle(element, null).getPropertyValue('height').replace('px',''));
+  return size;
+}
+
+function isOverlapping(element1,element2){
+  var coordinates1 = getCoordinates(element1);
+  var size1 = getSize(element1);
+  var el1 = {};
+
+  el1.left = coordinates1.left;
+  el1.right = coordinates1.right;
+  el1.top = coordinates1.top;
+  el1.bottom = coordinates1.bottom;
+
+  var coordinates2 = getCoordinates(element2);
+  var size2 = getSize(element2);
+  var el2 = {};
+
+  el2.left = coordinates2.left;
+  el2.right = coordinates2.right;
+  el2.top = coordinates2.top;
+  el2.bottom = coordinates2.bottom;
+
+  var overlap = !(el1.right < el2.left || 
+    el1.left > el2.right || 
+    el1.bottom < el2.top || 
+    el1.top > el2.bottom);
+
+  return overlap;
+}
+
+function getStyle(element){
+  var all = window.getComputedStyle(element, null);
+  var style = {};
+
+  style.marginTop = parseInt(all.getPropertyValue('margin-top').replace('px',''));
+  style.marginRight = parseInt(all.getPropertyValue('margin-right').replace('px',''));
+  style.marginBottom = parseInt(all.getPropertyValue('margin-bottom').replace('px',''));
+  style.marginLeft = parseInt(all.getPropertyValue('margin-left').replace('px',''));
+  style.padding = parseInt(all.getPropertyValue('padding').replace('px',''));
+
+  return style;
+}
 
 
 
@@ -153,3 +227,22 @@ function enableScroll(){
   window.ontouchmove = null;  
   document.onkeydown = null; 
 }
+
+(function() {
+  window.addEventListener('resize', resizeThrottler, false);
+
+  var resizeTimeout;
+  function resizeThrottler() {
+    if ( !resizeTimeout ) {
+      resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        actualResizeHandler();
+
+      }, 600);
+    }
+  }
+
+  function actualResizeHandler() {
+    documentUpdate();
+  }
+}());

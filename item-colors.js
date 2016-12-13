@@ -7,7 +7,6 @@ var colorImagesPath = 'assets/color-images/';
 var imageType = '.jpg';
 
 var colorClusters = [];
-
 getFiles.getFilesByTypeAsync(colorImagesPath,imageType).then((filePaths)=>{
   var fileNames = filePaths.map((element)=>{
     return element.replace(colorImagesPath,'').replace(imageType,'');
@@ -45,12 +44,11 @@ function getColorClustersAsync(imageUrl){
         res.on('data',(data)=>{
           body += data;
           //let us know still receiving data
-          if(Math.random()>.5) process.stdout.write('.');
+          if(Math.random()>.98) process.stdout.write('.');
         });
         res.on('error',(error)=>{
           console.log(error);
         });
-        console.log('statusCode: ', res.statusCode);
 
         res.on('end',()=>{
           console.log();
@@ -69,7 +67,6 @@ function writeClustersCssAsync(clusters){
   console.log('Writing css...');
   var cssContent = '';
   clusters.forEach( function(element, index) {
-    console.log(element);
     var primary = {};
     var secondary = {};
     var tertiary = {};
@@ -98,5 +95,5 @@ function writeClustersCssAsync(clusters){
     'height: '+tertiary.size+'%;}\n';
   });
   console.log('CSS: '+cssContent);
-  setFiles.writeFileAsync(Date.now()+'.css',cssContent);
+  setFiles.writeFileAsync('views/css/item-colors.css',cssContent);
 }

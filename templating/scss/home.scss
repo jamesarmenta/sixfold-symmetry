@@ -12,16 +12,24 @@ $item-size: 15vw;
   margin: auto;
 }
 
+ul.home-items{
+  @media #{$screen-break2}{
+    flex: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 .item {
   width: $item-size;
-  position: absolute;
   margin: $spacing-unit;
-  .item-name {
+  .item-title {
     font-size: 1.25em;
     font-style: italic;
     margin: .25em 0 .25em 0;
   }
   .item-artist {}
+  // @include transition(margin 500ms ease-in-out);
 
   @media #{$screen-break2}{
     position: static;
@@ -42,123 +50,17 @@ $item-size: 15vw;
   }
 }
 
-//SPECIFIC ITEMS
-//FIXME: Color CSS should be dynamically created with node
-//id contains position & colors
-#one {
-  .primary {
-    width: 100%;
-    height: 100%;
-    background-color: olive;
-  }
-  .secondary {
-    width: 60%;
-    height: 60%;
-    background-color: beige;
-  }
-  .tertiary {
-    width: 20%;
-    height: 20%;
-    background-color: teal;
+li.item:not(:first-child) {
+  margin-top: $item-size*-.5;
+  @media #{$screen-break2}{
+    margin-top: 0;
   }
 }
 
-#two {
-  left: 50vw;
-  top: 20vw;
-  .primary {
-    //first color is set to 100%
-    width: 100%;
-    height: 100%;
-    background-color: #BA8B62;
-  }
-  .secondary {
-    //proportionate to 
-    //(100/primary%) * .66 * secondary %
-    width: 49%;
-    height: 49%;
-    background-color: #A75A3C;
-  }
-  .tertiary {
-    //proportionate to 
-    //(100/primary%) * .33 * tertiary %
-    width: 28%;
-    height: 28%;
-    background-color: #614439;
-  }
+.overlapping-right{
+  @include translate(110%,0);
 }
 
-#three {
-  left: 20vw;
-  top: 50vw;
-  .primary {
-    //first color is set to 100%
-    width: 100%;
-    height: 100%;
-    background-color: #b979b7;
-  }
-  .secondary {
-    //proportionate to 
-    //(100/primary%) * .66 * secondary %
-    width: 62.2%;
-    height: 62.2%;
-    background-color: #b99dbf;
-  }
-  .tertiary {
-    //proportionate to 
-    //(100/primary%) * .33 * tertiary %
-    width: 29.08%;
-    height: 29.08%;
-    background-color: #a964a5;
-  }
-}
-
-  #four {
-  left: 0vw;
-  top: 40vw;
-  .primary {
-    //first color is set to 100%
-    width: 100%;
-    height: 100%;
-    background-color: #c1b199;
-  }
-  .secondary {
-    //proportionate to 
-    //(100/primary%) * .66 * secondary %
-    width: 62.2%;
-    height: 62.2%;
-    background-color: #94856e;
-  }
-  .tertiary {
-    //proportionate to 
-    //(100/primary%) * .33 * tertiary %
-    width: 29.08%;
-    height: 29.08%;
-    background-color: #eeeeee;
-  }
-}
-
-  #five {
-  left: 70vw;
-  top: 60vw;
-  .primary {
-    //first color is set to 100%
-    width: 100%;
-    height: 100%;
-    background-color: #ccccd0;
-  }
-  .secondary {
-    //proportionate to 
-    //(100/primary%) * .66 * secondary %
-    width: 43%;
-    height: 43%;
-    background-color: #d9d9dd;
-  }
-  .tertiary {
-    //proportionate to 
-    //(100/primary%) * .33 * tertiary %
-    width: 20.08%;
-    height: 20.08%;
-    background-color: #bdbdc2;
-  }
+.overlapping-left{
+  @include translate(-110%,0);
 }
