@@ -21,7 +21,7 @@ parser.getItemsAsync('assets/items/','.md').then((data)=>{
 function startServer(){
   app.listen(port, function() {
     console.log('Our app is running on ' + port);
-    console.log(items);
+    // console.log(items);
   });
   app.set('view engine', 'ejs');
 
@@ -31,8 +31,23 @@ function startServer(){
     });
   });
 
-  app.get('/item', function (req, res) {
-    res.render('pages/item');
+  app.get('/:item', function (req, res) {
+    var index = -1;
+    console.log(req.params.item);
+    for(var i = 0; i < items.length; i++){
+
+      if(req.params.item == items[i].slug){
+        index = i;
+      }
+    }
+    if(index>-1){
+      res.render('partials/item', {
+        items: items,
+        index: index
+      });
+    }else{
+      res.send(req.params.item+' not available');
+    }
   });
 
   app.get('/api/items', function (req, res) {
@@ -42,7 +57,7 @@ function startServer(){
   app.get('/api/items/:itemName', function (req, res) {
     var requestedItem = req.params.itemName;
     if(requestedItem in items){
-      res.send(items[requestedItem]);
+      res.render('pages/item');
     }else{
       res.send('ERROR: '+requestedItem+' not available.');
     }

@@ -52,7 +52,7 @@ function updateItems(){
       } 
 
       disableScroll();
-      expandSelectedItem(item);
+      expandSelectedItem(item, item.id);
     });
   });
 
@@ -75,7 +75,7 @@ function updateItems(){
   }
 }
 
-function expandSelectedItem(item) {
+function expandSelectedItem(item, href) {
   var itemColors = item.querySelector('.item-colors').children;
 
   for (var i = 0; i < itemColors.length; i++) {
@@ -102,26 +102,23 @@ function expandSelectedItem(item) {
       setTimeout(function() {
         document.querySelector('body').style.backgroundColor = clone.style.backgroundColor;
       }, delay+1000);
-      loadContentArea('/itempartial.html',delay+1000);
+      loadContentArea(href,delay+1000);
     }
   }
 
 }
 
 function loadContentArea (href,delay){
+  console.log('delay:'+delay);
   $('#content-area').addClass('fadeOut');
   setTimeout(function() {
-    $('#content-area').load(href, function(){
-      $(this).imagesLoaded().done( function( instance ) {
+    $('#content-area').load('/'+href, function(){
+      $('#content-area').imagesLoaded( function() {
         window.scrollTo(0,0);
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
-      })
-      .fail( function() {
-        console.log('IMAGES FAILED TO LOAD');
       });
-
     });
   }, delay);
 }

@@ -108,7 +108,7 @@ nav
 	margin: $site-title-size+$spacing-unit*2 0 0 $site-title-size+$spacing-unit*2;
 	max-width: $site-max-width;
 	@include opacity(1);
-	@include transition(opacity 500ms ease-in-out);
+	@include transition(opacity 10s ease-in-out);
 
 	@media #{$screen-break1}{
 		margin: $site-title-size-break1+$spacing-unit*2 0 0 $site-title-size-break1+$spacing-unit*2;
@@ -144,5 +144,5 @@ nav
 
 .fadeOut{
 	@include opacity(0);
-	@include transition(opacity 500ms ease-in-out);
+	@include transition(opacity 1s ease-in-out);
 }
