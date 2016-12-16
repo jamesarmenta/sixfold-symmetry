@@ -1,4 +1,7 @@
 var BREAKPOINT2 = 1000;
+var TEXTCOLORDARK = '#262626';
+var TEXTCOLORLIGHT = '#FFFFFF';
+
 
 var scrollX;
 var scrollY;
@@ -56,9 +59,10 @@ function updateItems(){
     });
   });
 
-  for(var i = 1; i < items.length; i++){
-    var item = items[i];
-    if(isOverlapping(items[i],items[i-1])&&window.innerWidth>BREAKPOINT2){
+  var homeItems = Array.from(document.querySelectorAll('.home-items > .item'));
+  for(var i = 1; i < homeItems.length; i++){
+    var item = homeItems[i];
+    if(isOverlapping(homeItems[i],homeItems[i-1])&&window.innerWidth>BREAKPOINT2){
       var coord = getCoordinates(item);
       var width = getSize(item).width;
       var right = coord.right;
@@ -101,9 +105,26 @@ function expandSelectedItem(item, href) {
     if(i==itemColors.length-1){
       setTimeout(function() {
         document.querySelector('body').style.backgroundColor = clone.style.backgroundColor;
+        document.querySelector('body').style.color = contrastTextColor(clone.style.backgroundColor);
+        document.querySelectorAll('a').forEach(function(element, index){element.style.color = contrastTextColor(clone.style.backgroundColor);});
       }, delay+1000);
       loadContentArea(href,delay+1000);
     }
+  }
+
+}
+
+function contrastTextColor(rgb){
+  rgb = rgb.replace('rgb(','').replace(')','').split(', ');
+  var red = parseInt(rgb[0]);
+  var green = parseInt(rgb[1]);
+  var blue = parseInt(rgb[2]);
+
+  var lum = (0.299*red + 0.587*green + 0.114*blue);
+  if(lum>127){
+    return TEXTCOLORDARK;
+  }else{
+    return TEXTCOLORLIGHT;
   }
 
 }

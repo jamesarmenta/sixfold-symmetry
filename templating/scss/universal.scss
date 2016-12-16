@@ -13,6 +13,8 @@ body{
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	
+	@include transition(color 500ms ease-in-out);
 
 	@media #{$screen-break2}{
 		font-size: $font-size-mobile;
@@ -26,6 +28,7 @@ p{
 a, a:visited {
 	color:  $color-light;
 	text-decoration: none;
+	@include transition(color 500ms ease-in-out);
 }
 
 nav

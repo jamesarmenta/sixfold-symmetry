@@ -1,17 +1,25 @@
-<div class="expanded-item-wrapper">
+<div class="expanded-item-wrapper <%= items[index].slug %>">
 	<div class="expanded-item-images">
-		<div class="expanded-item-gallery"><img src="http://placekitten.com/1000/600"/><img src="http://placekitten.com/600/1000"/><img src="http://placekitten.com/900/690"/></div>
+		<div class="expanded-item-gallery">
+		<% for(var i=0; i<items[index].images.length; i++) {%>
+		<img src="/assets/images/<%= items[index].images[i] %>.jpg"/>
+		<% } %>
+		</div>
 	</div>
 	<div class="expanded-item-info">
 		<h1><%= items[index].title %></h1><br/>
 		<h2><%= items[index].artist %></h2><br/>
 		<h3><%= items[index].description %></h3><br/>
 	</div>
-	<div class="expanded-item-about"><span class="expanded-item--label"> </span>
+	<div class="expanded-item-about">
+		<% if(items[index].body){%>
+		<span class="expanded-item--label"> </span>
 		<p>
 			<%= items[index].body %>
 		</p>
+		<% } %>
 	</div>
+
 	<div class="expanded-item-artist"><span class="expanded-item--label"></span>
 		<p>Etiam finibus lectus sit amet tellus malesuada posuere. Vestibulum scelerisque erat eget ligula mollis, quis vestibulum purus porttitor. Aliquam at tincidunt ipsum. Morbi viverra efficitur dolor, eu aliquam lectus hendrerit et. Sed a leo quis velit porta scelerisque ac sit amet dui. Integer molestie turpis ac vehicula porta.</p>
 	</div>

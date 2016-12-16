@@ -40,7 +40,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 36px; } }
@@ -50,7 +55,12 @@ p {
 
 a, a:visited {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out; }
 
 nav {
   position: fixed;
@@ -165,11 +175,11 @@ nav {
 .fadeOut {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 10s ease-in-out;
-  -moz-transition: opacity 10s ease-in-out;
-  -ms-transition: opacity 10s ease-in-out;
-  -o-transition: opacity 10s ease-in-out;
-  transition: opacity 10s ease-in-out; }
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out; }
 
 .center, .item-colors div {
   position: absolute;
@@ -510,7 +520,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 36px; } }
@@ -520,7 +535,12 @@ p {
 
 a, a:visited {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out; }
 
 nav {
   position: fixed;
@@ -635,11 +655,11 @@ nav {
 .fadeOut {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 10s ease-in-out;
-  -moz-transition: opacity 10s ease-in-out;
-  -ms-transition: opacity 10s ease-in-out;
-  -o-transition: opacity 10s ease-in-out;
-  transition: opacity 10s ease-in-out; }
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out; }
 
 .expanded-item-wrapper {
   width: 100%;
@@ -668,8 +688,7 @@ nav {
   height: 1px;
   display: flex;
   font-family: "Brown-Bold", Helvetica, sans-serif;
-  margin-bottom: 1em;
-  background-color: #aaa; }
+  margin-bottom: 1em; }
 
 .expanded-item-images {
   flex: 100% !important;
@@ -830,7 +849,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 36px; } }
@@ -840,7 +864,12 @@ p {
 
 a, a:visited {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out; }
 
 nav {
   position: fixed;
@@ -955,8 +984,8 @@ nav {
 .fadeOut {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 10s ease-in-out;
-  -moz-transition: opacity 10s ease-in-out;
-  -ms-transition: opacity 10s ease-in-out;
-  -o-transition: opacity 10s ease-in-out;
-  transition: opacity 10s ease-in-out; }
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out; }

@@ -19,7 +19,7 @@ module.exports = {
             "unix"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         //NOTE: disallow console before prodution 

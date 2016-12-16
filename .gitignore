@@ -1,6 +1,10 @@
 #Folders
 node_modules/
 
+# Private Config *
+###################
+config-private.js
+
 # Images *
 ###################
 *.jpg

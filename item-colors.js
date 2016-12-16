@@ -80,6 +80,9 @@ function writeClustersCssAsync(clusters){
     tertiary.size = ((1/element.primary.frequency)*33*element.tertiary.frequency).toFixed(1);
 
     cssContent += 
+    '.'+element.name+' .expanded-item--label {'+
+    'background-color:'+primary.hex+';}\n'+
+
     '#'+element.name+' .primary {'+
     'background-color:'+primary.hex+'; '+
     'width: 100%; height: 100%;}\n'+
