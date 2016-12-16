@@ -78,6 +78,8 @@ function writeClustersCssAsync(clusters){
 
     tertiary.hex = element.tertiary.hex;
     tertiary.size = ((1/element.primary.frequency)*33*element.tertiary.frequency).toFixed(1);
+    //just in case teriary is too small
+    if(tertiary.size<2){tertiary.size=3; secondary.size = secondary.size*2;}
 
     cssContent += 
     '.'+element.name+' .expanded-item--label {'+

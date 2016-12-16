@@ -14,7 +14,6 @@ $( document ).ready(function() {
 
 function documentUpdate(){
   flickInit();
-  updateItems();
   flickResize();
   updateItems();
 }
@@ -131,14 +130,13 @@ function contrastTextColor(rgb){
 }
 
 function loadContentArea (href,delay){
-  console.log('delay:'+delay);
   $('#content-area').addClass('fadeOut');
   setTimeout(function() {
-    window.scrollTo(0,0);
     $('#content-area').load('/'+href, function(){
       $('#content-area').imagesLoaded( function() {
-        enableScroll();
         documentUpdate();
+        window.scrollTo(0,0);
+        enableScroll();
         $('#content-area').removeClass('fadeOut');
       });
     });
