@@ -33,7 +33,7 @@ function flickInit(){
   $('.expanded-item-gallery').flickity({
     freeScroll: true,
     freeScrollFriction: 0.1,
-    // wrapAround: true,
+    contain: true,
     cellAlign: 'left',
     setGallerySize: false
   });
@@ -155,9 +155,9 @@ function loadContentArea (href,delay){
   $('#content-area').addClass('fadeOut');
   //TODO: Scroll to top
   setTimeout(function() {
+    window.scrollTo(0,0);
     $('#content-area').load('/'+href, function(){
       $('#content-area').imagesLoaded( function() {
-        window.scrollTo(0,0);
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
