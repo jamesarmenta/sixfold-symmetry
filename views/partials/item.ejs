@@ -1,3 +1,4 @@
+<% if(typeof items !== 'undefined'){%>
 <div class="expanded-item-wrapper <%= items[index].slug %>">
 	<div class="expanded-item-images">
 		<div class="expanded-item-gallery">
@@ -24,28 +25,38 @@
 		<% } %>
 	</div>
 
-	<div class="expanded-item-artist"><span class="expanded-item--label"></span>
-		<p><%= items[index].artist %></p>
+	<div class="expanded-item-artist">
+	<% if(items[index].description){%>
+	<span class="expanded-item--label"></span>
+		<p><%- artist.description %></p>
+		<% } %>
 	</div>
 	<div class="expanded-item-stats"><span class="expanded-item--label"> </span>
+	<% if(items[index].views>-1){%>
 		<div class="expanded-item-stat">
-			<h1>365</h1><span>views today</span>
+			<h1><%= items[index].views %></h1><span>views</span>
 		</div>
+		<% } %>
+		<% if(items[index].viewsToday>-1){%>
 		<div class="expanded-item-stat">
-			<h1>364</h1><span>views today</span>
+			<h1><%= items[index].viewsToday %> sec</h1><span>views today</span>
 		</div>
+		<% } %>
+		<% if(items[index].yourViews>-1){%>
 		<div class="expanded-item-stat">
-			<h1>363</h1><span>views today</span>
+			<h1><%= items[index].yourViews %> sec</h1><span>your views</span>
 		</div>
+		<% } %>
+		<% if(items[index].averageVisitDuration>-1){%>
 		<div class="expanded-item-stat">
-			<h1>362</h1><span>views today</span>
+			<h1><%= items[index].averageVisitDuration %> sec</h1><span>average visit</span>
 		</div>
+		<% } %>
+		<% if(items[index].lastVisit>-1){%>
 		<div class="expanded-item-stat">
-			<h1>361</h1><span>views today</span>
+			<h1><%= items[index].lastVisit %>m</h1><span>since last visit</span>
 		</div>
-		<div class="expanded-item-stat">
-			<h1>3600</h1><span>views today</span>
-		</div>
+		<% } %>
 	</div>
 	<div class="all-items">
 		<% for(var i=0; i<items.length; i++) {%>
@@ -62,3 +73,4 @@
 		<% } %>
 		<% } %>
 	</div>
+	<% } %>

@@ -142,20 +142,20 @@ function flickInit(){
 
     }
 
-    function contrastTextColor(rgb){
-      rgb = rgb.replace('rgb(','').replace(')','').split(', ');
-      var red = parseInt(rgb[0]);
-      var green = parseInt(rgb[1]);
-      var blue = parseInt(rgb[2]);
+    // function contrastTextColor(rgb){
+    //   rgb = rgb.replace('rgb(','').replace(')','').split(', ');
+    //   var red = parseInt(rgb[0]);
+    //   var green = parseInt(rgb[1]);
+    //   var blue = parseInt(rgb[2]);
 
-      var lum = (0.299*red + 0.587*green + 0.114*blue);
-      if(lum>127){
-        return TEXTCOLORDARK;
-      }else{
-        return TEXTCOLORLIGHT;
-      }
+    //   var lum = (0.299*red + 0.587*green + 0.114*blue);
+    //   if(lum>127){
+    //     return TEXTCOLORDARK;
+    //   }else{
+    //     return TEXTCOLORLIGHT;
+    //   }
 
-    }
+    // }
 
     function loadContentArea (href,delay){
       $('#content-area').addClass('fadeOut');

@@ -29,18 +29,17 @@ parser.getItemsAsync('assets/items/','.md')
     });
 })
 .then((collection)=>{
-  // Save / Update items to DB
   for (var i = 0; i < items.length; i++) {
     items[i]._id = items[i].slug;
     console.log(items[i]._id);
 
-    //either updates or creates new based on _id
-    if(i+1==items.length){
-      dbSave(collection, items[i]).then(()=>{
+    //db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+    if(i==items.length-1){
+      dbUpdate(collection, {"_id": items[i]._id}, {$set: items[i]}).then((results)=>{
         process.exit(0);
       });
     }else{
-      dbSave(collection, items[i]);
+      dbUpdate(collection, {"_id": items[i]._id}, {$set: items[i]});
     }
   }
 });
@@ -60,10 +59,19 @@ function connectMongo(url,collection){
     });
 }
 
-function dbSave(collection,query){
-  return new Promise(
-    (resolve,reject)=>{
-      var results = collection.save(query);
-      resolve(results);
-    });
-}
+// function dbSave(collection,query){
+  //   return new Promise(
+  //     (resolve,reject)=>{
+    //       var results = collection.save(query);
+    //       resolve(results);
+    //     });
+    // }
+
+    function dbUpdate(collection,criteria,data){
+      return new Promise(
+        (resolve,reject)=>{
+          //db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+          var results = collection.update(criteria,data);
+          resolve(results);
+        });
+    }

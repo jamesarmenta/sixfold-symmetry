@@ -5,33 +5,9 @@
 </head>
 
 <body>
-	<nav>
-		<div class="site-title">
-			<h1>SIXFOLD SYMMETRY</h1>
-			<h1>PATTERNS IN ART &amp; SCIENCE</h1>
-		</div>
-		<ul class="menu">
-			<li> <a href="/">ITEMS</a></li>
-			<li> <a href="/">FACULTY</a></li>
-			<li> <a href="/">ABOUT</a></li>
-		</ul>
-	</nav>
+	<% include ../partials/universal-nav %>
 	<div id="content-area">
-		<ul class="home-items">
-			<% for(var i=0; i<items.length; i++) {%>
-			<li class="item" id="<%= items[i].slug %>">
-				<a href="/partials/<%= items[i].slug %>">
-					<div class="item-colors">
-						<div class="primary"></div>
-						<div class="secondary"></div>
-						<div class="tertiary"></div>
-					</div>
-					<div class="item-title"><%= items[i].title %></div>
-					<div class="item-artist"><%= items[i].artist %></div>
-				</a>
-			</li>
-			<% } %>
-		</ul>
+		<% include ../partials/index %>
 	</div>
 	<% include ../partials/universal-scripts.ejs %>
 </body>

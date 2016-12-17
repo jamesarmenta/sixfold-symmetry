@@ -3,22 +3,11 @@
 <head>
 	<% include ../partials/universal-head %>
 </head>
-
-<body class="<%= items[index].slug %>">
-	<nav>
-		<div class="site-title">
-			<h1>SIXFOLD SYMMETRY</h1>
-			<h1>PATTERNS IN ART &amp; SCIENCE</h1>
-		</div>
-		<ul class="menu">
-			<li> <a href="/">ITEMS</a></li>
-			<li> <a href="/">FACULTY</a></li>
-			<li> <a href="#" onclick="javascript:flickResize();">ABOUT</a></li>
-		</ul>
-	</nav>
-	<div id="content-area">
-		<% include ../partials/item %>
-		</div>
-		<% include ../partials/universal-scripts.ejs %>
-	</body>
-	</html>
+<body class="<% if(typeof items !== 'undefined'){%><%= locals.items[index].slug %><% } %>">
+  <% include ../partials/universal-nav %>
+  <div id="content-area">
+   <% include ../partials/item %>
+ </div>
+ <% include ../partials/universal-scripts %>
+</body>
+</html>
