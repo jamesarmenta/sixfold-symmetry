@@ -86,15 +86,15 @@ function flickInit(){
 
           //too close to right edge, move left
           if((right+width>window.innerWidth)){
-            item.classList += ' overlapping-left';
+            $(item).addClass('overlapping-left');
           }else{
             //move right to avoid overlap
-            item.classList += ' overlapping-right';
+             $(item).addClass('overlapping-right');
           }
         }else{
           //not overlapping
-          item.classList.remove('overlapping-right');
-          item.classList.remove('overlapping-left');
+           $(item).removeClass('overlapping-left');
+           $(item).removeClass('overlapping-right');
         }
       }
     }

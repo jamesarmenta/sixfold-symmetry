@@ -62,13 +62,13 @@ function flickInit(){
           var right = coord.right;
 
           if((right+width>window.innerWidth)){
-            item.classList += ' overlapping-left';
+            $(item).addClass('overlapping-left');
           }else{
-            item.classList += ' overlapping-right';
+             $(item).addClass('overlapping-right');
           }
         }else{
-          item.classList.remove('overlapping-right');
-          item.classList.remove('overlapping-left');
+           $(item).removeClass('overlapping-left');
+           $(item).removeClass('overlapping-right');
         }
       }
     }
