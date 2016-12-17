@@ -14,23 +14,22 @@ $( document ).ready(function() {
 
 function documentUpdate(){
   flickInit();
-  flickResize();
   updateItems();
 }
 
 
-function flickResize(){
-}
 
-function flickInit(){
-  flkty = new Flickity( document.querySelector('.expanded-item-gallery'), {
-    freeScroll: true,
-    freeScrollFriction: 0.1,
-    contain: true,
-    cellAlign: "left",
-    setGallerySize: false
-  });
-
+  function flickInit(){
+    var gallery = document.querySelector('.expanded-item-gallery');
+    if(gallery){
+      var flkty = new Flickity( gallery, {
+        freeScroll: true,
+        freeScrollFriction: 0.1,
+        contain: true,
+        cellAlign: "left",
+        setGallerySize: false
+      });
+    }
   }
 
 
@@ -54,21 +53,12 @@ function flickInit(){
       });
 
       var homeItems = Array.from(document.querySelectorAll('.home-items > .item'));
-      for(var i = 1; i < homeItems.length; i++){
-        var item = homeItems[i];
-        if(isOverlapping(homeItems[i],homeItems[i-1])&&window.innerWidth>BREAKPOINT2){
-          var coord = getCoordinates(item);
-          var width = getSize(item).width;
-          var right = coord.right;
 
-          if((right+width>window.innerWidth)){
-            $(item).addClass('overlapping-left');
-          }else{
-             $(item).addClass('overlapping-right');
-          }
+      for(var i = 1; i < homeItems.length; i++){
+        if(isOverlapping(homeItems[i],homeItems[i-1])&&window.innerWidth>BREAKPOINT2){
+          $(homeItems[i]).addClass('overlap');
         }else{
-           $(item).removeClass('overlapping-left');
-           $(item).removeClass('overlapping-right');
+           $(homeItems[i]).removeClass('overlap');
         }
       }
     }
@@ -100,18 +90,12 @@ function flickInit(){
           setTimeout(function() {
             var itemName = href.replace('/partials/','');
             $('body').removeClass();
-            console.log(itemName);
             $('body').addClass(itemName);
-            document.querySelectorAll('a').forEach(function(element, index){element.style.color = contrastTextColor(clone.style.backgroundColor);});
           }, delay+1000);
           loadContentArea(href,delay+1000);
         }
       }
-
     }
-
-
-
 
     function loadContentArea (href,delay){
       $('#content-area').addClass('fadeOut');
@@ -180,15 +164,21 @@ function flickInit(){
       return overlap;
     }
 
+
+
+
+
+
+
     function getStyle(element){
       var all = window.getComputedStyle(element, null);
       var style = {};
 
-      style.marginTop = parseInt(all.getPropertyValue('margin-top').replace('px',''));
-      style.marginRight = parseInt(all.getPropertyValue('margin-right').replace('px',''));
-      style.marginBottom = parseInt(all.getPropertyValue('margin-bottom').replace('px',''));
-      style.marginLeft = parseInt(all.getPropertyValue('margin-left').replace('px',''));
-      style.padding = parseInt(all.getPropertyValue('padding').replace('px',''));
+      style.marginTop = parseInt(all.getPropertyValue('margin-top').replace('/[^\d]*/g',''));
+      style.marginRight = parseInt(all.getPropertyValue('margin-right').replace('/[^\d]*/g',''));
+      style.marginBottom = parseInt(all.getPropertyValue('margin-bottom').replace('/[^\d]*/g',''));
+      style.marginLeft = parseInt(all.getPropertyValue('margin-left').replace('/[^\d]*/g',''));
+      style.padding = parseInt(all.getPropertyValue('padding').replace('/[^\d]*/g',''));
 
       return style;
     }
@@ -196,55 +186,55 @@ function flickInit(){
 
 
 
-    function preventDefault(e) {
-      e = e || window.event;
-      if (e.preventDefault)
-        e.preventDefault();
-      e.returnValue = false;  
-    }
+            function preventDefault(e) {
+              e = e || window.event;
+              if (e.preventDefault)
+                e.preventDefault();
+              e.returnValue = false;  
+            }
 
-    function preventDefaultForScrollKeys(e) {
-      var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-      if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
-      }
-    }
+            function preventDefaultForScrollKeys(e) {
+              var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+              if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+              }
+            }
 
-    function disableScroll(){
-      if (window.addEventListener) 
-        window.addEventListener('DOMMouseScroll', preventDefault, false);
-      window.onwheel = preventDefault; 
-      window.onmousewheel = document.onmousewheel = preventDefault; 
-      window.ontouchmove  = preventDefault; 
-      document.onkeydown  = preventDefaultForScrollKeys;
-    }
+            function disableScroll(){
+              if (window.addEventListener) 
+                window.addEventListener('DOMMouseScroll', preventDefault, false);
+              window.onwheel = preventDefault; 
+              window.onmousewheel = document.onmousewheel = preventDefault; 
+              window.ontouchmove  = preventDefault; 
+              document.onkeydown  = preventDefaultForScrollKeys;
+            }
 
-    function enableScroll(){
-      if (window.removeEventListener){
-        window.removeEventListener('DOMMouseScroll', preventDefault, false);
-      }
-      window.onmousewheel = document.onmousewheel = null; 
-      window.onwheel = null; 
-      window.ontouchmove = null;  
-      document.onkeydown = null; 
-    }
+            function enableScroll(){
+              if (window.removeEventListener){
+                window.removeEventListener('DOMMouseScroll', preventDefault, false);
+              }
+              window.onmousewheel = document.onmousewheel = null; 
+              window.onwheel = null; 
+              window.ontouchmove = null;  
+              document.onkeydown = null; 
+            }
 
-    (function() {
-      window.addEventListener('resize', resizeThrottler, false);
+            (function() {
+              window.addEventListener('resize', resizeThrottler, false);
 
-      var resizeTimeout;
-      function resizeThrottler() {
-        if ( !resizeTimeout ) {
-          resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
+              var resizeTimeout;
+              function resizeThrottler() {
+                if ( !resizeTimeout ) {
+                  resizeTimeout = setTimeout(function() {
+                    resizeTimeout = null;
+                    actualResizeHandler();
 
-          }, 600);
-        }
-      }
+                  }, 600);
+                }
+              }
 
-      function actualResizeHandler() {
-        documentUpdate();
-      }
-    }());
+              function actualResizeHandler() {
+                documentUpdate();
+              }
+            }())

@@ -18,32 +18,27 @@ $( document ).ready(function() {
 
 function documentUpdate(){
   flickInit();
-  flickResize();
+  // flickResize();
   updateItems();
 }
 
 /*----------  GALLERY SLIDES  ----------*/
 
-function flickResize(){
-  // $('.expanded-item-gallery').flickity('resize');
-}
+// function flickResize(){
+  //   document.querySelector('.expanded-item-gallery').flickity('resize');
+  // }
 
-function flickInit(){
-  flkty = new Flickity( document.querySelector('.expanded-item-gallery'), {
-    freeScroll: true,
-    freeScrollFriction: 0.1,
-    contain: true,
-    cellAlign: "left",
-    setGallerySize: false
-  });
-
-  // $('.expanded-item-gallery').flickity({
-    //   freeScroll: true,
-    //   freeScrollFriction: 0.1,
-    //   contain: true,
-    //   cellAlign: 'left',
-    //   setGallerySize: false
-    // });
+  function flickInit(){
+    var gallery = document.querySelector('.expanded-item-gallery');
+    if(gallery){
+      var flkty = new Flickity( gallery, {
+        freeScroll: true,
+        freeScrollFriction: 0.1,
+        contain: true,
+        cellAlign: "left",
+        setGallerySize: false
+      });
+    }
   }
 
   /*----------  HOME ITEMS  ----------*/
@@ -77,24 +72,16 @@ function flickInit(){
       });
 
       var homeItems = Array.from(document.querySelectorAll('.home-items > .item'));
-      for(var i = 1; i < homeItems.length; i++){
-        var item = homeItems[i];
-        if(isOverlapping(homeItems[i],homeItems[i-1])&&window.innerWidth>BREAKPOINT2){
-          var coord = getCoordinates(item);
-          var width = getSize(item).width;
-          var right = coord.right;
 
-          //too close to right edge, move left
-          if((right+width>window.innerWidth)){
-            $(item).addClass('overlapping-left');
-          }else{
-            //move right to avoid overlap
-             $(item).addClass('overlapping-right');
-          }
+      for(var i = 1; i < homeItems.length; i++){
+        if(isOverlapping(homeItems[i],homeItems[i-1])&&window.innerWidth>BREAKPOINT2){
+          $(homeItems[i]).addClass('overlap');
         }else{
-          //not overlapping
-           $(item).removeClass('overlapping-left');
-           $(item).removeClass('overlapping-right');
+          //remove any class for overlap
+          // $(homeItems[i]).removeClass (function (index, css) {
+          //   return (css.match (/overlap.*\w+/g) || []).join(' ');
+          // });
+           $(homeItems[i]).removeClass('overlap');
         }
       }
     }
@@ -132,30 +119,12 @@ function flickInit(){
           setTimeout(function() {
             var itemName = href.replace('/partials/','');
             $('body').removeClass();
-            console.log(itemName);
             $('body').addClass(itemName);
-            document.querySelectorAll('a').forEach(function(element, index){element.style.color = contrastTextColor(clone.style.backgroundColor);});
           }, delay+1000);
           loadContentArea(href,delay+1000);
         }
       }
-
     }
-
-    // function contrastTextColor(rgb){
-    //   rgb = rgb.replace('rgb(','').replace(')','').split(', ');
-    //   var red = parseInt(rgb[0]);
-    //   var green = parseInt(rgb[1]);
-    //   var blue = parseInt(rgb[2]);
-
-    //   var lum = (0.299*red + 0.587*green + 0.114*blue);
-    //   if(lum>127){
-    //     return TEXTCOLORDARK;
-    //   }else{
-    //     return TEXTCOLORLIGHT;
-    //   }
-
-    // }
 
     function loadContentArea (href,delay){
       $('#content-area').addClass('fadeOut');
@@ -228,92 +197,119 @@ function flickInit(){
       return overlap;
     }
 
+    // function resolveOverlap(element1,element2){
+    //   //el2 is the item to be moved
+    //   var coordinates1 = getCoordinates(element1);
+    //   var coordinates2 = getCoordinates(element2);
+    //   var el1 = {};
+    //   var el2 = {};
+
+    //   var size2 = getSize(element2);
+
+    //   el1.left = coordinates1.left;
+    //   el1.right = coordinates1.right;
+
+    //   el2.left = coordinates2.left;
+    //   el2.right = coordinates2.right;
+
+    //   var right = (el1.right)-(el2.left);
+    //   var left = (el1.left)-(el2.right);
+
+    //   var amount = (right<=left*-1) ? right : left;
+    //   //convert to relative item size
+    //   amount = amount/size2.width;
+    //   //round to clean number
+    //   amount = (amount>1) ? Math.ceil(amount*10) : Math.floor(amount*10);
+    //   //should be integer -10 to 10
+    //   return amount;
+    // }
+
     function getStyle(element){
       var all = window.getComputedStyle(element, null);
       var style = {};
 
-      style.marginTop = parseInt(all.getPropertyValue('margin-top').replace('px',''));
-      style.marginRight = parseInt(all.getPropertyValue('margin-right').replace('px',''));
-      style.marginBottom = parseInt(all.getPropertyValue('margin-bottom').replace('px',''));
-      style.marginLeft = parseInt(all.getPropertyValue('margin-left').replace('px',''));
-      style.padding = parseInt(all.getPropertyValue('padding').replace('px',''));
+      style.marginTop = parseInt(all.getPropertyValue('margin-top').replace('/[^\d]*/g',''));
+      style.marginRight = parseInt(all.getPropertyValue('margin-right').replace('/[^\d]*/g',''));
+      style.marginBottom = parseInt(all.getPropertyValue('margin-bottom').replace('/[^\d]*/g',''));
+      style.marginLeft = parseInt(all.getPropertyValue('margin-left').replace('/[^\d]*/g',''));
+      style.padding = parseInt(all.getPropertyValue('padding').replace('/[^\d]*/g',''));
 
       return style;
     }
     // (function(window,undefined){
-    //   // Code here
-    //   History.Adapter.bind(window,'statechange',function() { // Note: We are using statechange instead of popstate
-    //     var State = History.getState();
-    //     // $('body').load(State.url);
-    //      Instead of the line above, you could run the code below if the url returns the whole page instead of just the content (assuming it has a `#content`):
-    //     $.get(State.url, function(response) {
-    //       $('#content').html($(response).find('#content').html()); });
-          
-    //     });
-    // })(window);
+      //   // Code here
+      //   History.Adapter.bind(window,'statechange',function() { // Note: We are using statechange instead of popstate
+        //     var State = History.getState();
+        //     // $('body').load(State.url);
+        //      Instead of the line above, you could run the code below if the url returns the whole page instead of just the content (assuming it has a `#content`):
+        //     $.get(State.url, function(response) {
+          //       $('#content').html($(response).find('#content').html()); });
 
-    /*----------  HANDLERS  ----------*/
+          //     });
+          // })(window);
 
-    // $('a').click(function(event) {
-    //   event.preventDefault();
-    //   console.log($(this).text());
-    //   var href = $(this).attr('href').replace('/partials/','');
-    //   History.pushState(null, $(this).text(), href);
-    // });
+          /*----------  HANDLERS  ----------*/
 
-    function preventDefault(e) {
-      e = e || window.event;
-      if (e.preventDefault)
-        e.preventDefault();
-      e.returnValue = false;  
-    }
+          // $('a').click(function(event) {
+            //   event.preventDefault();
+            //   console.log($(this).text());
+            //   var href = $(this).attr('href').replace('/partials/','');
+            //   History.pushState(null, $(this).text(), href);
+            // });
 
-    function preventDefaultForScrollKeys(e) {
-      // left: 37, up: 38, right: 39, down: 40,
-      // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-      var keys = {37: 1, 38: 1, 39: 1, 40: 1};
-      if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
-      }
-    }
+            function preventDefault(e) {
+              e = e || window.event;
+              if (e.preventDefault)
+                e.preventDefault();
+              e.returnValue = false;  
+            }
 
-    function disableScroll(){
-      if (window.addEventListener) // older FF
-        window.addEventListener('DOMMouseScroll', preventDefault, false);
-      window.onwheel = preventDefault; // modern standard
-      window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-      window.ontouchmove  = preventDefault; // mobile
-      document.onkeydown  = preventDefaultForScrollKeys;
-    }
+            function preventDefaultForScrollKeys(e) {
+              // left: 37, up: 38, right: 39, down: 40,
+              // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+              var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+              if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+              }
+            }
 
-    function enableScroll(){
-      if (window.removeEventListener){
-        window.removeEventListener('DOMMouseScroll', preventDefault, false);
-      }
-      window.onmousewheel = document.onmousewheel = null; 
-      window.onwheel = null; 
-      window.ontouchmove = null;  
-      document.onkeydown = null; 
-    }
+            function disableScroll(){
+              if (window.addEventListener) // older FF
+                window.addEventListener('DOMMouseScroll', preventDefault, false);
+              window.onwheel = preventDefault; // modern standard
+              window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+              window.ontouchmove  = preventDefault; // mobile
+              document.onkeydown  = preventDefaultForScrollKeys;
+            }
 
-    (function() {
-      window.addEventListener('resize', resizeThrottler, false);
+            function enableScroll(){
+              if (window.removeEventListener){
+                window.removeEventListener('DOMMouseScroll', preventDefault, false);
+              }
+              window.onmousewheel = document.onmousewheel = null; 
+              window.onwheel = null; 
+              window.ontouchmove = null;  
+              document.onkeydown = null; 
+            }
 
-      var resizeTimeout;
-      function resizeThrottler() {
-        // ignore resize events as long as an actualResizeHandler execution is in the queue
-        if ( !resizeTimeout ) {
-          resizeTimeout = setTimeout(function() {
-            resizeTimeout = null;
-            actualResizeHandler();
+            (function() {
+              window.addEventListener('resize', resizeThrottler, false);
 
-            // The actualResizeHandler will execute at a rate of 15fps
-          }, 600);
-        }
-      }
+              var resizeTimeout;
+              function resizeThrottler() {
+                // ignore resize events as long as an actualResizeHandler execution is in the queue
+                if ( !resizeTimeout ) {
+                  resizeTimeout = setTimeout(function() {
+                    resizeTimeout = null;
+                    actualResizeHandler();
 
-      function actualResizeHandler() {
-        documentUpdate();
-      }
-    }());
+                    // The actualResizeHandler will execute at a rate of 15fps
+                  }, 600);
+                }
+              }
+
+              function actualResizeHandler() {
+                documentUpdate();
+              }
+            }())

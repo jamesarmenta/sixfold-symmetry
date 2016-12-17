@@ -29,9 +29,8 @@ ul.home-items{
     margin: .25em 0 .25em 0;
   }
   .item-artist {}
-  // @include transition(margin 500ms ease-in-out);
 
-  @media #{$screen-break2}{
+  @media #{$screen-break2}{    
     position: static;
     flex: 50%;
     max-width: 50%;
@@ -40,6 +39,14 @@ ul.home-items{
     @include border-box();
   }
 }
+
+.item[style] {
+  @media #{$screen-break2}{  
+    margin-left: 0 !important;
+    margin: 0 !important; 
+  }
+}
+
 
 .item-colors {
   width: 100%;
@@ -57,10 +64,21 @@ li.item:not(:first-child) {
   }
 }
 
-.overlapping-right{
-  @include translate(110%,0);
+.overlap{
+  margin-top: 0 !important;
 }
 
-.overlapping-left{
-  @include translate(-110%,0);
-}
+// @for $i from -12 through 12 {
+  //   .overlap#{$i} {
+    //     @include translate ($i*10%, 0);
+
+    //     @media #{$screen-break2}{  
+      //       @include translate (0,0);
+      //     }
+      //   }
+      // }
+
+      // .overlap0{
+        //   @include translate(100%,0);
+        // }
+
