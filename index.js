@@ -1,7 +1,7 @@
 var COLLECTION = 'sixfold-items';
 
 /*----------  REQUIRE  ----------*/
-var config = require('./config-private');
+var config = process.env || require('./config-private');
 
 //server
 var express = require('express');
