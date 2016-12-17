@@ -82,6 +82,9 @@ function writeClustersCssAsync(clusters){
     if(tertiary.size<2){tertiary.size=3; secondary.size = secondary.size*2;}
 
     cssContent += 
+    '.'+element.name+' {'+
+    'background-color:'+tertiary.hex+';}\n'+
+
     '.'+element.name+' .expanded-item--label {'+
     'background-color:'+primary.hex+';}\n'+
 

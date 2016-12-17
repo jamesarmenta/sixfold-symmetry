@@ -1,0 +1,15 @@
+<ul class="home-items">
+	<% for(var i=0; i<items.length; i++) {%>
+	<li class="item" id="<%= items[i].slug %>">
+		<a href="/partials/<%= items[i].slug %>">
+			<div class="item-colors">
+				<div class="primary"></div>
+				<div class="secondary"></div>
+				<div class="tertiary"></div>
+			</div>
+			<div class="item-title"><%= items[i].title %></div>
+			<div class="item-artist"><%= items[i].artist %></div>
+		</a>
+	</li>
+	<% } %>
+</ul>

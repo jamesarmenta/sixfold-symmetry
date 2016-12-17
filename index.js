@@ -75,19 +75,23 @@ function dbUpdate(collection,query){
 //SERVER
 
 function startServer(){
+
+  //INIT
   app.listen(port, function() {
     console.log('Our app is running on ' + port);
-    // console.log(items);
   });
   app.set('view engine', 'ejs');
 
+  //HOME PAGE
   app.get('/', function (req, res) {
     res.render('pages/index', {
       items: items
     });
   });
 
-  app.get('/:item', function (req, res) {
+  //AJAX LOADS
+  app.get('/partials/:item', function (req, res) {
+    console.log('serving partial thing');
     var index = -1;
     for(var i = 0; i < items.length; i++){
 
@@ -104,6 +108,28 @@ function startServer(){
       res.send(req.params.item+' not available');
     }
   });
+
+  //ITEM PAGES
+  app.get('/:item', function (req, res) {
+    console.log('serving the whole thing');
+    console.log(req.params);
+    var index = -1;
+    for(var i = 0; i < items.length; i++){
+
+      if(req.params.item == items[i].slug){
+        index = i;
+      }
+    }
+    if(index>-1){
+      res.render('pages/item', {
+        items: items,
+        index: index
+      });
+    }else{
+      res.send(req.params.item+' not available');
+    }
+  });
+
 
   app.get('/assets/images/:image', function (req, res) {
     res.sendFile('assets/images/'+req.params.image, { root : __dirname});

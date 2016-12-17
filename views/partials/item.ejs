@@ -1,9 +1,9 @@
 <div class="expanded-item-wrapper <%= items[index].slug %>">
 	<div class="expanded-item-images">
 		<div class="expanded-item-gallery">
-		<% for(var i=0; i<items[index].images.length; i++) {%>
-		<img src="/assets/images/<%= items[index].images[i] %>.jpg"/>
-		<% } %>
+			<% for(var i=0; i<items[index].images.length; i++) {%>
+			<img src="/assets/images/<%= items[index].images[i] %>.jpg"/>
+			<% } %>
 		</div>
 	</div>
 	<div class="expanded-item-info">
@@ -47,7 +47,7 @@
 		<% for(var i=0; i<items.length; i++) {%>
 		<% if(i != index) {%>
 		<div class="item" id="<%= items[i].slug %>" >
-			<a href="/<%= items[i].slug %>">
+			<a href="/partials/<%= items[i].slug %>">
 				<div class="item-colors">
 					<div class="primary"></div>
 					<div class="secondary"></div>
