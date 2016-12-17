@@ -1,4 +1,4 @@
-## artist 
+## artist
 Janko Gravner and David Griffeath
 
 ## title

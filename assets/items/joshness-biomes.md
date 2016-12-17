@@ -1,4 +1,4 @@
-## artist 
+## artist
 Josh Ness 
 
 ## title

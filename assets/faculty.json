@@ -1,0 +1,38 @@
+{"faculty": [
+  {
+    "name": "Rachel Roe-Dale",
+    "description": "Rachel Roe-Dale is an Associate Professor of Mathematics. She received her Ph.D. at Rensselaer Polytechnic Institute in Troy, New York with a dissertation titled, “Quantitative Models in Cancer Chemotherapy.” Roe-Dale’s research focuses on mathematical biology, medicine, and modeling other physical systems. She teaches courses in calculus, linear algebra, differential equations, statistics, and applied mathematics. For this exhibition, Roe-Dale focuses on snowflakes through the work of the contemporary mathematicians Janko Gravner and David Griffeath and the early 20th century artist, scientist, and photographer Wilson Bentley. Roe-Dale is interested in exploring the tensions between pattern as a human construct and as a naturally occurring phenomenon."
+  },
+  {
+    "name": "Lisa Aronson",
+    "description": "Lisa Aronson is a Professor Emeritus of Art History and received her Ph.D. from Indiana University. She is an African Art specialist who taught courses on African textiles and colonial trade, gender and visual culture, Native American art, as well as Mesoamerican and South American art. Her scholarship and research focuses on African textiles and trade, issues of gender in African art, and most recently, on early African photography through the lens of the 19th century Nigerian photographer, J. A. Green (1873-1905).  In Sixfold Symmetry, Aronson explores nsibidi, the ancient script of the secret Ekpe society from the Cross-Rivers region of Nigeria, and it’s role in the creation of a distinctly African modernism by the contemporary Nigerian-American artist Victor Ekpuk."
+  },
+  {
+    "name": "Grace Burton",
+    "description": "Grace Burton is an Associate Professor of Spanish. Burton received her Ph.D. from Duke University, and her research includes Spanish Golden Age poetry and theater, the work of Cervantes, Spanish intellectual history, as well as the history of science and mathematics within the Spanish-speaking world. She teaches courses in Spanish language and literature, Golden Age literature, and Cervante’s Don Quijote. For this exhibition, Burton worked collaboratively with the psychology professor, Rebecca Johnson, to study linguistic patterns and how people process visual languages. Burton was fascinated by the fundamental issues she saw in her students as they grappled with learning Spanish as a second language, discovering that in order to learn a second langague, the student had to disregard the structural fundamentals of their first."
+  },
+  {
+    "name": "Rebecca Johnson",
+    "description": "Rebecca Johnson is an Associate Professor of Psychology; she received her Ph.D. from the University of Massachusetts, Amherst. Johnson teaches courses related to Experimental Methodology and the Psychology of Language. She conducts research on the cognitive process underlying reading in normal skilled readers and individuals with stroke-induced reading disorders. Johnson directs research conducted in the LETR (Language, Eye-Tracking & Reading) Lab on Skidmore’s campus. In conjunction with Grace Burton, Johnson installed a Tobi Eye-Tracker in Sixfold Symmetry, along with a video showing the eye patterns of different readers at various levels of ability."
+  },
+  {
+    "name": "Michael Eckmann",
+    "description": "Michael Eckmann is an Associate Professor of Computer Science, as well as the chair of the Computer Science department. He received his Ph.D. from Lehigh University’s Computer Science and Engineering department. Eckmann currently teaches courses on introductory computer science and programming languages and his research interests focus on computer vision and bibliometrics. In Sixfold Symmetry, he explores the role that algorithms play in artists’ works, investigating how artists follow self-imposed rules, sometimes consciously, other times not, in order to produce art."
+  },
+  {
+    "name": "Elizabeth Macy",
+    "description": "Elizabeth Macy is a Teaching Professor of Music. Macy received her Ph.D. in ethnomusicology from University of California, Los Angeles and her dissertation is titled, “Music Tourism in New Orleans and Bali: A Comparative Study of Cultural Tourism Development.” She continues to conduct research on the music of Bali and Indonesia, the music of New Orleans, tourism, music and disaster, global popular music, and issues of gender and representation. Her courses include Global Pop; Music, Culture and Performance of Indonesia; and the Music of Southeast Asia. As part of Sixfold Symmetry, the gamelan ensemble she directs, Gamelan Banyu Wali (or Gamelan of the Sacred Spring), has been practicing and performing on the Balinese Gamelan angklung installed in the exhibition."
+  },
+  {
+    "name": "Josh Ness",
+    "description": "Josh Ness is an Associate Professor in the Biology department. He conducts research and teaches courses about mutualism and parasitism, landscape change, biological invasions, plant-animal interactions, plant defense and dispersal, urban ecology, and climatic drivers of variation in inter-specific interactions (i.e. the relationships between different species). In Sixfold Symmetry, Ness uses his field recordings of different environments around the world to help visitors understand how different scales of time reveal patterns that might otherwise go unnoticed.  By speeding up his field recordings, we can see patterns in the environment emerge over long periods of time."
+  },
+  {
+    "name": "Gregory Spinner",
+    "description": "Gregory Spinner is a Teaching Professor in the Religious Studies department. He received his Ph.D. from The University of Chicago. Spinner’s teaching and research interests lie within the history of religions, Jewish Studies, Christian and Muslim scriptures and their interpretations, as well as ritual and gender studies. In Sixfold Symmetry, Spinner explores how religions build conceptual worlds, making maps of time and space that users consult for study, meditation, and inspiration. Tibetan mandalas, Christian Dispensationalist charts, Shaker gift drawings, and Kabbalistic diagrams, provide examples of cosmograms that people have employed in order to visualize their salvation or enlightenment."
+  },
+  {
+    "name": "Sarah Sweeney",
+    "description": "Sarah Sweeney is an Associate Professor of Art in the Studio Art Department. Sweeney received her MFA in Digital Media from Columbia University and she teaches courses on Interactive Design and Digital Media. Her digital and interactive works investigate the relationship between photographic and physical memories, and is informed by both the study of memory science and the history of documentary technologies. In Sixfold Symmetry she pursues her interrogation of technology, memory, and their subversion through the work of Thomas Bangsted. His images, assembled in Photoshop, replicate WWI warships that used “dazzle” patterns to confuse their trackers. Her work recognizes that “dazzle” has once again become relevant in our contemporary discourse as a method to subvert facial recognition software, among other things."
+  }
+]}

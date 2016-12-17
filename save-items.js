@@ -14,6 +14,12 @@ var itemStats;
 parser.getItemsAsync('assets/items/','.md')
 .then((data)=>{
   items = data;
+
+  for (var i = 0; i < items.length; i++) {
+    //preserve newline
+    if(items[i].body){ items[i].body = items[i].body.replace(/\n/g,'<br>');}
+    if(items[i].description){ items[i].description = items[i].description.replace(/\n/g,'<br>');}
+  }
 })
 .then(()=>{
   // Connect to DB

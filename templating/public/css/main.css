@@ -431,7 +431,7 @@ nav {
   box-sizing: border-box; }
   .expanded-item-wrapper > div {
     flex: 50%;
-    padding: 1em;
+    padding: 1em 0 0 1em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -471,9 +471,9 @@ nav {
     fill: #fff; }
 
 .expanded-item-info {
-  padding-top: 2em;
+  padding-top: 2em !important;
   text-align: left;
-  line-height: .75em; }
+  line-height: 1.2em; }
   .expanded-item-info h1 {
     font-style: italic; }
 

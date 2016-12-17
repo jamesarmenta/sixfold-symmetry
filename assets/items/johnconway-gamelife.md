@@ -1,4 +1,4 @@
-## artist 
+## artist
 John Conway 
 
 ## title

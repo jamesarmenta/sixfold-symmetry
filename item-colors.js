@@ -83,7 +83,11 @@ function writeClustersCssAsync(clusters){
 
     cssContent += 
     '.'+element.name+' {'+
+    'color:'+contrastTextColor(tertiary.hex)+' !important; '+
     'background-color:'+tertiary.hex+';}\n'+
+
+    '.'+element.name+' a, .'+element.name+' a:visited {'+
+    'color:'+contrastTextColor(tertiary.hex)+' !important;}\n'+
 
     '.'+element.name+' .expanded-item--label {'+
     'background-color:'+primary.hex+';}\n'+
@@ -104,4 +108,21 @@ function writeClustersCssAsync(clusters){
   });
   console.log('CSS: '+cssContent);
   setFiles.writeFileAsync('views/css/item-colors.css',cssContent);
+}
+
+function contrastTextColor(hex){
+  var TEXTCOLORDARK = '#262626';
+  var TEXTCOLORLIGHT = '#FFFFFF';
+  hex = hex.replace('#','');
+
+  var red = parseInt(hex.substring(0,2),16);
+  var green = parseInt(hex.substring(2,4),16);
+  var blue = parseInt(hex.substring(4,6),16);
+
+  var lum = (0.299*red + 0.587*green + 0.114*blue);
+  if(lum>127){
+    return TEXTCOLORDARK;
+  }else{
+    return TEXTCOLORLIGHT;
+  }
 }

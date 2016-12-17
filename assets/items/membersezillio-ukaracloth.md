@@ -1,4 +1,4 @@
-## artist 
+## artist
 Members of the Ezillio Community 
 
 ## title

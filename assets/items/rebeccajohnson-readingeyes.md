@@ -1,4 +1,4 @@
-## artist 
+## artist
 Rebecca Johnson 
 
 ## title

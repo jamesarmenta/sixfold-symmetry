@@ -1,4 +1,4 @@
-## artist 
+## artist
 Wilson A. Bentley 
 
 ## title

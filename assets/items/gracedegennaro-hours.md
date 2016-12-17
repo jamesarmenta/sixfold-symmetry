@@ -1,4 +1,4 @@
-## artist 
+## artist
 Grace DeGennaro 
 
 ## title

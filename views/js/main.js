@@ -130,8 +130,10 @@ function flickInit(){
         //on last one... do this
         if(i==itemColors.length-1){
           setTimeout(function() {
-            document.querySelector('body').style.backgroundColor = clone.style.backgroundColor;
-            document.querySelector('body').style.color = contrastTextColor(clone.style.backgroundColor);
+            var itemName = href.replace('/partials/','');
+            $('body').removeClass();
+            console.log(itemName);
+            $('body').addClass(itemName);
             document.querySelectorAll('a').forEach(function(element, index){element.style.color = contrastTextColor(clone.style.backgroundColor);});
           }, delay+1000);
           loadContentArea(href,delay+1000);

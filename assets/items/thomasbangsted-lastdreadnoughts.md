@@ -1,4 +1,4 @@
-## artist 
+## artist
 Thomas Bangsted 
 
 ## title

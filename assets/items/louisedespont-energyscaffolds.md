@@ -1,4 +1,4 @@
-## artist 
+## artist
 Louise Despont 
 
 ## title

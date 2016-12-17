@@ -1,154 +1,185 @@
-.artistunknown-astrologicalchart {background-color:#A0684A;}
+.artistunknown-astrologicalchart {color:#FFFFFF !important; background-color:#A0684A;}
+.artistunknown-astrologicalchart a, .artistunknown-astrologicalchart a:visited {color:#FFFFFF !important;}
 .artistunknown-astrologicalchart .expanded-item--label {background-color:#D1AD88;}
 #artistunknown-astrologicalchart .primary {background-color:#D1AD88; width: 100%; height: 100%;}
 #artistunknown-astrologicalchart .secondary {background-color:#AA896A; width: 61.3%; height: 61.3%;}
 #artistunknown-astrologicalchart .tertiary {background-color:#A0684A; width: 14.6%; height: 14.6%;}
-.artistunknown-kabbalisticdiagram {background-color:#E2D2C0;}
+.artistunknown-kabbalisticdiagram {color:#262626 !important; background-color:#E2D2C0;}
+.artistunknown-kabbalisticdiagram a, .artistunknown-kabbalisticdiagram a:visited {color:#262626 !important;}
 .artistunknown-kabbalisticdiagram .expanded-item--label {background-color:#D4C2AE;}
 #artistunknown-kabbalisticdiagram .primary {background-color:#D4C2AE; width: 100%; height: 100%;}
 #artistunknown-kabbalisticdiagram .secondary {background-color:#C7B29C; width: 56.7%; height: 56.7%;}
 #artistunknown-kabbalisticdiagram .tertiary {background-color:#E2D2C0; width: 21.9%; height: 21.9%;}
-.artistunknown-lordyourgod {background-color:#D0BCA4;}
+.artistunknown-lordyourgod {color:#262626 !important; background-color:#D0BCA4;}
+.artistunknown-lordyourgod a, .artistunknown-lordyourgod a:visited {color:#262626 !important;}
 .artistunknown-lordyourgod .expanded-item--label {background-color:#DBC8AE;}
 #artistunknown-lordyourgod .primary {background-color:#DBC8AE; width: 100%; height: 100%;}
 #artistunknown-lordyourgod .secondary {background-color:#E5D3BA; width: 46.7%; height: 46.7%;}
-#artistunknown-lordyourgod .tertiary {background-color:#D0BCA4; width: 19.2%; height: 19.2%;}
-.artistunknown-protectiveastrological {background-color:#7F684D;}
+#artistunknown-lordyourgod .tertiary {background-color:#D0BCA4; width: 19.3%; height: 19.3%;}
+.artistunknown-protectiveastrological {color:#FFFFFF !important; background-color:#7F684D;}
+.artistunknown-protectiveastrological a, .artistunknown-protectiveastrological a:visited {color:#FFFFFF !important;}
 .artistunknown-protectiveastrological .expanded-item--label {background-color:#AA7D51;}
 #artistunknown-protectiveastrological .primary {background-color:#AA7D51; width: 100%; height: 100%;}
 #artistunknown-protectiveastrological .secondary {background-color:#905D3E; width: 61.2%; height: 61.2%;}
 #artistunknown-protectiveastrological .tertiary {background-color:#7F684D; width: 21.5%; height: 21.5%;}
-.artistunknown-thangka1 {background-color:#2C3950;}
+.artistunknown-thangka1 {color:#FFFFFF !important; background-color:#2C3950;}
+.artistunknown-thangka1 a, .artistunknown-thangka1 a:visited {color:#FFFFFF !important;}
 .artistunknown-thangka1 .expanded-item--label {background-color:#853329;}
 #artistunknown-thangka1 .primary {background-color:#853329; width: 100%; height: 100%;}
 #artistunknown-thangka1 .secondary {background-color:#536046; width: 62.6%; height: 62.6%;}
 #artistunknown-thangka1 .tertiary {background-color:#2C3950; width: 24.2%; height: 24.2%;}
-.artistunknown-thangka2 {background-color:#686D54;}
+.artistunknown-thangka2 {color:#FFFFFF !important; background-color:#686D54;}
+.artistunknown-thangka2 a, .artistunknown-thangka2 a:visited {color:#FFFFFF !important;}
 .artistunknown-thangka2 .expanded-item--label {background-color:#AD3C3A;}
 #artistunknown-thangka2 .primary {background-color:#AD3C3A; width: 100%; height: 100%;}
 #artistunknown-thangka2 .secondary {background-color:#AB7351; width: 27.1%; height: 27.1%;}
 #artistunknown-thangka2 .tertiary {background-color:#686D54; width: 13.2%; height: 13.2%;}
-.artistunknown-wordsavior {background-color:#D1C2AE;}
+.artistunknown-wordsavior {color:#262626 !important; background-color:#D1C2AE;}
+.artistunknown-wordsavior a, .artistunknown-wordsavior a:visited {color:#262626 !important;}
 .artistunknown-wordsavior .expanded-item--label {background-color:#DECEB6;}
 #artistunknown-wordsavior .primary {background-color:#DECEB6; width: 100%; height: 100%;}
-#artistunknown-wordsavior .secondary {background-color:#E8D3B8; width: 46.6%; height: 46.6%;}
+#artistunknown-wordsavior .secondary {background-color:#E8D2B8; width: 49.1%; height: 49.1%;}
 #artistunknown-wordsavior .tertiary {background-color:#D1C2AE; width: 21.5%; height: 21.5%;}
-.avrahamloewenthal-gateslight {background-color:#BA4952;}
+.avrahamloewenthal-gateslight {color:#FFFFFF !important; background-color:#BA4952;}
+.avrahamloewenthal-gateslight a, .avrahamloewenthal-gateslight a:visited {color:#FFFFFF !important;}
 .avrahamloewenthal-gateslight .expanded-item--label {background-color:#E3DFE1;}
 #avrahamloewenthal-gateslight .primary {background-color:#E3DFE1; width: 100%; height: 100%;}
 #avrahamloewenthal-gateslight .secondary {background-color:#7978B2; width: 32.1%; height: 32.1%;}
 #avrahamloewenthal-gateslight .tertiary {background-color:#BA4952; width: 10.3%; height: 10.3%;}
-.clarencelarkin-rightlydividing {background-color:#B8B5BD;}
+.clarencelarkin-rightlydividing {color:#262626 !important; background-color:#B8B5BD;}
+.clarencelarkin-rightlydividing a, .clarencelarkin-rightlydividing a:visited {color:#262626 !important;}
 .clarencelarkin-rightlydividing .expanded-item--label {background-color:#E7E6E9;}
 #clarencelarkin-rightlydividing .primary {background-color:#E7E6E9; width: 100%; height: 100%;}
 #clarencelarkin-rightlydividing .secondary {background-color:#D6D4D8; width: 61.4%; height: 61.4%;}
 #clarencelarkin-rightlydividing .tertiary {background-color:#B8B5BD; width: 15.1%; height: 15.1%;}
-.clarencelarkin-seventhousand {background-color:#B2B1B1;}
+.clarencelarkin-seventhousand {color:#262626 !important; background-color:#B2B1B1;}
+.clarencelarkin-seventhousand a, .clarencelarkin-seventhousand a:visited {color:#262626 !important;}
 .clarencelarkin-seventhousand .expanded-item--label {background-color:#D5D4D4;}
 #clarencelarkin-seventhousand .primary {background-color:#D5D4D4; width: 100%; height: 100%;}
 #clarencelarkin-seventhousand .secondary {background-color:#C4C3C3; width: 38.1%; height: 38.1%;}
 #clarencelarkin-seventhousand .tertiary {background-color:#B2B1B1; width: 12.3%; height: 12.3%;}
-.cosmos {background-color:#876F60;}
+.cosmos {color:#FFFFFF !important; background-color:#876F60;}
+.cosmos a, .cosmos a:visited {color:#FFFFFF !important;}
 .cosmos .expanded-item--label {background-color:#E5E1DE;}
 #cosmos .primary {background-color:#E5E1DE; width: 100%; height: 100%;}
 #cosmos .secondary {background-color:#CAC4C0; width: 49.9%; height: 49.9%;}
 #cosmos .tertiary {background-color:#876F60; width: 9.9%; height: 9.9%;}
-.deansnyder-arachnasarcade {background-color:#4A4741;}
-.deansnyder-arachnasarcade .expanded-item--label {background-color:#67655E;}
-#deansnyder-arachnasarcade .primary {background-color:#67655E; width: 100%; height: 100%;}
-#deansnyder-arachnasarcade .secondary {background-color:#838279; width: 61.4%; height: 61.4%;}
-#deansnyder-arachnasarcade .tertiary {background-color:#4A4741; width: 23.1%; height: 23.1%;}
-.elderjosephwicker-citypease {background-color:#7B6E51;}
+.deansnyder-arachnasarcade {color:#FFFFFF !important; background-color:#29241F;}
+.deansnyder-arachnasarcade a, .deansnyder-arachnasarcade a:visited {color:#FFFFFF !important;}
+.deansnyder-arachnasarcade .expanded-item--label {background-color:#706B5A;}
+#deansnyder-arachnasarcade .primary {background-color:#706B5A; width: 100%; height: 100%;}
+#deansnyder-arachnasarcade .secondary {background-color:#4C473E; width: 60.1%; height: 60.1%;}
+#deansnyder-arachnasarcade .tertiary {background-color:#29241F; width: 24.6%; height: 24.6%;}
+.elderjosephwicker-citypease {color:#FFFFFF !important; background-color:#7B6E51;}
+.elderjosephwicker-citypease a, .elderjosephwicker-citypease a:visited {color:#FFFFFF !important;}
 .elderjosephwicker-citypease .expanded-item--label {background-color:#E6C39D;}
 #elderjosephwicker-citypease .primary {background-color:#E6C39D; width: 100%; height: 100%;}
 #elderjosephwicker-citypease .secondary {background-color:#DDB488; width: 39.7%; height: 39.7%;}
 #elderjosephwicker-citypease .tertiary {background-color:#7B6E51; width: 7.0%; height: 7.0%;}
-.gracedegennaro-hours {background-color:#838FE4;}
-.gracedegennaro-hours .expanded-item--label {background-color:#C3C4C5;}
-#gracedegennaro-hours .primary {background-color:#C3C4C5; width: 100%; height: 100%;}
-#gracedegennaro-hours .secondary {background-color:#8792BC; width: 51.4%; height: 51.4%;}
-#gracedegennaro-hours .tertiary {background-color:#838FE4; width: 17.4%; height: 17.4%;}
-.gracedegennaro-hours13 {background-color:#957BCD;}
+.gracedegennaro-hours {color:#262626 !important; background-color:#818EE3;}
+.gracedegennaro-hours a, .gracedegennaro-hours a:visited {color:#262626 !important;}
+.gracedegennaro-hours .expanded-item--label {background-color:#C3C5C6;}
+#gracedegennaro-hours .primary {background-color:#C3C5C6; width: 100%; height: 100%;}
+#gracedegennaro-hours .secondary {background-color:#8993BD; width: 56.1%; height: 56.1%;}
+#gracedegennaro-hours .tertiary {background-color:#818EE3; width: 17.5%; height: 17.5%;}
+.gracedegennaro-hours13 {color:#262626 !important; background-color:#957BCD;}
+.gracedegennaro-hours13 a, .gracedegennaro-hours13 a:visited {color:#262626 !important;}
 .gracedegennaro-hours13 .expanded-item--label {background-color:#948ACA;}
 #gracedegennaro-hours13 .primary {background-color:#948ACA; width: 100%; height: 100%;}
 #gracedegennaro-hours13 .secondary {background-color:#8D84D1; width: 60.4%; height: 60.4%;}
 #gracedegennaro-hours13 .tertiary {background-color:#957BCD; width: 25.7%; height: 25.7%;}
-.gravnergriffeath-modelingsnow {background-color:#013EEB;}
-.gravnergriffeath-modelingsnow .expanded-item--label {background-color:#0547DD;}
-#gravnergriffeath-modelingsnow .primary {background-color:#0547DD; width: 100%; height: 100%;}
-#gravnergriffeath-modelingsnow .secondary {background-color:#F3F8FC; width: 50.3%; height: 50.3%;}
-#gravnergriffeath-modelingsnow .tertiary {background-color:#013EEB; width: 24.3%; height: 24.3%;}
-.joelfisher-tree {background-color:#1C1E21;}
-.joelfisher-tree .expanded-item--label {background-color:#BAB796;}
-#joelfisher-tree .primary {background-color:#BAB796; width: 100%; height: 100%;}
-#joelfisher-tree .secondary {background-color:#D6A59A; width: 56.4%; height: 56.4%;}
-#joelfisher-tree .tertiary {background-color:#1C1E21; width: 22.6%; height: 22.6%;}
-.johnconway-gamelife {background-color:#DFE029;}
+.gravnergriffeath-modelingsnow {color:#FFFFFF !important; background-color:#013FEC;}
+.gravnergriffeath-modelingsnow a, .gravnergriffeath-modelingsnow a:visited {color:#FFFFFF !important;}
+.gravnergriffeath-modelingsnow .expanded-item--label {background-color:#0446DD;}
+#gravnergriffeath-modelingsnow .primary {background-color:#0446DD; width: 100%; height: 100%;}
+#gravnergriffeath-modelingsnow .secondary {background-color:#F3F8FC; width: 49.4%; height: 49.4%;}
+#gravnergriffeath-modelingsnow .tertiary {background-color:#013FEC; width: 22.8%; height: 22.8%;}
+.joelfisher-tree {color:#FFFFFF !important; background-color:#1C1F21;}
+.joelfisher-tree a, .joelfisher-tree a:visited {color:#FFFFFF !important;}
+.joelfisher-tree .expanded-item--label {background-color:#BAB797;}
+#joelfisher-tree .primary {background-color:#BAB797; width: 100%; height: 100%;}
+#joelfisher-tree .secondary {background-color:#D8A499; width: 53.6%; height: 53.6%;}
+#joelfisher-tree .tertiary {background-color:#1C1F21; width: 22.1%; height: 22.1%;}
+.johnconway-gamelife {color:#262626 !important; background-color:#DFE029;}
+.johnconway-gamelife a, .johnconway-gamelife a:visited {color:#262626 !important;}
 .johnconway-gamelife .expanded-item--label {background-color:#828282;}
 #johnconway-gamelife .primary {background-color:#828282; width: 100%; height: 100%;}
 #johnconway-gamelife .secondary {background-color:#959595; width: 7.2%; height: 7.2%;}
 #johnconway-gamelife .tertiary {background-color:#DFE029; width: 3%; height: 3%;}
-.joshness-biomes {background-color:#B9D5EF;}
+.joshness-biomes {color:#262626 !important; background-color:#B9D5EF;}
+.joshness-biomes a, .joshness-biomes a:visited {color:#262626 !important;}
 .joshness-biomes .expanded-item--label {background-color:#A5AA82;}
 #joshness-biomes .primary {background-color:#A5AA82; width: 100%; height: 100%;}
 #joshness-biomes .secondary {background-color:#65412E; width: 43.0%; height: 43.0%;}
 #joshness-biomes .tertiary {background-color:#B9D5EF; width: 19.2%; height: 19.2%;}
-.louisedespont-energyscaffolds {background-color:#DDBB99;}
+.louisedespont-energyscaffolds {color:#262626 !important; background-color:#DDBB99;}
+.louisedespont-energyscaffolds a, .louisedespont-energyscaffolds a:visited {color:#262626 !important;}
 .louisedespont-energyscaffolds .expanded-item--label {background-color:#D6C3AC;}
 #louisedespont-energyscaffolds .primary {background-color:#D6C3AC; width: 100%; height: 100%;}
 #louisedespont-energyscaffolds .secondary {background-color:#BEAC97; width: 58.5%; height: 58.5%;}
 #louisedespont-energyscaffolds .tertiary {background-color:#DDBB99; width: 15.0%; height: 15.0%;}
-.madegabeleran-gamelanangklung {background-color:#89B6D2;}
+.madegabeleran-gamelanangklung {color:#262626 !important; background-color:#89B6D2;}
+.madegabeleran-gamelanangklung a, .madegabeleran-gamelanangklung a:visited {color:#262626 !important;}
 .madegabeleran-gamelanangklung .expanded-item--label {background-color:#BEBCBC;}
 #madegabeleran-gamelanangklung .primary {background-color:#BEBCBC; width: 100%; height: 100%;}
 #madegabeleran-gamelanangklung .secondary {background-color:#756E71; width: 42.2%; height: 42.2%;}
 #madegabeleran-gamelanangklung .tertiary {background-color:#89B6D2; width: 15.7%; height: 15.7%;}
-.madesuratha-candibentar {background-color:#6B5B61;}
-.madesuratha-candibentar .expanded-item--label {background-color:#9D9BA1;}
-#madesuratha-candibentar .primary {background-color:#9D9BA1; width: 100%; height: 100%;}
+.madesuratha-candibentar {color:#FFFFFF !important; background-color:#6B5C61;}
+.madesuratha-candibentar a, .madesuratha-candibentar a:visited {color:#FFFFFF !important;}
+.madesuratha-candibentar .expanded-item--label {background-color:#9E9BA1;}
+#madesuratha-candibentar .primary {background-color:#9E9BA1; width: 100%; height: 100%;}
 #madesuratha-candibentar .secondary {background-color:#BFD4DF; width: 48.4%; height: 48.4%;}
-#madesuratha-candibentar .tertiary {background-color:#6B5B61; width: 17.4%; height: 17.4%;}
-.membersezillio-ukaracloth {background-color:#2F3E4B;}
+#madesuratha-candibentar .tertiary {background-color:#6B5C61; width: 17.5%; height: 17.5%;}
+.membersezillio-ukaracloth {color:#FFFFFF !important; background-color:#2F3E4B;}
+.membersezillio-ukaracloth a, .membersezillio-ukaracloth a:visited {color:#FFFFFF !important;}
 .membersezillio-ukaracloth .expanded-item--label {background-color:#162231;}
 #membersezillio-ukaracloth .primary {background-color:#162231; width: 100%; height: 100%;}
-#membersezillio-ukaracloth .secondary {background-color:#4A5B66; width: 65.7%; height: 65.7%;}
-#membersezillio-ukaracloth .tertiary {background-color:#2F3E4B; width: 30.7%; height: 30.7%;}
-.monirfarmanfarmaian-firstfamily {background-color:#6A6865;}
+#membersezillio-ukaracloth .secondary {background-color:#4B5C66; width: 65.5%; height: 65.5%;}
+#membersezillio-ukaracloth .tertiary {background-color:#2F3E4B; width: 30.9%; height: 30.9%;}
+.monirfarmanfarmaian-firstfamily {color:#FFFFFF !important; background-color:#6A6865;}
+.monirfarmanfarmaian-firstfamily a, .monirfarmanfarmaian-firstfamily a:visited {color:#FFFFFF !important;}
 .monirfarmanfarmaian-firstfamily .expanded-item--label {background-color:#C5C4C4;}
 #monirfarmanfarmaian-firstfamily .primary {background-color:#C5C4C4; width: 100%; height: 100%;}
 #monirfarmanfarmaian-firstfamily .secondary {background-color:#D8D6D6; width: 50.4%; height: 50.4%;}
 #monirfarmanfarmaian-firstfamily .tertiary {background-color:#6A6865; width: 9.4%; height: 9.4%;}
-.rebeccajohnson-readingeyes {background-color:#786E7F;}
+.rebeccajohnson-readingeyes {color:#FFFFFF !important; background-color:#786E7F;}
+.rebeccajohnson-readingeyes a, .rebeccajohnson-readingeyes a:visited {color:#FFFFFF !important;}
 .rebeccajohnson-readingeyes .expanded-item--label {background-color:#1A0F07;}
 #rebeccajohnson-readingeyes .primary {background-color:#1A0F07; width: 100%; height: 100%;}
-#rebeccajohnson-readingeyes .secondary {background-color:#5C505E; width: 34.4%; height: 34.4%;}
-#rebeccajohnson-readingeyes .tertiary {background-color:#786E7F; width: 13.9%; height: 13.9%;}
-.schedelpleydenwurffwolgemut-nurembergchronicle {background-color:#AEB2A6;}
+#rebeccajohnson-readingeyes .secondary {background-color:#5C505E; width: 34.2%; height: 34.2%;}
+#rebeccajohnson-readingeyes .tertiary {background-color:#786E7F; width: 13.8%; height: 13.8%;}
+.schedelpleydenwurffwolgemut-nurembergchronicle {color:#262626 !important; background-color:#AEB3A6;}
+.schedelpleydenwurffwolgemut-nurembergchronicle a, .schedelpleydenwurffwolgemut-nurembergchronicle a:visited {color:#262626 !important;}
 .schedelpleydenwurffwolgemut-nurembergchronicle .expanded-item--label {background-color:#CCCABF;}
 #schedelpleydenwurffwolgemut-nurembergchronicle .primary {background-color:#CCCABF; width: 100%; height: 100%;}
-#schedelpleydenwurffwolgemut-nurembergchronicle .secondary {background-color:#9D9D94; width: 18.4%; height: 18.4%;}
-#schedelpleydenwurffwolgemut-nurembergchronicle .tertiary {background-color:#AEB2A6; width: 7.9%; height: 7.9%;}
-.thomasbangsted-lastdreadnoughts {background-color:#252525;}
+#schedelpleydenwurffwolgemut-nurembergchronicle .secondary {background-color:#9E9E95; width: 18.5%; height: 18.5%;}
+#schedelpleydenwurffwolgemut-nurembergchronicle .tertiary {background-color:#AEB3A6; width: 7.7%; height: 7.7%;}
+.thomasbangsted-lastdreadnoughts {color:#FFFFFF !important; background-color:#717171;}
+.thomasbangsted-lastdreadnoughts a, .thomasbangsted-lastdreadnoughts a:visited {color:#FFFFFF !important;}
 .thomasbangsted-lastdreadnoughts .expanded-item--label {background-color:#EAEAEA;}
 #thomasbangsted-lastdreadnoughts .primary {background-color:#EAEAEA; width: 100%; height: 100%;}
-#thomasbangsted-lastdreadnoughts .secondary {background-color:#474747; width: 34.1%; height: 34.1%;}
-#thomasbangsted-lastdreadnoughts .tertiary {background-color:#252525; width: 10.5%; height: 10.5%;}
-.tobiieye {background-color:#D0DAE2;}
+#thomasbangsted-lastdreadnoughts .secondary {background-color:#454545; width: 33.9%; height: 33.9%;}
+#thomasbangsted-lastdreadnoughts .tertiary {background-color:#717171; width: 10.6%; height: 10.6%;}
+.tobiieye {color:#262626 !important; background-color:#D0DAE2;}
+.tobiieye a, .tobiieye a:visited {color:#262626 !important;}
 .tobiieye .expanded-item--label {background-color:#E8F1F7;}
 #tobiieye .primary {background-color:#E8F1F7; width: 100%; height: 100%;}
 #tobiieye .secondary {background-color:#0C0B0D; width: 53.2%; height: 53.2%;}
 #tobiieye .tertiary {background-color:#D0DAE2; width: 11.5%; height: 11.5%;}
-.veramolnar-desordres {background-color:#E2E9EA;}
-.veramolnar-desordres .expanded-item--label {background-color:#F4F5F0;}
-#veramolnar-desordres .primary {background-color:#F4F5F0; width: 100%; height: 100%;}
-#veramolnar-desordres .secondary {background-color:#E5E3DD; width: 51.0%; height: 51.0%;}
-#veramolnar-desordres .tertiary {background-color:#E2E9EA; width: 24.2%; height: 24.2%;}
-.viktorekpuk-drawingmemory {background-color:#5F5E5E;}
+.veramolnar-desordres {color:#262626 !important; background-color:#CCD2D0;}
+.veramolnar-desordres a, .veramolnar-desordres a:visited {color:#262626 !important;}
+.veramolnar-desordres .expanded-item--label {background-color:#DBDBD3;}
+#veramolnar-desordres .primary {background-color:#DBDBD3; width: 100%; height: 100%;}
+#veramolnar-desordres .secondary {background-color:#CECBC3; width: 56.7%; height: 56.7%;}
+#veramolnar-desordres .tertiary {background-color:#CCD2D0; width: 21.8%; height: 21.8%;}
+.viktorekpuk-drawingmemory {color:#FFFFFF !important; background-color:#5F5E5E;}
+.viktorekpuk-drawingmemory a, .viktorekpuk-drawingmemory a:visited {color:#FFFFFF !important;}
 .viktorekpuk-drawingmemory .expanded-item--label {background-color:#434141;}
 #viktorekpuk-drawingmemory .primary {background-color:#434141; width: 100%; height: 100%;}
 #viktorekpuk-drawingmemory .secondary {background-color:#2D2C2C; width: 54.5%; height: 54.5%;}
 #viktorekpuk-drawingmemory .tertiary {background-color:#5F5E5E; width: 22.9%; height: 22.9%;}
-.wilsonbentley-snowflakes {background-color:#C0BCB0;}
+.wilsonbentley-snowflakes {color:#262626 !important; background-color:#C0BCB0;}
+.wilsonbentley-snowflakes a, .wilsonbentley-snowflakes a:visited {color:#262626 !important;}
 .wilsonbentley-snowflakes .expanded-item--label {background-color:#282017;}
 #wilsonbentley-snowflakes .primary {background-color:#282017; width: 100%; height: 100%;}
 #wilsonbentley-snowflakes .secondary {background-color:#E4E4DD; width: 59.1%; height: 59.1%;}

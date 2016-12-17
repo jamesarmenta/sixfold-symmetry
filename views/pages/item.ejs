@@ -17,66 +17,7 @@
 		</ul>
 	</nav>
 	<div id="content-area">
-		<div class="expanded-item-wrapper <%= items[index].slug %>">
-			<div class="expanded-item-images">
-				<div class="expanded-item-gallery">
-					<% for(var i=0; i<items[index].images.length; i++) {%>
-					<img src="/assets/images/<%= items[index].images[i] %>.jpg"/>
-					<% } %>
-				</div>
-			</div>
-			<div class="expanded-item-info">
-				<h1><%= items[index].title %></h1><br/>
-				<h2><%= items[index].artist %></h2><br/>
-				<h3><%= items[index].description %></h3><br/>
-			</div>
-			<div class="expanded-item-about">
-				<% if(items[index].body){%>
-				<span class="expanded-item--label"> </span>
-				<p>
-					<%= items[index].body %>
-				</p>
-				<% } %>
-			</div>
-
-			<div class="expanded-item-artist"><span class="expanded-item--label"></span>
-				<p>Etiam finibus lectus sit amet tellus malesuada posuere. Vestibulum scelerisque erat eget ligula mollis, quis vestibulum purus porttitor. Aliquam at tincidunt ipsum. Morbi viverra efficitur dolor, eu aliquam lectus hendrerit et. Sed a leo quis velit porta scelerisque ac sit amet dui. Integer molestie turpis ac vehicula porta.</p>
-			</div>
-			<div class="expanded-item-stats"><span class="expanded-item--label"> </span>
-				<div class="expanded-item-stat">
-					<h1>365</h1><span>views today</span>
-				</div>
-				<div class="expanded-item-stat">
-					<h1>364</h1><span>views today</span>
-				</div>
-				<div class="expanded-item-stat">
-					<h1>363</h1><span>views today</span>
-				</div>
-				<div class="expanded-item-stat">
-					<h1>362</h1><span>views today</span>
-				</div>
-				<div class="expanded-item-stat">
-					<h1>361</h1><span>views today</span>
-				</div>
-				<div class="expanded-item-stat">
-					<h1>360</h1><span>views today</span>
-				</div>
-			</div>
-			<div class="all-items">
-				<% for(var i=0; i<items.length; i++) {%>
-				<% if(i != index) {%>
-				<div class="item" id="<%= items[i].slug %>" >
-				<a href="/partials/<%= items[i].slug %>">
-						<div class="item-colors">
-							<div class="primary"></div>
-							<div class="secondary"></div>
-							<div class="tertiary"></div>
-						</div>
-					</a>
-				</div>
-				<% } %>
-				<% } %>
-			</div>
+		<% include ../partials/item %>
 		</div>
 		<% include ../partials/universal-scripts.ejs %>
 	</body>

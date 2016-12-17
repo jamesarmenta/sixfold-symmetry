@@ -64,6 +64,7 @@ function customParser(text){
       obj[key] = value;
     }
   });
+
   return obj;
 }
 

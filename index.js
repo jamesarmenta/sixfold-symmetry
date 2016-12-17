@@ -15,6 +15,9 @@ var dbUrl = process.env.DB_URL || config.DB_URL;
 
 var itemsCollection;
 var items = [];
+var faculty = require('./assets/faculty.json').faculty;
+
+console.log(faculty[0]);
 
 //INITIAL
 connectMongo(dbUrl, COLLECTION)
@@ -27,11 +30,11 @@ connectMongo(dbUrl, COLLECTION)
 /*----------  FUNCTIONS  ----------*/
 
 function updateLocal(){
-  dbFind(itemsCollection,{},{"title" : -1}).then((results)=>{
+  dbFind(itemsCollection,{},{"title" : 1}).then((results)=>{
+    // console.log(results);
     items = results;
   });
 }
-
 
 function connectMongo(url,collection){
   return new Promise(
@@ -91,7 +94,6 @@ function startServer(){
 
   //AJAX LOADS
   app.get('/partials/:item', function (req, res) {
-    console.log('serving partial thing');
     var index = -1;
     for(var i = 0; i < items.length; i++){
 
@@ -100,6 +102,7 @@ function startServer(){
       }
     }
     if(index>-1){
+      console.log(items[index]);
       res.render('partials/item', {
         items: items,
         index: index
@@ -111,8 +114,6 @@ function startServer(){
 
   //ITEM PAGES
   app.get('/:item', function (req, res) {
-    console.log('serving the whole thing');
-    console.log(req.params);
     var index = -1;
     for(var i = 0; i < items.length; i++){
 
@@ -121,6 +122,7 @@ function startServer(){
       }
     }
     if(index>-1){
+      console.log(items[index]);
       res.render('pages/item', {
         items: items,
         index: index

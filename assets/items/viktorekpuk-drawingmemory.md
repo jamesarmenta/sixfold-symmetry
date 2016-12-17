@@ -1,4 +1,4 @@
-## artist 
+## artist
 Victor Ekpuk
 
 ## title

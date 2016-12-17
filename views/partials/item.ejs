@@ -7,21 +7,25 @@
 		</div>
 	</div>
 	<div class="expanded-item-info">
-		<h1><%= items[index].title %></h1><br/>
-		<h2><%= items[index].artist %></h2><br/>
-		<h3><%= items[index].description %></h3><br/>
+
+		<% if(items[index].title){%><h1><%= items[index].title %></h1><br/><% }%>
+		<% if(items[index].artist){%><h2><%= items[index].artist %></h2><br/><% }%>
+		<% if(items[index].description){%><h3><%- items[index].description %></h3><br/><% }%>
 	</div>
 	<div class="expanded-item-about">
 		<% if(items[index].body){%>
 		<span class="expanded-item--label"> </span>
 		<p>
-			<%= items[index].body %>
+			<%- items[index].body %>
+			<% if(items[index].faculty){%>
+			<br><br>-<%= items[index].faculty %>
+			<% }%>
 		</p>
 		<% } %>
 	</div>
 
 	<div class="expanded-item-artist"><span class="expanded-item--label"></span>
-		<p>Etiam finibus lectus sit amet tellus malesuada posuere. Vestibulum scelerisque erat eget ligula mollis, quis vestibulum purus porttitor. Aliquam at tincidunt ipsum. Morbi viverra efficitur dolor, eu aliquam lectus hendrerit et. Sed a leo quis velit porta scelerisque ac sit amet dui. Integer molestie turpis ac vehicula porta.</p>
+		<p><%= items[index].artist %></p>
 	</div>
 	<div class="expanded-item-stats"><span class="expanded-item--label"> </span>
 		<div class="expanded-item-stat">
@@ -40,7 +44,7 @@
 			<h1>361</h1><span>views today</span>
 		</div>
 		<div class="expanded-item-stat">
-			<h1>360</h1><span>views today</span>
+			<h1>3600</h1><span>views today</span>
 		</div>
 	</div>
 	<div class="all-items">
