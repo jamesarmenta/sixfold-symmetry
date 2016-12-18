@@ -39,12 +39,12 @@
 		<% } %>
 		<% if(items[index].viewsToday>-1){%>
 		<div class="expanded-item-stat">
-			<h1><%= items[index].viewsToday %> sec</h1><span>views today</span>
+			<h1><%= items[index].viewsToday %></h1><span>views today</span>
 		</div>
 		<% } %>
 		<% if(items[index].yourViews>-1){%>
 		<div class="expanded-item-stat">
-			<h1><%= items[index].yourViews %> sec</h1><span>your views</span>
+			<h1><%= items[index].yourViews %></h1><span>your views</span>
 		</div>
 		<% } %>
 		<% if(items[index].averageVisitDuration>-1){%>
@@ -58,19 +58,5 @@
 		</div>
 		<% } %>
 	</div>
-	<div class="all-items">
-		<% for(var i=0; i<items.length; i++) {%>
-		<% if(i != index) {%>
-		<div class="item" id="<%= items[i].slug %>" >
-			<a href="/partials/<%= items[i].slug %>">
-				<div class="item-colors">
-					<div class="primary"></div>
-					<div class="secondary"></div>
-					<div class="tertiary"></div>
-				</div>
-			</a>
-		</div>
-		<% } %>
-		<% } %>
-	</div>
 	<% } %>
+	<% include ../partials/all-items %>

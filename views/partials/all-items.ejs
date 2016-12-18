@@ -1,0 +1,17 @@
+<% if(typeof items !== 'undefined'){%>
+<div class="all-items">
+  <% for(var i=0; i<items.length; i++) {%>
+  <% if(i != index) {%>
+  <div class="item" id="<%= items[i].slug %>" >
+    <a href="/partials/<%= items[i].slug %>">
+      <div class="item-colors">
+        <div class="primary"></div>
+        <div class="secondary"></div>
+        <div class="tertiary"></div>
+      </div>
+    </a>
+  </div>
+  <% } %>
+  <% } %>
+</div>
+<% } %>

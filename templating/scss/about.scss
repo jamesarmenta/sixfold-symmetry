@@ -1,0 +1,22 @@
+@import 'universal';
+
+.about{
+  padding-right: $spacing-unit;
+  > div{
+    padding: $spacing-unit;
+  }
+}
+.about-quote{
+  margin-bottom: $spacing-unit;
+
+  h2{
+    font-size: 2em;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.25em;
+  }
+  h3{
+    padding: $spacing-unit 0 $spacing-unit 0;
+    text-align: right;
+  }
+}

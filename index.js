@@ -100,7 +100,7 @@ function requestedData(name){
     return {items: items, index: index, artist: artist };
   }
   else{
-    return {'error': name+' is not available'};
+    return {items: items, index: -1, artist: artist };
   }
 }
 
@@ -121,6 +121,11 @@ app.all(/^\/$/, function (req, res) {
     index: 0
   });
   updateLocal();
+});
+
+app.get('/about/', function (req, res) {
+  var locals = requestedData();
+  res.render('pages/about', locals);
 });
 
 //AJAX LOADS
