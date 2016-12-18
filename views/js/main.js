@@ -6,6 +6,7 @@ $(document).ready(function() {
   flickInit();
   updateItems();
   // ajaxifyLinks();
+  // stateChange();
 });
 
 /*----------  ON DOCUMENT UPDATE  ----------*/
@@ -18,9 +19,6 @@ function documentUpdate() {
 }
 
 /*----------  GALLERY SLIDES  ----------*/
-
-
-
 function flickInit() {
   var gallery = document.querySelector('.expanded-item-gallery');
   if (gallery) {
@@ -100,23 +98,31 @@ function expandSelectedItem(item, href) {
 
     //on last one... do this
     if (i == itemColors.length - 1) {
-      setTimeout(function() {
-        var itemName = href.replace('/partials/', '');
-        $('body').removeClass();
-        $('body').addClass(itemName);
-      }, delay + 1000);
-      loadContentArea(href, delay + 1000);
+      var itemName = href.replace('/partials/', '');
+      History.pushState({
+        'loadUrl': href,
+        'delay': delay + 1000,
+        'itemName': itemName
+      }, document.title, itemName);
     }
   }
 }
 
-function loadContentArea(href) {
+function loadContentArea(href, delay, itemName) {
+
+  setTimeout(function() {
+    $('body').removeClass();
+    $('body').addClass(itemName);
+  }, delay);
+
+  console.log('load content');
   $('#content-area').addClass('fadeOut');
   //TODO: Scroll to top
   setTimeout(function() {
     $('#content-area').load(href, function() {
+      window.scrollTo(0, 0);
       $('#content-area').imagesLoaded(function() {
-        window.scrollTo(0, 0);
+        //push to state history
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
@@ -138,45 +144,37 @@ function scaleItem(item, finalScale, delay) {
   }, delay + 1000);
 }
 
+(function(window, undefined) {
+  // Bind to StateChange Event
+  History.Adapter.bind(window, 'statechange', function() { // Note: We are using statechange instead of popstate
+    // store the State object
+    var State = History.getState();
+    // all the data you passed is accessable here now
+    var data = State.data;
 
-
-// function ajaxifyLinks() {
-//   // whenever a hyperlink is clicked...
-//   $('a').click(function() {
-//     // create an object to pass as state data
-//     var data = {};
-//     // do whatever you want to the data
-//     data.putYour = "data here";
-//     // update the url, preserve title
-//     History.pushState(data, document.title, $(this).attr('href'));
-//     // cancel the normal action of the hyperlink
-//     return false;
-//   });
-// }
-
-
-// History.Adapter.bind(window, 'statechange', function() {
-//   // store the State object
-//   var State = History.getState();
-//   // all the data you passed is accessable here now
-//   var data = State.data;
-
-//   // at this point you do whatever needs to be done to update the page.
-
-//   if (State.url.includes('partials')) {
-//     // load the new url into #main
-//     loadContentArea(State.url);
-//   }
-
-//   // after new page is loaded, do stuff here
-//   console.log("Page has been loaded!");
-
-//   // and re-ajaxify the links
-//   ajaxifyLinks();
-// });
-
+    if (typeof data.loadUrl !== 'undefined' && data.loadUrl.includes('partials')) {
+      loadContentArea(data.loadUrl, data.delay, data.itemName);
+    } else {
+      console.log('not a partial');
+      window.location = State.url;
+    }
+  });
+})(window);
 
 /*----------  HELPERS  ----------*/
+
+$('nav a').click(function() {
+  
+    // create an object to pass as state data
+    var data = {};
+    
+    var href = $(this).attr('href');
+    // update the url, preserve title
+    History.pushState({'loadUrl':href,'delay':1000}, document.title, href.replace('/partials/','/'));
+    
+    // cancel the normal action of the hyperlink
+    return false;
+  });
 
 function getCoordinates(element) {
   var coords = element.getBoundingClientRect();

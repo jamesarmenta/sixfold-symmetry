@@ -127,6 +127,15 @@ app.get('/about/', function (req, res) {
   res.render('pages/about', locals);
 });
 
+app.get('/partials/', function (req, res) {
+console.log('partial home');
+  res.render('partials/index', {
+    items: items,
+    index: 0
+  });
+  updateLocal();
+});
+
 //AJAX LOADS
 app.get('/partials/:item', function (req, res) {
   var locals = requestedData(req.params.item);

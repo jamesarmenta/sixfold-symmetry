@@ -11,9 +11,6 @@ function documentUpdate() {
   updateItems();
 }
 
-
-
-
 function flickInit() {
   var gallery = document.querySelector('.expanded-item-gallery');
   if (gallery) {
@@ -82,22 +79,29 @@ function expandSelectedItem(item, href) {
     scaleItem(clone, finalScale, delay);
 
     if (i == itemColors.length - 1) {
-      setTimeout(function() {
-        var itemName = href.replace('/partials/', '');
-        $('body').removeClass();
-        $('body').addClass(itemName);
-      }, delay + 1000);
-      loadContentArea(href, delay + 1000);
+      var itemName = href.replace('/partials/', '');
+      History.pushState({
+        'loadUrl': href,
+        'delay': delay + 1000,
+        'itemName': itemName
+      }, document.title, itemName);
     }
   }
 }
 
-function loadContentArea(href) {
+function loadContentArea(href, delay, itemName) {
+
+  setTimeout(function() {
+    $('body').removeClass();
+    $('body').addClass(itemName);
+  }, delay);
+
+  console.log('load content');
   $('#content-area').addClass('fadeOut');
   setTimeout(function() {
     $('#content-area').load(href, function() {
+      window.scrollTo(0, 0);
       $('#content-area').imagesLoaded(function() {
-        window.scrollTo(0, 0);
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
@@ -117,16 +121,30 @@ function scaleItem(item, finalScale, delay) {
   }, delay + 1000);
 }
 
+(function(window, undefined) {
+  History.Adapter.bind(window, 'statechange', function() { 
+    var State = History.getState();
+    var data = State.data;
+
+    if (typeof data.loadUrl !== 'undefined' && data.loadUrl.includes('partials')) {
+      loadContentArea(data.loadUrl, data.delay, data.itemName);
+    } else {
+      console.log('not a partial');
+      window.location = State.url;
+    }
+  });
+})(window);
 
 
+$('nav a').click(function() {
 
+    var data = {};
 
+        var href = $(this).attr('href');
+    History.pushState({'loadUrl':href,'delay':1000}, document.title, href.replace('/partials/','/'));
 
-
-
-
-
-
+    return false;
+  });
 
 function getCoordinates(element) {
   var coords = element.getBoundingClientRect();
