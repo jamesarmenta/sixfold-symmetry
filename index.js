@@ -14,7 +14,7 @@ var dbUrl = process.env.DB_URL || require('./config-private').DB_URL;
 
 var itemsCollection;
 var items = [];
-var faculty = require('./assets/faculty.json').faculty;
+var curators = require('./assets/curators.json').curators;
 var artists = require('./assets/artists.json').artists;
 
 //INITIAL
@@ -73,6 +73,15 @@ function dbUpdate(collection,criteria,data){
     });
 }
 
+  function updatePageView(item){
+    if(typeof item !== 'undefined'){
+      dbUpdate(itemsCollection,{"_id": item._id}, { $inc: { "views": 1}})
+      .then((results)=>{
+        updateLocal();
+      });
+    }
+  }
+
 //SERVER
 
 function requestedData(name){
@@ -113,7 +122,7 @@ function startServer(){
 /*----------  ROUTING  ----------*/
 //HOME PAGE
 app.get('/', function (req, res) {
-  console.log('home');
+  // console.log('home');
   res.render('pages/index', {
     items: items,
     index: 0
@@ -122,13 +131,20 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about/', function (req, res) {
-  console.log('about');
+  // console.log('about');
   var locals = requestedData();
   res.render('pages/about', locals);
 });
 
+app.get('/curators/', function (req, res) {
+  // console.log('about');
+  var locals = requestedData();
+  locals.curators = curators;
+  res.render('pages/curators', locals);
+});
+
 app.get('/partials/', function (req, res) {
-console.log('partial home');
+// console.log('partial home');
   res.render('partials/index', {
     items: items,
     index: 0
@@ -146,7 +162,7 @@ app.get('/partials/:item', function (req, res) {
 
 // ITEM PAGES
 app.get('/:item', function (req, res) {
-  console.log('item');
+  // console.log('item');
   var locals = requestedData(req.params.item);
 
   res.render('pages/item', locals);
@@ -166,13 +182,3 @@ app.get('/assets/fonts/:font', function (req, res) {
 // app.post('/api/:image', function (req, res) {
   //     res.sendFile('assets/images/'+req.params.image, { root : __dirname});
   //   });
-
-
-  function updatePageView(item){
-    if(typeof item !== 'undefined'){
-      dbUpdate(itemsCollection,{"_id": item._id}, { $inc: { "views": 1}})
-      .then((results)=>{
-        updateLocal();
-      });
-    }
-  }

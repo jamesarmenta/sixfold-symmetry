@@ -92,6 +92,11 @@
   }
 }
 
+
+.curator-link {
+  text-decoration: underline;
+}
+
 .expanded-item-artist {
   @media #{$screen-break2}{
     flex: 100% !important; 

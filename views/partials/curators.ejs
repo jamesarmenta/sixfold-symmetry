@@ -1,0 +1,9 @@
+<div class="curators">
+<% for(var i=0; i<curators.length; i++) {%>
+<div class="curator" id="<%= curators[i].name.replace(/[^\w]/g,'').toLowerCase() %>">
+	<h2><b><%= curators[i].name %></b></h2>
+	<p><%= curators[i].description %></p>
+</div>
+<% } %>
+<% include ../partials/all-items %>
+</div>

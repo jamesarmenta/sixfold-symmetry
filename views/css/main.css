@@ -44,7 +44,12 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out;
+  -webkit-transition: background-color 500ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out;
+  -ms-transition: background-color 500ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -242,7 +247,208 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
+  -webkit-transition: background-color 500ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out;
+  -ms-transition: background-color 500ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out; }
+  @media screen and (max-width: 1000px) {
+    body {
+      font-size: 28px; } }
+
+p {
+  line-height: 1.5em; }
+
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
   transition: color 500ms ease-in-out; }
+
+nav {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-basis: 100;
+  z-index: 999; }
+  @media screen and (max-width: 1000px) {
+    nav {
+      position: relative;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-basis: 100;
+      text-align: center; } }
+
+.site-title {
+  font-family: "Brown Bold", Helvetica, sans-serif; }
+  .site-title h1 {
+    font-size: 3.5em; }
+  .site-title h1:nth-of-type(1) {
+    position: fixed;
+    moz-transform-origin: 0% 0%;
+    -o-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    -moz-transform: rotate(-90deg) translateX(-111%);
+    -o-transform: rotate(-90deg) translateX(-111%);
+    -ms-transform: rotate(-90deg) translateX(-111%);
+    -webkit-transform: rotate(-90deg) translateX(-111%);
+    transform: rotate(-90deg) translateX(-111%); }
+    .site-title h1:nth-of-type(1):after {
+      content: ':'; }
+  @media screen and (max-width: 1400px) {
+    .site-title h1 {
+      font-size: 2.45em; } }
+  @media screen and (max-width: 1000px) {
+    .site-title h1 {
+      position: relative; }
+    .site-title h1:nth-of-type(1) {
+      position: relative;
+      -moz-transform: rotate(0deg) translateX(0%);
+      -o-transform: rotate(0deg) translateX(0%);
+      -ms-transform: rotate(0deg) translateX(0%);
+      -webkit-transform: rotate(0deg) translateX(0%);
+      transform: rotate(0deg) translateX(0%); }
+      .site-title h1:nth-of-type(1):after {
+        content: ''; }
+    .site-title h1:nth-of-type(2) {
+      display: none; } }
+
+.menu {
+  top: 1.75em;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .menu li {
+    display: inline-block;
+    margin: 0 0.5em 0 0.5em; }
+  @media screen and (max-width: 1400px) {
+    .menu {
+      top: 1.225em; } }
+
+#content-area {
+  position: relative;
+  margin: 5.5em 0 0 5.5em;
+  max-width: 100%;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; }
+  @media screen and (max-width: 1400px) {
+    #content-area {
+      margin: 4.45em 0 0 4.45em; } }
+  @media screen and (max-width: 1000px) {
+    #content-area {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap; } }
+
+.all-items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 1em !important; }
+  .all-items > div {
+    position: static;
+    top: 0;
+    left: 0;
+    flex-basis: 10%;
+    padding: 0;
+    margin: 0; }
+    @media screen and (max-width: 1000px) {
+      .all-items > div {
+        flex-basis: 12.5%; } }
+
+.fadeOut {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.5s ease-in-out !important;
+  -moz-transition: opacity 0.5s ease-in-out !important;
+  -ms-transition: opacity 0.5s ease-in-out !important;
+  -o-transition: opacity 0.5s ease-in-out !important;
+  transition: opacity 0.5s ease-in-out !important; }
+
+.curators {
+  padding-right: 1em; }
+  .curators h2 {
+    font-size: 2em; }
+  .curators > div {
+    padding: 1em; }
+
+.curator {
+  margin-bottom: 1em; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #262626;
+  font-family: "Brown", Helvetica, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  -webkit-transition: color 500ms ease-in-out;
+  -moz-transition: color 500ms ease-in-out;
+  -ms-transition: color 500ms ease-in-out;
+  -o-transition: color 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
+  -webkit-transition: background-color 500ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out;
+  -ms-transition: background-color 500ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -475,7 +681,12 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out;
+  -webkit-transition: background-color 500ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out;
+  -ms-transition: background-color 500ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -706,6 +917,9 @@ nav {
       /* Firefox */
       column-gap: 1em; } }
 
+.curator-link {
+  text-decoration: underline; }
+
 @media screen and (max-width: 1000px) {
   .expanded-item-artist {
     flex: 100% !important; } }
@@ -804,7 +1018,12 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out;
+  -webkit-transition: background-color 500ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out;
+  -ms-transition: background-color 500ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
