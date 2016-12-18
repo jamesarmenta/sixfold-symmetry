@@ -30,8 +30,6 @@ connectMongo(dbUrl, COLLECTION)
 function updateLocal(){
   dbFind(itemsCollection,{},{"views" : 1}).then((results)=>{
     items = results;
-    // console.log('Items loaded.');
-    // console.log(items);
   });
 }
 
@@ -114,8 +112,8 @@ function startServer(){
 
 /*----------  ROUTING  ----------*/
 //HOME PAGE
-app.all(/^\/$/, function (req, res) {
-  // console.log('home');
+app.get('/', function (req, res) {
+  console.log('home');
   res.render('pages/index', {
     items: items,
     index: 0
@@ -124,6 +122,7 @@ app.all(/^\/$/, function (req, res) {
 });
 
 app.get('/about/', function (req, res) {
+  console.log('about');
   var locals = requestedData();
   res.render('pages/about', locals);
 });
@@ -131,14 +130,14 @@ app.get('/about/', function (req, res) {
 //AJAX LOADS
 app.get('/partials/:item', function (req, res) {
   var locals = requestedData(req.params.item);
-  // console.log('partial item');
+  console.log('partial item');
   res.render('partials/item', locals);
   updatePageView(items[locals.index]);
 });
 
-//ITEM PAGES
+// ITEM PAGES
 app.get('/:item', function (req, res) {
-  // console.log('item');
+  console.log('item');
   var locals = requestedData(req.params.item);
 
   res.render('pages/item', locals);
