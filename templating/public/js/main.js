@@ -87,6 +87,7 @@ function expandSelectedItem(item, href) {
 
 function loadContentArea(href, delay, itemName) {
   $('#content-area').addClass('fadeOut');
+  setTimeout(function() { $('#content-area').html('loading...');}, 500);
   itemName = (typeof itemName !== 'undefined') ? itemName.replace('/', '') : '';
   setTimeout(function() {
     $('body').removeClass();
@@ -133,6 +134,7 @@ function scaleItem(item, finalScale, delay) {
 
 var visit;
 startVisit(window.location.pathname.replace('/', ''));
+
 function startVisit(pageName) {
   pageName = pageName || '';
   visit = {};
