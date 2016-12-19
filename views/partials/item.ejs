@@ -11,7 +11,7 @@
 		<h1>
 		<% if(items[index].title){%><i><%= items[index].title %>,</i> <% if(items[index].year){%><%= items[index].year %>,&nbsp;<% }%><% }%>
 		<% if(items[index].artist){%><%= items[index].artist %>,&nbsp;<% }%>
-		<% if(items[index].description){%><%- items[index].description %>&nbsp;<% }%>
+		<% if(items[index].description){%><%= items[index].description %>&nbsp;<% }%>
 		</h1>
 	</div>
 	<div class="expanded-item-about">
