@@ -107,8 +107,6 @@ function loadContentArea(href, delay, itemName) {
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-    $('#content-area').removeClass('fadeOut');
-    enableScroll();
   }, delay);
 
   // console.log('load content');
