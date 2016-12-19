@@ -94,6 +94,9 @@ function expandSelectedItem(item, href) {
     //on last one... do this
     if (i == itemColors.length - 1) {
       var itemName = href.replace('/partials/', '');
+      itemName = href.replace('/credits/', '');
+      itemName = href.replace('/about/', '');
+      itemName = href.replace('/curators/', '');
       History.pushState({
         'loadUrl': href,
         'delay': delay + 1000,
@@ -176,6 +179,7 @@ function startVisit(pageName) {
 function endVisit() {
   // console.log('ending ' + visit.name);
   visit.time = Math.round((Date.now() - visit.time) / 1000);
+  visit.time = (visit.time>600) ? 600 : visit.time;
   visit.name = visit.name.replace('/', '');
   // console.log('visit ended at ' + visit.time);
   $.ajax({

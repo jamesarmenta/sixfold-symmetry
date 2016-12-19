@@ -94,6 +94,9 @@ function expandSelectedItem(item, href) {
     //on last one... do this
     if (i == itemColors.length - 1) {
       var itemName = href.replace('/partials/', '');
+      itemName = href.replace('/credits/', '');
+      itemName = href.replace('/about/', '');
+      itemName = href.replace('/curators/', '');
       History.pushState({
         'loadUrl': href,
         'delay': delay + 1000,
