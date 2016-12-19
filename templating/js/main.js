@@ -32,28 +32,24 @@ function flickInit() {
 
 function updateItems() {
   var items = Array.from(document.querySelectorAll('.item'));
-
   //for each item
   items.forEach(function(item) {
-
     //click event handler 
     item.addEventListener('click', function(event) {
       preventDefault(event);
       var item = event.target;
-
       //if it's not an item, then its a child
       while (!item.classList.contains('item')) {
         //find childs parent
         item = item.parentNode;
       } //var item is now item div
-
       disableScroll();
+      console.log(item.id);
       expandSelectedItem(item, '/partials/' + item.id);
     });
   });
 
   var homeItems = Array.from(document.querySelectorAll('.home-items > .item'));
-
   for (var i = 1; i < homeItems.length; i++) {
     if (isOverlapping(homeItems[i], homeItems[i - 1]) && window.innerWidth > BREAKPOINT2) {
       $(homeItems[i]).addClass('overlap');
@@ -93,26 +89,29 @@ function expandSelectedItem(item, href) {
 
     //on last one... do this
     if (i == itemColors.length - 1) {
-      var itemName = href.replace('/partials/', '');
+      var realUrl = href;
+      var fakeHref = href.replace('/partials/', '/');
+      // update the url, preserve title
       History.pushState({
-        'loadUrl': href,
+        'loadUrl': realUrl,
         'delay': delay + 1000,
-        'itemName': itemName
-      }, document.title, itemName);
+        'itemName': fakeHref
+      }, document.title, fakeHref);
     }
   }
 }
 
 function loadContentArea(href, delay, itemName) {
-  //just in case
-  setTimeout(function(){$('#content-area').removeClass('fadeOut');},2000);
+  $('#content-area').addClass('fadeOut');
+  itemName = (typeof itemName !== 'undefined') ? itemName.replace('/', '') : '';
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-  }, delay-200);
+    $('#content-area').removeClass('fadeOut');
+    enableScroll();
+  }, delay);
 
   // console.log('load content');
-  $('#content-area').addClass('fadeOut');
   //TODO: Scroll to top
   setTimeout(function() {
     $('#content-area').load(href, function() {
@@ -122,7 +121,6 @@ function loadContentArea(href, delay, itemName) {
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
-        // console.log('starting ' + window.location.pathname);
         startVisit(window.location.pathname);
       });
     });
@@ -163,19 +161,19 @@ function scaleItem(item, finalScale, delay) {
 /*----------  PAGE VIEWS AND AVERAGE TIMES  ----------*/
 var visit;
 startVisit(window.location.pathname.replace('/', ''));
-
-
 function startVisit(pageName) {
   pageName = pageName || '';
   // console.log('visit started');
   visit = {};
   visit.name = pageName;
-  visit.time = Date.now();
+  visit.time = 0;
+  setInterval(function() {
+    visit.time++;
+  }, 995);
 }
 
 function endVisit() {
   // console.log('ending ' + visit.name);
-  visit.time = Math.round((Date.now() - visit.time) / 1000);
   visit.name = visit.name.replace('/', '');
   // console.log('visit ended at ' + visit.time);
   $.ajax({
@@ -185,7 +183,6 @@ function endVisit() {
 }
 
 window.onbeforeunload = function() {
-  visit.time = Math.round((Date.now() - visit.time) / 1000);
   visit.name = visit.name.replace('/', '');
   $.ajax({
     url: "/api/item?name=" + visit.name + "&time=" + visit.time,
@@ -197,9 +194,11 @@ window.onbeforeunload = function() {
 
 $('nav a').click(function() {
   var href = $(this).attr('href');
+  var fakeHref = href.replace('/partials/', '/');
+  console.log('load: ' + href);
+  console.log('fake: ' + fakeHref);
   // update the url, preserve title
-  History.pushState({ 'loadUrl': href, 'delay': 1000 }, document.title, href.replace('/partials/', '/'));
-
+  History.pushState({ 'loadUrl': href, 'delay': 1000 }, document.title, fakeHref);
   // cancel the normal action of the hyperlink
   return false;
 });

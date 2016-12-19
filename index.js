@@ -116,9 +116,9 @@ function requestedData(name) {
         }
       }
     }
-    return { items: items, index: index, artist: artist, stats: stats};
+    return { items: items, index: index, artist: artist, stats: stats };
   } else {
-    return { items: items, index: 0, artist: artist, stats: stats};
+    return { items: items, index: 0, artist: artist, stats: stats };
   }
 }
 
@@ -174,9 +174,26 @@ app.get('/partials/', function(req, res) {
 
 // AJAX LOADS
 app.get('/partials/:item', function(req, res) {
-  var locals = requestedData(req.params.item);
-  // console.log('partial item');
-  res.render('partials/item', locals);
+  var item = req.params.item;
+  var locals = requestedData(item);
+  if (item == '') {
+    res.render('partials/index', {
+      items: items,
+      index: 0,
+      stats: stats
+    });
+    updateLocal();
+  } else if (item == 'about') {
+    res.render('partials/about', locals);
+  } else if (item == 'curators') {
+    locals.curators = curators;
+    res.render('partials/curators', locals);
+  } else if (item == 'credits') {
+    locals.credits = credits;
+    res.render('partials/credits', locals);
+  } else {
+    res.render('partials/item', locals);
+  }
   updatePageView(items[locals.index]);
 });
 
