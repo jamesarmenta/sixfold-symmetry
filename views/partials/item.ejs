@@ -49,7 +49,7 @@
 		<% } %>
 		<% if(items[index].averageVisitDuration>-1){%>
 		<div class="expanded-item-stat">
-			<h1><%= items[index].averageVisitDuration %> sec</h1><span>average visit</span>
+			<h1><%= parseInt(items[index].averageVisitDuration) %> sec</h1><span>average visit</span>
 		</div>
 		<% } %>
 		<% if(items[index].lastVisit>-1){%>

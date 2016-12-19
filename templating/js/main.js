@@ -111,7 +111,7 @@ function loadContentArea(href, delay, itemName) {
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-  }, delay);
+  }, delay-2);
 
   console.log('load content');
   $('#content-area').addClass('fadeOut');

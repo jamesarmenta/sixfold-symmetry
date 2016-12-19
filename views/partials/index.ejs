@@ -1,6 +1,6 @@
 <ul class="home-items">
 	<% for(var i=0; i<items.length; i++) {%>
-	<li class="item" id="<%= items[i].slug %>" style="margin-left:<%= Math.round(((items[i].averageVisitDuration-stats.minVisitDuration)/(stats.maxVisitDuration-stats.minVisitDuration))*75) %>vw">
+	<li class="item" id="<%= items[i].slug %>" style="margin-left:<%= Math.round(((parseInt(items[i].averageVisitDuration)-stats.minVisitDuration)/(stats.maxVisitDuration-stats.minVisitDuration))*75) %>vw">
 		<a href="/partials/<%= items[i].slug %>">
 			<div class="item-colors">
 				<div class="primary"></div>

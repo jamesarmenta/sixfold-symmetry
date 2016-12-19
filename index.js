@@ -211,7 +211,7 @@ app.post('/api/item', function(req, res) {
 
       // console.log('new avg:'+newAverage);
 
-      dbUpdate(itemsCollection, { "_id": data._id }, { $set: { "averageVisitDuration": NumberInt(newAverage) } })
+      dbUpdate(itemsCollection, { "_id": data._id }, { $set: { "averageVisitDuration": parseInt(newAverage) } })
         .then((results) => {
           updateLocal();
         });

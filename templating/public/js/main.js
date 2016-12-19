@@ -92,13 +92,14 @@ function loadContentArea(href, delay, itemName) {
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-  }, delay);
+  }, delay-2);
 
   console.log('load content');
   $('#content-area').addClass('fadeOut');
   setTimeout(function() {
     $('#content-area').load(href, function() {
       window.scrollTo(0, 0);
+      setTimeout(()=>{$('#content-area').removeClass('fadeOut');},2000);
       $('#content-area').imagesLoaded(function() {
         enableScroll();
         documentUpdate();
