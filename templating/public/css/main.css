@@ -157,6 +157,9 @@ nav {
   padding: 1em; }
   .page-title h1 {
     font-size: 2em; }
+  @media screen and (max-width: 1000px) {
+    .page-title {
+      text-align: center; } }
 
 .all-items {
   width: 100%;
@@ -358,6 +361,9 @@ nav {
   padding: 1em; }
   .page-title h1 {
     font-size: 2em; }
+  @media screen and (max-width: 1000px) {
+    .page-title {
+      text-align: center; } }
 
 .all-items {
   width: 100%;
@@ -552,6 +558,9 @@ nav {
   padding: 1em; }
   .page-title h1 {
     font-size: 2em; }
+  @media screen and (max-width: 1000px) {
+    .page-title {
+      text-align: center; } }
 
 .all-items {
   width: 100%;
@@ -749,6 +758,9 @@ nav {
   padding: 1em; }
   .page-title h1 {
     font-size: 2em; }
+  @media screen and (max-width: 1000px) {
+    .page-title {
+      text-align: center; } }
 
 .all-items {
   width: 100%;
@@ -988,6 +1000,9 @@ nav {
   padding: 1em; }
   .page-title h1 {
     font-size: 2em; }
+  @media screen and (max-width: 1000px) {
+    .page-title {
+      text-align: center; } }
 
 .all-items {
   width: 100%;
@@ -1326,6 +1341,9 @@ nav {
   padding: 1em; }
   .page-title h1 {
     font-size: 2em; }
+  @media screen and (max-width: 1000px) {
+    .page-title {
+      text-align: center; } }
 
 .all-items {
   width: 100%;
