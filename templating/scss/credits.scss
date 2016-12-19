@@ -1,0 +1,15 @@
+@import 'universal';
+
+.credits{
+  h2{
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+
+  > div{
+    padding: $spacing-unit/2 $spacing-unit  $spacing-unit/2 $spacing-unit;
+  }
+}
+.credit{
+
+}

@@ -1,13 +1,11 @@
 @import 'universal';
 
 .about{
-  padding-right: $spacing-unit;
   > div{
     padding: $spacing-unit;
   }
 }
 .about-quote{
-  margin-bottom: $spacing-unit;
 
   h2{
     font-size: 2em;

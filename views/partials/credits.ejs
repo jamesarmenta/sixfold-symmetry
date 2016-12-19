@@ -1,0 +1,22 @@
+<div class="page-title"><h1>Credits</h1></div>
+<div class="credits">
+<div><h2>Curators:</h2></div>
+<% for(var i=0; i<credits.curators.length; i++) {%>
+<div class="credit">
+	<h2><b><%= credits.curators[i].name %></b></h2>
+	<p><%= credits.curators[i].description %></p>
+</div>
+<% } %>
+<div><h2>Collaborators:</h2></div>
+<% for(var i=0; i<credits.collaborators.length; i++) {%>
+<div class="credit">
+	<h2><b><%= credits.collaborators[i].name %></b></h2>
+	<p><%= credits.collaborators[i].description %></p>
+</div>
+<% } %>
+<div class="credit">
+<%= credits.extra %>
+</div>
+<% include ../partials/all-items %>
+</div>
+</div>

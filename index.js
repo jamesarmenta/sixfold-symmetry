@@ -16,6 +16,7 @@ var itemsCollection;
 var items = [];
 var curators = require('./assets/curators.json').curators;
 var artists = require('./assets/artists.json').artists;
+var credits = require('./assets/credits.json');
 
 //INITIAL
 connectMongo(dbUrl, COLLECTION)
@@ -141,6 +142,13 @@ app.get('/curators/', function (req, res) {
   var locals = requestedData();
   locals.curators = curators;
   res.render('pages/curators', locals);
+});
+
+app.get('/credits/', function (req, res) {
+  // console.log('about');
+  var locals = requestedData();
+  locals.credits = credits;
+  res.render('pages/credits', locals);
 });
 
 app.get('/partials/', function (req, res) {

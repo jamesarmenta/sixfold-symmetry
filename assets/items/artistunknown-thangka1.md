@@ -17,5 +17,5 @@ Tibetan cosmograms may be designed for instruction, meditation, divination, or p
 
 Two of the works presented here are visual expressions of Tibetan astrology, which synthesizes Indian and Chinese traditions. These cosmograms are not spatially oriented, as they order time by tracking the movement of heavenly bodies. Annual cycles coordinate with the five elements and the twelve signs of the zodiac, influencing the human form and impacting a person’s fate. One astrological chart presents a functional calendar, employed for calculating natal horoscopes. The other chart was commissioned to protect a specific, well-placed person, by counteracting negative astral influences and invoking protective deities. Powerful verbal formulas, known as mantras, are written in circles as they need to be repeated. 
 
-## faculty
+## curator
 G. Spinner

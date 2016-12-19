@@ -18,8 +18,8 @@
 		<span class="expanded-item--label"> </span>
 		<p>
 			<%- items[index].body %>
-			<% if(items[index].faculty){%>
-			<br><br><a href="/curators/#<%= items[index].faculty.replace(/[^\w]/g,'').toLowerCase() %>" class="curator-link"><%= items[index].faculty %></a>
+			<% if(items[index].curator){%>
+			<br><br><a href="/curators/#<%= items[index].curator.replace(/[^\w]/g,'').toLowerCase() %>" class="curator-link"><%= items[index].curator %></a>
 			<% }%>
 		</p>
 		<% } %>

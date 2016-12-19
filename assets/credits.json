@@ -1,0 +1,45 @@
+{"curators":
+[{
+"name":" Rachel Roe-Dale",
+"description":" Associate Professor of Mathematics"
+},
+{
+"name":"Rachel Seligman",
+"description":"Assistant Director for Curatorial Affairs, Tang Teaching Museum"
+}],
+
+"collaborators": 
+[{
+"name":"Lisa Aronson",
+"description":"Professor Emeritus of Art History"
+},
+{
+"name":"Grace Burton",
+"description":"Associate Professor of Spanish"
+},
+{
+"name":"Michael Eckmann",
+"description":"Associate Professor of Computer Science"
+},
+{
+"name":"Rebecca Johnson",
+"description":"Associate Professor of Psychology"
+},
+{
+"name":"Elizabeth Macy",
+"description":"Teaching Professor in Music"
+},
+{
+"name":"Josh Ness",
+"description":"Associate Professor of Biology"
+},
+{
+"name":"Gregory Spinner",
+"description":"Teaching Professor in Religious Studies"
+},
+{
+"name":"Sarah Sweeney",
+"description":"Associate Professor of Art"
+}],
+"extra":"The exhibition is supported by the Andrew W. Mellon Foundation and Friends of the Tang."
+}

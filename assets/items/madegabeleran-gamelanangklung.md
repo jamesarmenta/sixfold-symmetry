@@ -23,5 +23,5 @@ Pattern in Balinese culture occurs in myriad ways, across multiple platforms —
 
 Skidmore’s ensemble, Skidmore College Gamelan Banyu Wali, will rehearse with the gamelan throughout the fall semester. Rehearsals are open to the public on Thursday October 6 and Thursday November 3, from 5:30 to 7 PM. Concerts will take place on Saturday, October 15, at 6 and 6:30 PM; and Thursday, December 8, at 7 PM. 
 
-## faculty
+## curator
 E. Macy
