@@ -70,7 +70,10 @@
 
   h1 {
     // font-size: $font-size * 3;
-    font-style: italic;
+    // font-style: italic;
+    i{
+      font-style: italic;
+    }
   }
 
   h2 {

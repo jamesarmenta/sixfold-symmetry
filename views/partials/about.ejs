@@ -15,3 +15,40 @@
 	</div>
 	<% include ../partials/all-items %>
 </div>
+
+<script type="text/javascript">
+    var current = $('.about-description').text();
+
+    var selectedWords = [
+    ['violations', 'vioaltoins'],
+    ['expected', 'expceted'],
+    ['disrupt', 'dirsupt'],
+    ['ability', 'abiitly'],
+    ['language with', 'lagnauge wtih'],
+    ['expanded', 'expadned'],
+    ['systems', 'systmes'],
+    ['viewers', 'veiwers'],
+    ['enlightenment', 'enlightnement'],
+    ['in these areas', 'in thsee areas'],
+    ['faculty', 'facluty'],
+    ['arts and sciences', 'arts nad sciences'],
+    ['that transcend', 'taht transcend'],
+    ['exhibition stages', 'exhibitoin stages'],
+    ['interpretation', 'intereprtation'],
+    ['as something', 'as somtheing'],
+    ['constructed', 'constrcuted'],
+    ['enables', 'enabels']
+    ];
+
+    setInterval(function() {
+      var current = $('.about-description p').text();
+      var randomIndex = Math.round(Math.random()*selectedWords.length);
+      var spelling = Math.round(Math.random());
+      var oppositeSpelling = Math.abs(spelling-1);
+
+      var replacement = current.replace(selectedWords[randomIndex][spelling], selectedWords[randomIndex][oppositeSpelling]);
+
+      $('.about-description p').text(replacement);
+
+    }, 1000);
+  </script>

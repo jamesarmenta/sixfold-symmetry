@@ -87,7 +87,8 @@ function writeClustersCssAsync(clusters){
     'background-color:'+tertiary.hex+';}\n'+
 
     '.'+element.name+' a, .'+element.name+' a:visited {'+
-    'color:'+contrastTextColor(tertiary.hex)+' !important;}\n'+
+    'color:'+contrastTextColor(tertiary.hex)+' !important;'+
+    'text-shadow: 1px 1px 1px '+tertiary.hex+', -1px -1px 1px '+tertiary.hex+', 1px -1px 1px '+tertiary.hex+', -1px 1px 1px '+tertiary.hex+';'+
 
     '.'+element.name+' .expanded-item--label {'+
     'background-color:'+primary.hex+';}\n'+

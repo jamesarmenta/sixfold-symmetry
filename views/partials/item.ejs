@@ -8,10 +8,11 @@
 		</div>
 	</div>
 	<div class="expanded-item-info">
-
-		<% if(items[index].title){%><h1><%= items[index].title %></h1><br/><% }%>
-		<% if(items[index].artist){%><h2><%= items[index].artist %></h2><br/><% }%>
-		<% if(items[index].description){%><h3><%- items[index].description %></h3><br/><% }%>
+		<h1>
+		<% if(items[index].title){%><i><%= items[index].title %>,</i> <% if(items[index].year){%><%= items[index].year %>,&nbsp;<% }%><% }%>
+		<% if(items[index].artist){%><%= items[index].artist %>,&nbsp;<% }%>
+		<% if(items[index].description){%><%- items[index].description %>&nbsp;<% }%>
+		</h1>
 	</div>
 	<div class="expanded-item-about">
 		<% if(items[index].body){%>
