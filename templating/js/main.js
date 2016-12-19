@@ -105,11 +105,11 @@ function expandSelectedItem(item, href) {
 
 function loadContentArea(href, delay, itemName) {
   //just in case
-  setTimeout(function(){$('#content-area').removeClass('fadeOut');},2000);
+  setTimeout(function() { $('#content-area').removeClass('fadeOut'); }, 2000);
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-  }, delay-200);
+  }, delay - 200);
 
   // console.log('load content');
   $('#content-area').addClass('fadeOut');
@@ -176,7 +176,7 @@ function startVisit(pageName) {
 function endVisit() {
   // console.log('ending ' + visit.name);
   visit.time = Math.round((Date.now() - visit.time) / 1000);
-  visit.time = (visit.time>600) ? 600 : visit.time;
+  visit.time = (visit.time > 600) ? 600 : visit.time;
   visit.name = visit.name.replace('/', '');
   // console.log('visit ended at ' + visit.time);
   $.ajax({
