@@ -154,7 +154,8 @@ nav {
       flex-wrap: wrap; } }
 
 .page-title {
-  padding: 1em; }
+  padding: 1em;
+  flex: 100%; }
   .page-title h1 {
     font-size: 2em; }
   @media screen and (max-width: 1000px) {
@@ -358,7 +359,8 @@ nav {
       flex-wrap: wrap; } }
 
 .page-title {
-  padding: 1em; }
+  padding: 1em;
+  flex: 100%; }
   .page-title h1 {
     font-size: 2em; }
   @media screen and (max-width: 1000px) {
@@ -555,7 +557,8 @@ nav {
       flex-wrap: wrap; } }
 
 .page-title {
-  padding: 1em; }
+  padding: 1em;
+  flex: 100%; }
   .page-title h1 {
     font-size: 2em; }
   @media screen and (max-width: 1000px) {
@@ -755,7 +758,8 @@ nav {
       flex-wrap: wrap; } }
 
 .page-title {
-  padding: 1em; }
+  padding: 1em;
+  flex: 100%; }
   .page-title h1 {
     font-size: 2em; }
   @media screen and (max-width: 1000px) {
@@ -997,7 +1001,8 @@ nav {
       flex-wrap: wrap; } }
 
 .page-title {
-  padding: 1em; }
+  padding: 1em;
+  flex: 100%; }
   .page-title h1 {
     font-size: 2em; }
   @media screen and (max-width: 1000px) {
@@ -1338,7 +1343,8 @@ nav {
       flex-wrap: wrap; } }
 
 .page-title {
-  padding: 1em; }
+  padding: 1em;
+  flex: 100%; }
   .page-title h1 {
     font-size: 2em; }
   @media screen and (max-width: 1000px) {
