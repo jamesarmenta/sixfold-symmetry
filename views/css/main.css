@@ -44,12 +44,7 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out;
-  -webkit-transition: background-color 500ms ease-in-out;
-  -moz-transition: background-color 500ms ease-in-out;
-  -ms-transition: background-color 500ms ease-in-out;
-  -o-transition: background-color 500ms ease-in-out;
-  transition: background-color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -250,12 +245,7 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out;
-  -webkit-transition: background-color 500ms ease-in-out;
-  -moz-transition: background-color 500ms ease-in-out;
-  -ms-transition: background-color 500ms ease-in-out;
-  -o-transition: background-color 500ms ease-in-out;
-  transition: background-color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -449,12 +439,7 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out;
-  -webkit-transition: background-color 500ms ease-in-out;
-  -moz-transition: background-color 500ms ease-in-out;
-  -ms-transition: background-color 500ms ease-in-out;
-  -o-transition: background-color 500ms ease-in-out;
-  transition: background-color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -651,12 +636,7 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out;
-  -webkit-transition: background-color 500ms ease-in-out;
-  -moz-transition: background-color 500ms ease-in-out;
-  -ms-transition: background-color 500ms ease-in-out;
-  -o-transition: background-color 500ms ease-in-out;
-  transition: background-color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -895,12 +875,7 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out;
-  -webkit-transition: background-color 500ms ease-in-out;
-  -moz-transition: background-color 500ms ease-in-out;
-  -ms-transition: background-color 500ms ease-in-out;
-  -o-transition: background-color 500ms ease-in-out;
-  transition: background-color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
@@ -1238,12 +1213,7 @@ body {
   -moz-transition: color 500ms ease-in-out;
   -ms-transition: color 500ms ease-in-out;
   -o-transition: color 500ms ease-in-out;
-  transition: color 500ms ease-in-out;
-  -webkit-transition: background-color 500ms ease-in-out;
-  -moz-transition: background-color 500ms ease-in-out;
-  -ms-transition: background-color 500ms ease-in-out;
-  -o-transition: background-color 500ms ease-in-out;
-  transition: background-color 500ms ease-in-out; }
+  transition: color 500ms ease-in-out; }
   @media screen and (max-width: 1000px) {
     body {
       font-size: 28px; } }
