@@ -6,10 +6,15 @@
   h2{
     font-size: 1.5em;
     line-height: 1.25em;
+    margin: $spacing-unit 0 0 0;
+  }
+  h3{
+    font-size: 1.25em;
+    line-height: 1.25em;
   }
 
   > div{
-    padding: $spacing-unit/2 $spacing-unit  $spacing-unit/2 $spacing-unit;
+    padding: 0 $spacing-unit 0 $spacing-unit;
   }
 }
 .credit{

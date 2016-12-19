@@ -3,19 +3,19 @@
 <div><h2>Curators:</h2></div>
 <% for(var i=0; i<credits.curators.length; i++) {%>
 <div class="credit">
-	<h2><b><%= credits.curators[i].name %></b></h2>
+	<h3><b><%= credits.curators[i].name %></b></h3>
 	<p><%= credits.curators[i].description %></p>
 </div>
 <% } %>
 <div><h2>Collaborators:</h2></div>
 <% for(var i=0; i<credits.collaborators.length; i++) {%>
 <div class="credit">
-	<h2><b><%= credits.collaborators[i].name %></b></h2>
+	<h3><b><%= credits.collaborators[i].name %></b></h3>
 	<p><%= credits.collaborators[i].description %></p>
 </div>
 <% } %>
 <div class="credit">
-<%= credits.extra %>
+<h2><%= credits.extra %></h2>
 </div>
 <% include ../partials/all-items %>
 </div>

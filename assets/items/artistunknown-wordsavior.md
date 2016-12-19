@@ -20,5 +20,5 @@ The Shakers, more formally known as the United Society of Believers in Christ’
 
 Shaker gift drawings are not about the geography of the universe as a whole; instead, the art made during Mother Ann’s Work was thought to provide glimpses into the anticipated after-life in Heaven. Some drawings are representational, with trees being a favorite motif, whereas other images are more abstract, combining letters, numbers, emblems, and shapes. They exhibit a calligraphic precision, and some contain indecipherable scripts, inscribing the gift of tongues. Typically, the art is highly symmetrical, as Heaven was believed to be perfectly ordered, which is why the Shaker’s own dwellings were crafted with clean lines and uncomplicated shapes. Most works are unsigned, yet each drawing testifies to the vibrant inner life of the Shakers, pulsing just below the plain surface of their simple living. 
 
-##faculty
-G. Spinner
+## curator
+Gregory Spinner

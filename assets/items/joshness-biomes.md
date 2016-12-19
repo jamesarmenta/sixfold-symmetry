@@ -23,4 +23,4 @@ In the graphs below, I model the interaction of Crematogaster opuntiae and Solen
 For scientists seeking patterns in nature, video and repeat photography offer useful tools for describing communities, detecting pertinent time scales for particular phenomena, and capturing how those communities change over time. The biomes presented here include the Sonoran Desert in Arizona, the Catskill Mountains, Skidmore’s North Woods, the Atlantic Coast in New Hampshire, the Northern Forest of the Great Lakes, the North Island of New Zealand, and Moreton Bay in Australia. All are structured by the same sort of climatic rhythms described above. A particular combination of precipitation, temperature, and solar energy engenders dynamic conditions that distinguish each site. Some of the videos have been accelerated to make these patterns more explicit. 
 
 ## curator
-J. Ness
+Josh Ness

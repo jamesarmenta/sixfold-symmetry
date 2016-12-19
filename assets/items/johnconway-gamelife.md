@@ -27,4 +27,4 @@ British mathematician John Conway developed the Game of Life in 1970. It isn’t
 The initial pattern of living and dead cells constitutes the seed or initial condition of the system. The algorithm, defined above, is then iterated for each discrete time step, thus creating future generations of cells and resulting in various patterns of population. Possible population outcomes that can emerge include extinction, stability, and overpopulation. 
 
 ## curator
-M. Eckmann
+Michael Eckmann
