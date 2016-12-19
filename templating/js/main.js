@@ -5,16 +5,12 @@ var BREAKPOINT2 = 1000;
 $(document).ready(function() {
   flickInit();
   updateItems();
-  // ajaxifyLinks();
-  // stateChange();
 });
 
 /*----------  ON DOCUMENT UPDATE  ----------*/
 
 function documentUpdate() {
   flickInit();
-  // flickResize();
-  // ajaxifyLinks();
   updateItems();
 }
 
@@ -108,24 +104,25 @@ function expandSelectedItem(item, href) {
 }
 
 function loadContentArea(href, delay, itemName) {
+  //just in case
+  setTimeout(function(){$('#content-area').removeClass('fadeOut');},2000);
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-  }, delay-2);
+  }, delay-200);
 
-  console.log('load content');
+  // console.log('load content');
   $('#content-area').addClass('fadeOut');
   //TODO: Scroll to top
   setTimeout(function() {
     $('#content-area').load(href, function() {
       window.scrollTo(0, 0);
-      setTimeout(()=>{$('#content-area').removeClass('fadeOut');},2000);
       $('#content-area').imagesLoaded(function() {
         //push to state history
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
-        console.log('starting ' + window.location.pathname);
+        // console.log('starting ' + window.location.pathname);
         startVisit(window.location.pathname);
       });
     });
@@ -157,7 +154,7 @@ function scaleItem(item, finalScale, delay) {
     if (typeof data.loadUrl !== 'undefined' && data.loadUrl.includes('partials')) {
       loadContentArea(data.loadUrl, data.delay, data.itemName);
     } else {
-      console.log('not a partial');
+      // console.log('not a partial');
       window.location = State.url;
     }
   });
@@ -170,17 +167,17 @@ startVisit(window.location.pathname.replace('/', ''));
 
 function startVisit(pageName) {
   pageName = pageName || '';
-  console.log('visit started');
+  // console.log('visit started');
   visit = {};
   visit.name = pageName;
   visit.time = Date.now();
 }
 
 function endVisit() {
-  console.log('ending ' + visit.name);
+  // console.log('ending ' + visit.name);
   visit.time = Math.round((Date.now() - visit.time) / 1000);
   visit.name = visit.name.replace('/', '');
-  console.log('visit ended at ' + visit.time);
+  // console.log('visit ended at ' + visit.time);
   $.ajax({
     url: "/api/item?name=" + visit.name + "&time=" + visit.time,
     method: "POST"

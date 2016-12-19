@@ -89,22 +89,20 @@ function expandSelectedItem(item, href) {
 }
 
 function loadContentArea(href, delay, itemName) {
+  setTimeout(function(){$('#content-area').removeClass('fadeOut');},2000);
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
-  }, delay-2);
+  }, delay-200);
 
-  console.log('load content');
   $('#content-area').addClass('fadeOut');
   setTimeout(function() {
     $('#content-area').load(href, function() {
       window.scrollTo(0, 0);
-      setTimeout(()=>{$('#content-area').removeClass('fadeOut');},2000);
       $('#content-area').imagesLoaded(function() {
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
-        console.log('starting ' + window.location.pathname);
         startVisit(window.location.pathname);
       });
     });
@@ -131,7 +129,6 @@ function scaleItem(item, finalScale, delay) {
     if (typeof data.loadUrl !== 'undefined' && data.loadUrl.includes('partials')) {
       loadContentArea(data.loadUrl, data.delay, data.itemName);
     } else {
-      console.log('not a partial');
       window.location = State.url;
     }
   });
@@ -143,17 +140,14 @@ startVisit(window.location.pathname.replace('/', ''));
 
 function startVisit(pageName) {
   pageName = pageName || '';
-  console.log('visit started');
   visit = {};
   visit.name = pageName;
   visit.time = Date.now();
 }
 
 function endVisit() {
-  console.log('ending ' + visit.name);
   visit.time = Math.round((Date.now() - visit.time) / 1000);
   visit.name = visit.name.replace('/', '');
-  console.log('visit ended at ' + visit.time);
   $.ajax({
     url: "/api/item?name=" + visit.name + "&time=" + visit.time,
     method: "POST"
