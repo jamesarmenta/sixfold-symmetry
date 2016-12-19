@@ -118,7 +118,7 @@ function requestedData(name) {
     }
     return { items: items, index: index, artist: artist, stats: stats};
   } else {
-    return { items: items, index: -1, artist: artist, stats: stats};
+    return { items: items, index: 0, artist: artist, stats: stats};
   }
 }
 
@@ -222,6 +222,10 @@ app.post('/api/item', function(req, res) {
 // FILE SERVES
 app.get('/assets/images/:image', function(req, res) {
   res.sendFile('assets/images/' + req.params.image, { root: __dirname });
+});
+
+app.get('/assets/favicon.ico', function(req, res) {
+  res.sendFile('assets/favicon.ico', { root: __dirname });
 });
 
 app.get('/assets/fonts/:font', function(req, res) {
