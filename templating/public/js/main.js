@@ -87,7 +87,7 @@ function expandSelectedItem(item, href) {
 
 function loadContentArea(href, delay, itemName) {
   $('#content-area').addClass('fadeOut');
-  setTimeout(function() { $('#content-area').html('loading...');}, 500);
+  setTimeout(function() { $('#content-area').html('loading...'); }, 500);
   itemName = (typeof itemName !== 'undefined') ? itemName.replace('/', '') : '';
   setTimeout(function() {
     $('body').removeClass();
@@ -136,6 +136,19 @@ var visit;
 startVisit(window.location.pathname.replace('/', ''));
 
 function startVisit(pageName) {
+  var name = pageName.replace('/', '');
+
+  if (readCookie(name)) {
+    var existing = readCookie(name);
+    eraseCookie(name);
+    createCookie(name, (parseInt(existing) + 1), 3650);
+  } else {
+    createCookie(name, 1, 3650);
+  }
+
+  var yourViews = document.getElementById("expanded-item-stat-your-views");
+  if (yourViews) { yourViews.innerHTML = readCookie(name); }
+
   pageName = pageName || '';
   visit = {};
   visit.name = pageName;
@@ -146,7 +159,6 @@ function startVisit(pageName) {
 }
 
 function endVisit() {
-  visit.name = visit.name.replace('/', '');
   $.ajax({
     url: "/api/item?name=" + visit.name + "&time=" + visit.time,
     method: "POST"
@@ -161,6 +173,31 @@ window.onbeforeunload = function() {
   });
 };
 
+
+function createCookie(name, value, days) {
+  var expires;
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = '; expires=' + date.toUTCString();
+  } else expires = '';
+  document.cookie = name + '=' + value + expires + '; path=/';
+}
+
+function readCookie(name) {
+  var nameEQ = name + '=';
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  createCookie(name, "", -1);
+}
 
 $('nav a').click(function() {
   var href = $(this).attr('href');

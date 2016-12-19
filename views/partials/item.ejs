@@ -44,11 +44,9 @@
 			<h1><%= items[index].viewsToday %></h1><span>views today</span>
 		</div>
 		<% } %>
-		<% if(items[index].yourViews>-1){%>
 		<div class="expanded-item-stat">
-			<h1><%= items[index].yourViews %></h1><span>your views</span>
+			<h1 id="expanded-item-stat-your-views"></h1><span>your views</span>
 		</div>
-		<% } %>
 		<% if(items[index].averageVisitDuration>-1){%>
 		<div class="expanded-item-stat">
 			<h1><%= parseInt(items[index].averageVisitDuration) %> sec</h1><span>average visit</span>
@@ -62,3 +60,6 @@
 	</div>
 	<% } %>
 	<% include ../partials/all-items %>
+	<script type="text/javscript">
+	document.getElementById('expanded-item-stat-your-views')
+	</script>
