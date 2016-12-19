@@ -126,6 +126,9 @@ nav
 	h1{
     font-size: 2em;
 	}
+	@media #{$screen-break2}{
+		text-align: center;
+	}
   }
 
 .all-items{
