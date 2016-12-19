@@ -48,9 +48,15 @@
 			<h1 id="expanded-item-stat-your-views"></h1><span>your views</span>
 		</div>
 		<% if(items[index].averageVisitDuration>-1){%>
+		<% if(items[index].averageVisitDuration>59){%>
 		<div class="expanded-item-stat">
-			<h1><%= parseInt(items[index].averageVisitDuration) %> sec</h1><span>average visit</span>
+			<h1><%= Math.floor(parseInt(items[index].averageVisitDuration)/60) %>m <%= parseInt(items[index].averageVisitDuration)%60 %>s</h1><span>average visit</span>
 		</div>
+		<% }else{ %>
+		<div class="expanded-item-stat">
+			<h1><%= parseInt(items[index].averageVisitDuration) %>sec</h1><span>average visit</span>
+		</div>
+		<% } %>
 		<% } %>
 		<% if(items[index].lastVisit>-1){%>
 		<div class="expanded-item-stat">
@@ -60,6 +66,3 @@
 	</div>
 	<% } %>
 	<% include ../partials/all-items %>
-	<script type="text/javscript">
-	document.getElementById('expanded-item-stat-your-views')
-	</script>
