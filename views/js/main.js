@@ -35,7 +35,6 @@ function flickInit() {
 /*----------  HOME ITEMS  ----------*/
 
 function updateItems() {
-
   var items = Array.from(document.querySelectorAll('.item'));
 
   //for each item
@@ -109,7 +108,6 @@ function expandSelectedItem(item, href) {
 }
 
 function loadContentArea(href, delay, itemName) {
-
   setTimeout(function() {
     $('body').removeClass();
     $('body').addClass(itemName);
@@ -126,6 +124,8 @@ function loadContentArea(href, delay, itemName) {
         enableScroll();
         documentUpdate();
         $('#content-area').removeClass('fadeOut');
+        console.log('starting ' + window.location.pathname);
+        startVisit(window.location.pathname);
       });
     });
   }, 1000);
@@ -146,7 +146,8 @@ function scaleItem(item, finalScale, delay) {
 
 (function(window, undefined) {
   // Bind to StateChange Event
-  History.Adapter.bind(window, 'statechange', function() { // Note: We are using statechange instead of popstate
+  History.Adapter.bind(window, 'statechange', function() {
+    endVisit();
     // store the State object
     var State = History.getState();
     // all the data you passed is accessable here now
@@ -161,24 +162,52 @@ function scaleItem(item, finalScale, delay) {
   });
 })(window);
 
+/*----------  PAGE VIEWS AND AVERAGE TIMES  ----------*/
+var visit;
+startVisit(window.location.pathname.replace('/', ''));
+
+
+function startVisit(pageName) {
+  pageName = pageName || '';
+  console.log('visit started');
+  visit = {};
+  visit.name = pageName;
+  visit.time = Date.now();
+}
+
+function endVisit() {
+  console.log('ending ' + visit.name);
+  visit.time = Math.round((Date.now() - visit.time) / 1000);
+  visit.name = visit.name.replace('/', '');
+  console.log('visit ended at ' + visit.time);
+  $.ajax({
+    url: "/api/item?name=" + visit.name + "&time=" + visit.time,
+    method: "POST"
+  });
+}
+
+window.onbeforeunload = function() {
+  visit.time = Math.round((Date.now() - visit.time) / 1000);
+  visit.name = visit.name.replace('/', '');
+  $.ajax({
+    url: "/api/item?name=" + visit.name + "&time=" + visit.time,
+    method: "POST"
+  });
+};
+
 /*----------  HELPERS  ----------*/
 
 $('nav a').click(function() {
-  
-    // create an object to pass as state data
-    var data = {};
-    
-    var href = $(this).attr('href');
-    // update the url, preserve title
-    History.pushState({'loadUrl':href,'delay':1000}, document.title, href.replace('/partials/','/'));
-    
-    // cancel the normal action of the hyperlink
-    return false;
-  });
+  var href = $(this).attr('href');
+  // update the url, preserve title
+  History.pushState({ 'loadUrl': href, 'delay': 1000 }, document.title, href.replace('/partials/', '/'));
+
+  // cancel the normal action of the hyperlink
+  return false;
+});
 
 function getCoordinates(element) {
   var coords = element.getBoundingClientRect();
-
   return coords;
 }
 
