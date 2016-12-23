@@ -225,10 +225,10 @@ app.post('/api/item', function(req, res) {
       // console.log('time'+ time);
 
       var newAverage = Math.round(((views * averageVisitDuration) + time) / (views + 1));
-
+      newAverage = (newAverage>300) ? 300 : parseInt(newAverage);
       // console.log('new avg:'+newAverage);
 
-      dbUpdate(itemsCollection, { "_id": data._id }, { $set: { "averageVisitDuration": parseInt(newAverage) } })
+      dbUpdate(itemsCollection, { "_id": data._id }, { $set: { "averageVisitDuration": newAverage } })
         .then((results) => {
           updateLocal();
         });
