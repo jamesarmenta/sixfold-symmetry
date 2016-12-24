@@ -17,6 +17,10 @@
 </div>
 
 <script type="text/javascript">
+
+setTimeout(function(){
+
+$(document).ready(function () {
     var current = $('.about-description').text();
 
     var selectedWords = [
@@ -50,5 +54,7 @@
 
       $('.about-description p').text(replacement);
 
-    }, 1000);
+    }, 500);
+});
+ },500);
   </script>
