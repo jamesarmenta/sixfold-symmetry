@@ -59,9 +59,19 @@
 		<% } %>
 		<% } %>
 		<% if(items[index].lastVisit>-1){%>
+		<% if((new Date().getTime() - items[index].lastVisit/1000)>59){%>
 		<div class="expanded-item-stat">
-			<h1><%= items[index].lastVisit %>m</h1><span>since last visit</span>
+			<h1><%= Math.floor(parseInt((new Date().getTime() - items[index].lastVisit)/1000)/60) %>m <%= parseInt((new Date().getTime() - items[index].lastVisit)/1000)%60 %>s</h1><span>last visit</span>
 		</div>
+		<% }else if((new Date().getTime() - items[index].lastVisit)/1000>3600){ %>
+		<div class="expanded-item-stat">
+			<h1><%= parseInt((new Date().getTime() - items[index].lastVisit)/1000/3600) %>hrs</h1><span>last visit</span>
+		</div>
+		<% }else{ %>
+		<div class="expanded-item-stat">
+			<h1><%= parseInt((new Date().getTime() - items[index].lastVisit)/1000) %>sec</h1><span>last visit</span>
+		</div>
+		<% } %>
 		<% } %>
 	</div>
 	<% } %>

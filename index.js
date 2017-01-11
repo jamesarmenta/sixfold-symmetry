@@ -211,6 +211,7 @@ app.get('/:item', function(req, res) {
 app.post('/api/item', function(req, res) {
   var name = req.query.name;
   var time = parseInt(req.query.time);
+  var lastVisit = (typeof req.query.lastvisit != undefined) ? parseInt(req.query.lastvisit) : new Date.getTime();
 
   // console.log(name);
   // console.log(time);
@@ -228,7 +229,7 @@ app.post('/api/item', function(req, res) {
       newAverage = (newAverage>300) ? 300 : parseInt(newAverage);
       // console.log('new avg:'+newAverage);
 
-      dbUpdate(itemsCollection, { "_id": data._id }, { $set: { "averageVisitDuration": newAverage } })
+      dbUpdate(itemsCollection, { "_id": data._id }, { $set: { "averageVisitDuration": newAverage, "lastVisit": lastVisit} })
         .then((results) => {
           updateLocal();
         });

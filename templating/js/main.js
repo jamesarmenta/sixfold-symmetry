@@ -192,7 +192,7 @@ function endVisit() {
   // console.log('visit ended at ' + visit.time);
   visit.name = visit.name.replace('/', '');
   $.ajax({
-    url: "/api/item?name=" + visit.name + "&time=" + visit.time,
+    url: "/api/item?name=" + visit.name + "&time=" + visit.time +"&lastvisit=" + new Date().getTime(),
     method: "POST"
   });
 }
@@ -200,7 +200,7 @@ function endVisit() {
 window.onbeforeunload = function() {
   visit.name = visit.name.replace('/', '');
   $.ajax({
-    url: "/api/item?name=" + visit.name + "&time=" + visit.time,
+    url: "/api/item?name=" + visit.name + "&time=" + visit.time +"&lastvisit=" + new Date().getTime(),
     method: "POST"
   });
 };
