@@ -88,7 +88,12 @@ function writeClustersCssAsync(clusters){
 
     '.'+element.name+' a, .'+element.name+' a:visited {'+
     'color:'+contrastTextColor(tertiary.hex)+' !important;'+
-    'text-shadow: 1px 1px 1px '+tertiary.hex+', -1px -1px 1px '+tertiary.hex+', 1px -1px 1px '+tertiary.hex+', -1px 1px 1px '+tertiary.hex+';'+
+    'text-shadow: 1px 1px 1px '+tertiary.hex+', -1px -1px 1px '+tertiary.hex+', 1px -1px 1px '+tertiary.hex+', -1px 1px 1px '+tertiary.hex+';}\n'+
+
+    '.'+element.name+' nav {'+
+    'background: -moz-linear-gradient(top, '+tertiary.hex+' 90%, rgba(128,128,128,0) 100%);'+
+    'background: -webkit-linear-gradient(top, '+tertiary.hex+' 90%,rgba(128,128,128,0) 100%);'+
+    'background: linear-gradient(to bottom, '+tertiary.hex+' 90%,rgba(128,128,128,0) 100%);}\n'+
 
     '.'+element.name+' .expanded-item--label {'+
     'background-color:'+primary.hex+';}\n'+
