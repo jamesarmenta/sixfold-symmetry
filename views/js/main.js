@@ -190,6 +190,7 @@ function startVisit(pageName) {
 function endVisit() {
   // console.log('ending ' + visit.name);
   // console.log('visit ended at ' + visit.time);
+  visit.name = visit.name.replace('/', '');
   $.ajax({
     url: "/api/item?name=" + visit.name + "&time=" + visit.time,
     method: "POST"

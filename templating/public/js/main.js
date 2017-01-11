@@ -159,6 +159,7 @@ function startVisit(pageName) {
 }
 
 function endVisit() {
+  visit.name = visit.name.replace('/', '');
   $.ajax({
     url: "/api/item?name=" + visit.name + "&time=" + visit.time,
     method: "POST"
